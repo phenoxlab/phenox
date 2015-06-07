@@ -10,19 +10,65 @@
     
 
     
+        
     <url>
-     <loc>None/</loc>
+     <loc>None/01_before_you_start/package/</loc>
+     <lastmod>2015-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01_before_you_start/hardware_structure/</loc>
+     <lastmod>2015-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01_before_you_start/training/</loc>
+     <lastmod>2015-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/02_how_to_manage/power/</loc>
+     <lastmod>2015-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/02_how_to_manage/serial_comm/</loc>
+     <lastmod>2015-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>None/trouble_shooting/</loc>
      <lastmod>2015-06-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
-     <loc>None/training/</loc>
+     <loc>None/03_application_dev/about_library/</loc>
      <lastmod>2015-06-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>None/03_application_dev/api_ref/</loc>
+     <lastmod>2015-06-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
 </urlset>

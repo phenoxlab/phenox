@@ -51,27 +51,32 @@
             "title": "Trouble Shooting"
         }, 
         {
-            "location": "/training/", 
+            "location": "/01_before_you_start/package/", 
+            "text": "Phenox2 contains the following parts.", 
+            "title": "Phenox and Components"
+        }, 
+        {
+            "location": "/01_before_you_start/training/", 
             "text": "Package\n\n\nOptional\n\n\nTraining\n\n\nPhenox works as you program it. Therefore it is highly possitble that it takes unintended actions when you start developping it. To avoid accidental damage or harm, please read the followings carefully, having your Phenox at your side, and check all the components and the keywords on your Phenox.\n\n\nPrincipal Axes of Phenox", 
             "title": "Training"
         }, 
         {
-            "location": "/training/#package", 
+            "location": "/01_before_you_start/training/#package", 
             "text": "", 
             "title": "Package"
         }, 
         {
-            "location": "/training/#optional", 
+            "location": "/01_before_you_start/training/#optional", 
             "text": "", 
             "title": "Optional"
         }, 
         {
-            "location": "/training/#training", 
+            "location": "/01_before_you_start/training/#training", 
             "text": "Phenox works as you program it. Therefore it is highly possitble that it takes unintended actions when you start developping it. To avoid accidental damage or harm, please read the followings carefully, having your Phenox at your side, and check all the components and the keywords on your Phenox.", 
             "title": "Training"
         }, 
         {
-            "location": "/training/#principal-axes-of-phenox", 
+            "location": "/01_before_you_start/training/#principal-axes-of-phenox", 
             "text": "", 
             "title": "Principal Axes of Phenox"
         }
