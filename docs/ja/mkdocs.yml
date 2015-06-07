@@ -8,5 +8,14 @@ site_favicon: 'favicon.ico'
 site_dir: '../../site-doc/ja'
 pages:
 - 'ホーム': 'home.md'
-- '目次': 'index.md'
-- 'トレーニング': 'training.md'
+- はじめに:
+    - 'Phenox セット内容物': '01_before_you_start/package.md'
+    - '機体構成': 01_before_you_start/hardware_structure.md
+    - 'トレーニング': '01_before_you_start/training.md'
+- Phenox の取り扱い方: 
+    - '電源供給方法': '02_how_to_manage/power.md'
+    - 'Phenox2 との通信方法': '02_how_to_manage/serial_comm.md'
+- 'トラブルシューティング': 'trouble_shooting.md'
+- アプリケーション開発:
+    - 'Phenox ライブラリについて': '03_application_dev/about_library.md'
+    - 'API' : '03_application_dev/api_ref.md'

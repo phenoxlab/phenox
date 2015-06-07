@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Phenox ドキュメント 目次
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+**はじめに**
 
-## Commands
+- [Phenox セット内容物](01_before_you_start/package.md)
+- [機体構成](01_before_you_start/hardware_structure.md)
+- [トレーニング](01_before_you_start/training.md)
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+**Phenox の取り扱い方**
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+- [Phenox の取り扱い方](test.md)
