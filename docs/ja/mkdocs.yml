@@ -1,0 +1,11 @@
+site_name: Phenox Library Documentation
+theme: readthedocs
+#repo_url: https://github.com/phenoxlab/phenox/
+repo_url: https://github.com/mthrok/phenox/
+site_description: Phenox Library Documentation
+site_author: 此村 領
+site_favicon: 'favicon.ico'
+site_dir: '../../doc/ja'
+pages:
+- 'ホーム': 'home.md'
+- '目次': 'index.md'
