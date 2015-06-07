@@ -1,0 +1,69 @@
+{
+    "docs": [
+        {
+            "location": "/home/", 
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "\u30db\u30fc\u30e0"
+        }, 
+        {
+            "location": "/home/#welcome-to-mkdocs", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Welcome to MkDocs"
+        }, 
+        {
+            "location": "/home/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/home/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/", 
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "\u76ee\u6b21"
+        }, 
+        {
+            "location": "/#welcome-to-mkdocs", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Welcome to MkDocs"
+        }, 
+        {
+            "location": "/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/training/", 
+            "text": "Package\n\n\nOptional\n\n\nTraining\n\n\nPhenox works as you program it. Therefore it is highly possitble that it takes unintended actions when you start developping it. To avoid accidental damage or harm, please read the followings carefully, having your Phenox at your side, and check all the components and the keywords on your Phenox.\n\n\nPrincipal Axes of Phenox", 
+            "title": "\u30c8\u30ec\u30fc\u30cb\u30f3\u30b0"
+        }, 
+        {
+            "location": "/training/#package", 
+            "text": "", 
+            "title": "Package"
+        }, 
+        {
+            "location": "/training/#optional", 
+            "text": "", 
+            "title": "Optional"
+        }, 
+        {
+            "location": "/training/#training", 
+            "text": "Phenox works as you program it. Therefore it is highly possitble that it takes unintended actions when you start developping it. To avoid accidental damage or harm, please read the followings carefully, having your Phenox at your side, and check all the components and the keywords on your Phenox.", 
+            "title": "Training"
+        }, 
+        {
+            "location": "/training/#principal-axes-of-phenox", 
+            "text": "", 
+            "title": "Principal Axes of Phenox"
+        }
+    ]
+}
