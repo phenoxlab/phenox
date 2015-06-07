@@ -5,7 +5,7 @@ repo_url: https://github.com/mthrok/phenox/
 site_description: Phenox Library Documentation
 site_author: Ryo Konomura
 site_favicon: 'favicon.ico'
-site_dir: '../../doc/en'
+site_dir: '../../site-doc/en'
 pages:
 - 'Home': 'home.md'
 - 'Index': 'index.md'
