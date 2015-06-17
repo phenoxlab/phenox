@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linux 環境の構築 - Phenox Library Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Linux 環境の構築";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../home/" class="icon icon-home"> Phenox Library Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../home/">ホーム</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>初めに</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/note/">初めにお読みください</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/package/">Phenox セット内容物</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/hardware/">機体構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/circuit/">回路構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/directions/">機体軸と回転方向</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/power/">電源について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/com/">通信方法について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../01/others/">その他の取り扱い</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>アプリケーション開発</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev/">開発について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Linux 環境の構築</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#sd">マイクロ SD カード上に環境構築をする</a></li>
+                
+                    <li><a class="toctree-l4" href="#todo">TODO バージョン確認？</a></li>
+                
+                    <li><a class="toctree-l4" href="#todo-check">TODO: Check ↑どれがあってないといけないの？どれが違ってていいの？</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../about_library/">Phenox ライブラリについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../api_ref/">API</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../trouble_shooting/">トラブルシューティング</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../home/">Phenox Library Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../home/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>アプリケーション開発 &raquo;</li>
+        
+      
+    
+    <li>Linux 環境の構築</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/mthrok/phenox/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="sd">マイクロ SD カード上に環境構築をする</h1>
+<h6 id="todo">TODO バージョン確認？</h6>
+<p>Phenox2 には Linux (Ubuntu ??) が搭載されており、この Linux 上で飛行制御システムやセンサーの信号処理を行っています。この Linux はマイクロ SD カード上に構築されており、ユーザーの好みに応じてカスタマイズすることが可能です。ここでは、出荷時と同等の環境をマイクロ SD カード上に構築する方法を説明します。</p>
+<p>なお以下の環境構築には Ubuntu 14.04 LTS を使用しました。</p>
+<ol>
+<li>まず、4 GB以上の容量を持った マイクロ SD カードを用意してください。  <br />
+SD カード内にデータがある場合は、環境構築を行うと全て失われてしまいますので、必要に応じてバックアップを取ってください。  <br />
+</br></li>
+<li>ターミナル（端末、Terminal）を開きます。  <br />
+デスクトップからメインメニューを開いてください。
+<img alt="ターミナルの開き方1" src="../../img/phenox_build_ja/1.1.open_terminal.png" />  <br />
+</br>
+検索窓に "terminal" と入力してください。  <br />
+<img alt="ターミナルの開き方2" src="../../img/phenox_build_ja/1.2.open_terminal.png" />       <br />
+</br>
+ターミナルが開き、待機状態になります。
+<img alt="ターミナルの開き方3" src="../../img/phenox_build_ja/1.3.open_terminal.png" />  <br />
+</br></li>
+<li>用意した SD カードをコンピューターに接続してください。  <br />
+</br></li>
+<li>
+<p><code>dmesg</code> コマンドを実行して、SD カードの識別子を確認します。  <br />
+画面出力の最後の方に SD カードについてのメッセージが現れます。  <br />
+<img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.1.find_identifier.png" />  <br />
+</br>
+メッセージの中に、以下の写真で示すような <code>sdX</code> (<code>X</code>部分は環境によって変化します)  <br />
+の文字を探します。この例では識別子は <code>sdb</code> となっています。  <br />
+<img alt="SDカードの識別子を探す2" src="../../img/phenox_build_ja/2.2.find_identifier.png" />  <br />
+</br></p>
+</li>
+<li>
+<p>SD カードのフォーマットを行います。  <br />
+次のコマンドを、<code>sdX</code> を先程確認した値に置き換えた上で、実行してください。  <br />
+<code>sudo dd if=/dev/zero of=/dev/sdX bs=1024 count=1</code>  <br />
+<img alt="SDカードのフォーマット1" src="../../img/phenox_build_ja/3.1.format.png" />  <br />
+</br>
+初めて <code>sudo</code> を実行する場合は、管理者権限のパスワードを尋ねられます。  <br />
+パスワードを入力して <code>Enter</code> を押してください。  <br />
+<img alt="SDカードのフォーマット2" src="../../img/phenox_build_ja/3.2.format.png" />  <br />
+</br>
+以下のような出力が出れば成功です。  <br />
+<img alt="SDカードのフォーマット2" src="../../img/phenox_build_ja/3.3.format.png" />  <br />
+</br></p>
+</li>
+<li>次に SD カードにパーティションを２つ作成します。次のコマンドを実行して下さい。  <br />
+（<code>sdX</code> を先程確認した値に置き換えてください。）  <br />
+<code>sudo fdisk /dev/sdX</code>  <br />
+ターミナルが対話モードに切り替わります。  <br />
+<code>コマンド（mでヘルプ）:</code>と出ますので<code>n</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成1" src="../../img/phenox_build_ja/4.1.partition.png" />  <br />
+</br>  <br />
+<code>Select (default p):</code>に<code>p</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成2" src="../../img/phenox_build_ja/4.2.partition.png" />  <br />
+</br>  <br />
+<code>パーティション番号（1-4、初期値１）:</code> に<code>1</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成3" src="../../img/phenox_build_ja/4.3.partition.png" />  <br />
+</br>  <br />
+<code>最初 セクタ （2048-XXXXXXX、初期値 2048）：</code>には何も入力しないで <code>Enter</code> を押します。  <br />
+<code>初期値 2048を使います</code>と出力されます。
+<img alt="SDカードのパーティション作成4" src="../../img/phenox_build_ja/4.4.partition.png" />  <br />
+</br>  <br />
+<code>Last セクタ, +セクタ数 or +size{K,M,G} (2048-XXXXXXX, 初期値 XXXXXXX)：</code>に<code>+256M</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成5" src="../../img/phenox_build_ja/4.5.partition.png" />  <br />
+</br>  <br />
+１つ目のパーティション作成が完了しました。  <br />
+<img alt="SDカードのパーティション作成6" src="../../img/phenox_build_ja/4.6.partition.png" />  <br />
+</br>  <br />
+続けて二つ目のパーティションを作成します。  <br />
+<code>コマンド（mでヘルプ）:</code>に<code>n</code> と入力し、<code>Select (default p):</code>に<code>p</code> と入力します。  <br />
+<code>パーティション番号（1-4、初期値１）:</code> に<code>2</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成7" src="../../img/phenox_build_ja/4.7.partition.png" />  <br />
+</br>  <br />
+<code>最初 セクタ （XXXXXXX-YYYYYYY、初期値 XXXXXXX）：</code>には何も入力しないで <code>Enter</code> を押します。  <br />
+<code>初期値 XXXXXXXを使います</code>と出力されます。
+<img alt="SDカードのパーティション作成8" src="../../img/phenox_build_ja/4.8.partition.png" />  <br />
+</br>  <br />
+<code>Last セクタ, +セクタ数 or +size{K,M,G} (XXXXXXX-YYYYYYY, 初期値 YYYYYYY)：</code>に再び何も入力しないで <code>Enter</code>を押します。  <br />
+<img alt="SDカードのパーティション作成9" src="../../img/phenox_build_ja/4.9.partition.png" />  <br />
+２つ目のパーティション作成が完了しました。  <br />
+</br>  <br />
+次に、それぞれのパーティションのシステムタイプを変更します。  <br />
+まずパーティション１のシステムタイプを変更します。  <br />
+<code>コマンド（mでヘルプ）:</code>と出ますので<code>a</code> と入力します。<br />
+<img alt="SDカードのパーティション作成10" src="../../img/phenox_build_ja/4.10.partition.png" />  <br />
+</br>  <br />
+<code>パーティション番号（1-4）:</code> に <code>1</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成11" src="../../img/phenox_build_ja/4.11.partition.png" />  <br />
+</br>  <br />
+<code>コマンド（mでヘルプ）:</code>に<code>t</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成12" src="../../img/phenox_build_ja/4.12.partition.png" />  <br />
+</br>  <br />
+<code>パーティション番号（1-4）:</code> に <code>1</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成13" src="../../img/phenox_build_ja/4.13.partition.png" />  <br />
+</br>  <br />
+<code>16進数コード（Lコマンドでコードリスト表示）：</code> に <code>c</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成14" src="../../img/phenox_build_ja/4.14.partition.png" />  <br />
+パーティション１のシステムタイプが変更されました。  <br />
+</br>  <br />
+次はパーティション２のシステムタイプを変更します。  <br />
+<code>コマンド（mでヘルプ）:</code>に<code>t</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成15" src="../../img/phenox_build_ja/4.15.partition.png" />  <br />
+</br>  <br />
+<code>パーティション番号（1-4）:</code> に<code>2</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成16" src="../../img/phenox_build_ja/4.16.partition.png" />  <br />
+</br>  <br />
+<code>16進数コード（Lコマンドでコードリスト表示）：</code> に <code>83</code> と入力します。  <br />
+<img alt="SDカードのパーティション作成17" src="../../img/phenox_build_ja/4.17.partition.png" />  <br />
+パーティション２のシステムタイプが変更されました。  <br />
+</br>  <br />
+これまでの入力を確認します。  <br />
+<code>コマンド（mでヘルプ）:</code>に<code>p</code> と入力します。  <br />
+次のようになっていることを確認します。(数字部分は環境によって異なります)  <br />
+<img alt="SDカードのパーティション作成18" src="../../img/phenox_build_ja/4.18.partition.png" />  <br />
+</br>    </li>
+</ol>
+<h6 id="todo-check">TODO: Check ↑どれがあってないといけないの？どれが違ってていいの？</h6>
+<p>違っていれば、<code>Ctrl+c</code>で操作を中断し、一連の操作を最初からやり直してください。  <br />
+正しく進んでいれば <code>w</code> を入力し、変更を反映させます。  <br />
+<img alt="SDカードのパーティション作成19" src="../../img/phenox_build_ja/4.19.partition.png" />  <br />
+fdisk の書き込みが完了したら、SD カードを一度抜き、再び差し直します。  <br />
+</br>    </p>
+<ol>
+<li>作成した２つのパーティションにファイルシステムを構築します。  <br />
+次の２つのコマンドを、<code>sdX</code> を先程確認した値に置き換えた上で、順番に実行してください。  <br />
+<code>sudo mkfs.vfat -F 32 -n boot /dev/sdX1</code>  <br />
+<code>sudo mkfs.ext4 -L root /dev/sdX2</code>   <br />
+注意：このコマンドでは先程作成したパーティションを指定するために、  <br />
+<code>sdX</code> の後に <code>1</code>, <code>2</code> が付け加わっています。注意して実行してください。  <br />
+<img alt="SDカードのファイルシステム構築1" src="../../img/phenox_build_ja/5.1.mount.png" />  <br />
+</br>  <br />
+<img alt="SDカードのファイルシステム構築2" src="../../img/phenox_build_ja/5.2.mount.png" />  <br />
+</br>  <br />
+<img alt="SDカードのファイルシステム構築3" src="../../img/phenox_build_ja/5.3.mount.png" />  <br />
+</br>  <br />
+<img alt="SDカードのファイルシステム構築4" src="../../img/phenox_build_ja/5.4.mount.png" />  <br />
+処理が完了したら、SD カードを一度抜き、再び差し直します。  <br />
+</br>    </li>
+<li>最後に、Phenox Lab の Web サイトより、  <br />
+必要なソフトウェアをダウンロードし、SD カード上に展開します。  <br />
+以下のコマンドを実行して、ソフトウェアをダウンロードしてください。  <br />
+<code>wget http://phenoxlab.com/static/phenox boot master.tar.gz</code>  <br />
+<code>wget http://phenoxlab.com/static/phenox ubuntu master.tar.gz</code>  <br />
+次に、以下のコマンドでダウンロードした圧縮ファイルを解凍します。
+<code>tar zxvfp phenox boot master.tar.gz</code>  <br />
+<code>tar zxvfp phenox ubuntu master.tar.gz</code>  <br />
+最後に、以下のコマンドで、解凍したファイルを SD カードにコピーします。  <br />
+最後のコピーには時間がかかりますのでご注意ください。  <br />
+<code>cp -a phenox boot master/* /media/boot</code> <br />
+<code>sudo cp -a phenox ubuntu master/* /media/root</code> <br />
+コピーが完了したら、以下のコマンドで SD カードをコンピューターから取り出します。
+<code>umount /media/root /media/boot</code></li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../about_library/" class="btn btn-neutral float-right" title="Phenox ライブラリについて"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../dev/" class="btn btn-neutral" title="開発について"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../dev/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../about_library/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
