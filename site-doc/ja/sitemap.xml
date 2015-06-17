@@ -4,7 +4,7 @@
     
     <url>
      <loc>None/home/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,20 +12,50 @@
     
         
     <url>
-     <loc>None/01_before_you_start/package/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <loc>None/01/note/</loc>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/01_before_you_start/hardware_structure/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <loc>None/01/package/</loc>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/01_before_you_start/training/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <loc>None/01/hardware/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01/circuit/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01/directions/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01/power/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01/com/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/01/others/</loc>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -34,14 +64,26 @@
     
         
     <url>
-     <loc>None/02_how_to_manage/power/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <loc>None/02/dev/</loc>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
-     <loc>None/02_how_to_manage/serial_comm/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <loc>None/02/env/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/02/about_library/</loc>
+     <lastmod>2015-06-18</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None/02/api_ref/</loc>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -50,25 +92,9 @@
     
     <url>
      <loc>None/trouble_shooting/</loc>
-     <lastmod>2015-06-07</lastmod>
+     <lastmod>2015-06-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
-    <url>
-     <loc>None/03_application_dev/about_library/</loc>
-     <lastmod>2015-06-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/03_application_dev/api_ref/</loc>
-     <lastmod>2015-06-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
     
 
 </urlset>
