@@ -1,17 +1,8 @@
-# Welcome to MkDocs
+Welcome to Phenox documentation. 
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+Phenox プロジェクトについては[こちら](http://phenoxlab.com/?lang=ja)を参照ください。
 
-## Commands
+このページでは Phenox2 開発キットの使い方、API の仕様について説明します。
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+Phenox2 を開発される方は右下の Next ボタンに従ってドキュメントを読み進めてください。
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.

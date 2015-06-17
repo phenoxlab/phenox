@@ -1,0 +1,146 @@
+# マイクロ SD カード上に環境構築をする
+###### TODO バージョン確認？Phenox2 には Linux (Ubuntu ??) が搭載されており、この Linux 上で飛行制御システムやセンサーの信号処理を行っています。この Linux はマイクロ SD カード上に構築されており、ユーザーの好みに応じてカスタマイズすることが可能です。ここでは、出荷時と同等の環境をマイクロ SD カード上に構築する方法を説明します。
+
+なお以下の環境構築には Ubuntu 14.04 LTS を使用しました。
+
+1. まず、4 GB以上の容量を持った マイクロ SD カードを用意してください。    
+SD カード内にデータがある場合は、環境構築を行うと全て失われてしまいますので、必要に応じてバックアップを取ってください。    
+</br>
+2. ターミナル（端末、Terminal）を開きます。    
+デスクトップからメインメニューを開いてください。
+![ターミナルの開き方1] (/img/phenox_build_ja/1.1.open_terminal.png)    
+</br>
+検索窓に "terminal" と入力してください。    
+![ターミナルの開き方2] (/img/phenox_build_ja/1.2.open_terminal.png)         
+</br>
+ターミナルが開き、待機状態になります。
+![ターミナルの開き方3] (/img/phenox_build_ja/1.3.open_terminal.png)    
+</br>
+3. 用意した SD カードをコンピューターに接続してください。    
+</br>
+4. `dmesg` コマンドを実行して、SD カードの識別子を確認します。    
+画面出力の最後の方に SD カードについてのメッセージが現れます。    
+![SDカードの識別子を探す1] (/img/phenox_build_ja/2.1.find_identifier.png)    
+</br>
+メッセージの中に、以下の写真で示すような `sdX` (`X`部分は環境によって変化します)    
+の文字を探します。この例では識別子は `sdb` となっています。    
+![SDカードの識別子を探す2] (/img/phenox_build_ja/2.2.find_identifier.png)    
+</br>
+
+5. SD カードのフォーマットを行います。    
+次のコマンドを、`sdX` を先程確認した値に置き換えた上で、実行してください。    
+```sudo dd if=/dev/zero of=/dev/sdX bs=1024 count=1```    
+![SDカードのフォーマット1] (/img/phenox_build_ja/3.1.format.png)    
+</br>
+初めて `sudo` を実行する場合は、管理者権限のパスワードを尋ねられます。    
+パスワードを入力して `Enter` を押してください。    
+![SDカードのフォーマット2] (/img/phenox_build_ja/3.2.format.png)    
+</br>
+以下のような出力が出れば成功です。    
+![SDカードのフォーマット2] (/img/phenox_build_ja/3.3.format.png)    
+</br>
+6. 次に SD カードにパーティションを２つ作成します。次のコマンドを実行して下さい。    
+（`sdX` を先程確認した値に置き換えてください。）    
+```sudo fdisk /dev/sdX```    
+ターミナルが対話モードに切り替わります。    
+`コマンド（mでヘルプ）:`と出ますので`n` と入力します。    
+![SDカードのパーティション作成1] (/img/phenox_build_ja/4.1.partition.png)    
+</br>    
+`Select (default p):`に`p` と入力します。    
+![SDカードのパーティション作成2] (/img/phenox_build_ja/4.2.partition.png)    
+</br>    
+`パーティション番号（1-4、初期値１）:` に`1` と入力します。    
+![SDカードのパーティション作成3] (/img/phenox_build_ja/4.3.partition.png)    
+</br>    
+`最初 セクタ （2048-XXXXXXX、初期値 2048）：`には何も入力しないで `Enter` を押します。    
+`初期値 2048を使います`と出力されます。
+![SDカードのパーティション作成4] (/img/phenox_build_ja/4.4.partition.png)    
+</br>    
+`Last セクタ, +セクタ数 or +size{K,M,G} (2048-XXXXXXX, 初期値 XXXXXXX)：`に`+256M` と入力します。    
+![SDカードのパーティション作成5] (/img/phenox_build_ja/4.5.partition.png)    
+</br>    
+１つ目のパーティション作成が完了しました。    
+![SDカードのパーティション作成6] (/img/phenox_build_ja/4.6.partition.png)    
+</br>    
+続けて二つ目のパーティションを作成します。    
+`コマンド（mでヘルプ）:`に`n` と入力し、`Select (default p):`に`p` と入力します。    
+`パーティション番号（1-4、初期値１）:` に`2` と入力します。    
+![SDカードのパーティション作成7] (/img/phenox_build_ja/4.7.partition.png)    
+</br>    
+`最初 セクタ （XXXXXXX-YYYYYYY、初期値 XXXXXXX）：`には何も入力しないで `Enter` を押します。    
+`初期値 XXXXXXXを使います`と出力されます。
+![SDカードのパーティション作成8] (/img/phenox_build_ja/4.8.partition.png)    
+</br>    
+`Last セクタ, +セクタ数 or +size{K,M,G} (XXXXXXX-YYYYYYY, 初期値 YYYYYYY)：`に再び何も入力しないで `Enter`を押します。    
+![SDカードのパーティション作成9] (/img/phenox_build_ja/4.9.partition.png)    
+２つ目のパーティション作成が完了しました。    
+</br>    
+次に、それぞれのパーティションのシステムタイプを変更します。    
+まずパーティション１のシステムタイプを変更します。    
+`コマンド（mでヘルプ）:`と出ますので`a` と入力します。  
+![SDカードのパーティション作成10] (/img/phenox_build_ja/4.10.partition.png)    
+</br>    
+`パーティション番号（1-4）:` に `1` と入力します。    
+![SDカードのパーティション作成11] (/img/phenox_build_ja/4.11.partition.png)    
+</br>    
+`コマンド（mでヘルプ）:`に`t` と入力します。    
+![SDカードのパーティション作成12] (/img/phenox_build_ja/4.12.partition.png)    
+</br>    
+`パーティション番号（1-4）:` に `1` と入力します。    
+![SDカードのパーティション作成13] (/img/phenox_build_ja/4.13.partition.png)    
+</br>    
+`16進数コード（Lコマンドでコードリスト表示）：` に `c` と入力します。    
+![SDカードのパーティション作成14] (/img/phenox_build_ja/4.14.partition.png)    
+パーティション１のシステムタイプが変更されました。    
+</br>    
+次はパーティション２のシステムタイプを変更します。    
+`コマンド（mでヘルプ）:`に`t` と入力します。    
+![SDカードのパーティション作成15] (/img/phenox_build_ja/4.15.partition.png)    
+</br>    
+`パーティション番号（1-4）:` に`2` と入力します。    
+![SDカードのパーティション作成16] (/img/phenox_build_ja/4.16.partition.png)    
+</br>    
+`16進数コード（Lコマンドでコードリスト表示）：` に `83` と入力します。    
+![SDカードのパーティション作成17] (/img/phenox_build_ja/4.17.partition.png)    
+パーティション２のシステムタイプが変更されました。    
+</br>    
+これまでの入力を確認します。    
+`コマンド（mでヘルプ）:`に`p` と入力します。    
+次のようになっていることを確認します。(数字部分は環境によって異なります)    
+![SDカードのパーティション作成18] (/img/phenox_build_ja/4.18.partition.png)    
+</br>    
+###### TODO: Check ↑どれがあってないといけないの？どれが違ってていいの？    
+違っていれば、`Ctrl+c`で操作を中断し、一連の操作を最初からやり直してください。    
+正しく進んでいれば `w` を入力し、変更を反映させます。    
+![SDカードのパーティション作成19] (/img/phenox_build_ja/4.19.partition.png)    
+fdisk の書き込みが完了したら、SD カードを一度抜き、再び差し直します。    
+</br>    
+
+7. 作成した２つのパーティションにファイルシステムを構築します。    
+次の２つのコマンドを、`sdX` を先程確認した値に置き換えた上で、順番に実行してください。    
+```sudo mkfs.vfat -F 32 -n boot /dev/sdX1```    
+```sudo mkfs.ext4 -L root /dev/sdX2```     
+注意：このコマンドでは先程作成したパーティションを指定するために、    
+`sdX` の後に `1`, `2` が付け加わっています。注意して実行してください。    
+![SDカードのファイルシステム構築1] (/img/phenox_build_ja/5.1.mount.png)    
+</br>    
+![SDカードのファイルシステム構築2] (/img/phenox_build_ja/5.2.mount.png)    
+</br>    
+![SDカードのファイルシステム構築3] (/img/phenox_build_ja/5.3.mount.png)    
+</br>    
+![SDカードのファイルシステム構築4] (/img/phenox_build_ja/5.4.mount.png)    
+処理が完了したら、SD カードを一度抜き、再び差し直します。    
+</br>    
+8. 最後に、Phenox Lab の Web サイトより、    
+必要なソフトウェアをダウンロードし、SD カード上に展開します。    
+以下のコマンドを実行して、ソフトウェアをダウンロードしてください。    ```wget http://phenoxlab.com/static/phenox boot master.tar.gz```    
+```wget http://phenoxlab.com/static/phenox ubuntu master.tar.gz```    
+次に、以下のコマンドでダウンロードした圧縮ファイルを解凍します。
+```tar zxvfp phenox boot master.tar.gz```    
+```tar zxvfp phenox ubuntu master.tar.gz```    
+最後に、以下のコマンドで、解凍したファイルを SD カードにコピーします。    
+最後のコピーには時間がかかりますのでご注意ください。    
+```cp -a phenox boot master/* /media/boot```   
+```sudo cp -a phenox ubuntu master/* /media/root```   
+コピーが完了したら、以下のコマンドで SD カードをコンピューターから取り出します。
+```umount /media/root /media/boot```
