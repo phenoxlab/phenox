@@ -31,11 +31,11 @@ hostpc$ ssh root@192.168.2.1
 
 1. まず、起動時に hostapd を使用する機能を無効化します。hostapd 起動スクリプトを Linux 起動時実行対象から外します。    
 ```bash
-phenox# mv /etc/rc2.d/S20hostapd /etc/rc2.d/refuge
+mv /etc/rc2.d/S20hostapd /etc/rc2.d/refuge
 ```
 2. 次に、Phenox2 をユーザーの用意した WiFi ルーターへ接続し、`wpa supplicant` コマンドで DHCP サーバから IP アドレスを取得します。設定ファイルの一例が `/root/setting/wlan-set-wli-uc.sh` に記載されています。このスクリプトをユーザーに合わせて書き換え、以下のコマンドを実 行してください。
 ```bash
-phenox# source /root/setting/wlan-set-wli-uc.sh
+source /root/setting/wlan-set-wli-uc.sh
 ```
 
 各パラメータの意味と設定方法については、インターネット上で `wpa supplicant` コマンドの使用例を参照してください。
