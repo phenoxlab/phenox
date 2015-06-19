@@ -187,16 +187,16 @@ wget http://phenoxlab.com/static/phenox_ubuntu_master.tar.gz
 
 次に、以下のコマンドでダウンロードした圧縮ファイルを解凍します。
 ```bash
-tar zxvfp phenox boot master.tar.gz
-tar zxvfp phenox ubuntu master.tar.gz
+tar zxvfp phenox_boot_master.tar.gz
+tar zxvfp phenox_ubuntu_master.tar.gz
 ```
 最後に、解凍したファイルを SD カードにコピーします。
 以下のコマンドの `<username>` 部分を現在ログインしているユーザー名に置き換え、実行してください。    
 写真の例ではユーザー名は `phenox` になっています。    
 （なお、最後のコピーには時間がかかりますのでご注意ください。）
 ```bash
-cp -a phenox boot master/* /media/<username>/boot
-sudo cp -a phenox ubuntu master/* /media/<username>/root
+cp -a phenox_boot_master/* /media/<username>/boot
+sudo cp -a phenox_ubuntu_master/* /media/<username>/root
 ```
 ![コピー1] (/img/phenox_build_ja/7.1.copy.png)
 
