@@ -435,16 +435,16 @@ wget http://phenoxlab.com/static/phenox_ubuntu_master.tar.gz
 <p><img alt="ダウンロード3" src="../../img/phenox_build_ja/6.3.download.png" /></p>
 <p><img alt="ダウンロード4" src="../../img/phenox_build_ja/6.4.download.png" /></p>
 <p>次に、以下のコマンドでダウンロードした圧縮ファイルを解凍します。</p>
-<pre><code class="bash">tar zxvfp phenox boot master.tar.gz
-tar zxvfp phenox ubuntu master.tar.gz
+<pre><code class="bash">tar zxvfp phenox_boot_master.tar.gz
+tar zxvfp phenox_ubuntu_master.tar.gz
 </code></pre>
 
 <p>最後に、解凍したファイルを SD カードにコピーします。
 以下のコマンドの <code>&lt;username&gt;</code> 部分を現在ログインしているユーザー名に置き換え、実行してください。  <br />
 写真の例ではユーザー名は <code>phenox</code> になっています。  <br />
 （なお、最後のコピーには時間がかかりますのでご注意ください。）</p>
-<pre><code class="bash">cp -a phenox boot master/* /media/&lt;username&gt;/boot
-sudo cp -a phenox ubuntu master/* /media/&lt;username&gt;/root
+<pre><code class="bash">cp -a phenox_boot_master/* /media/&lt;username&gt;/boot
+sudo cp -a phenox_ubuntu_master/* /media/&lt;username&gt;/root
 </code></pre>
 
 <p><img alt="コピー1" src="../../img/phenox_build_ja/7.1.copy.png" /></p>
