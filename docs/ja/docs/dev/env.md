@@ -195,8 +195,8 @@ tar zxvfp phenox_ubuntu_master.tar.gz
 写真の例ではユーザー名は `phenox` になっています。    
 （なお、最後のコピーには時間がかかりますのでご注意ください。）
 ```bash
-cp -a phenox_boot_master/* /media/<username>/boot
-sudo cp -a phenox_ubuntu_master/* /media/<username>/root
+cp -a phenox_boot_master/* /media/<username>/boot/
+sudo cp -a phenox_ubuntu_master/* /media/<username>/root/
 ```
 ![コピー1] (/img/phenox_build_ja/7.1.copy.png)
 
