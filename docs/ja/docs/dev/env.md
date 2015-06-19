@@ -1,5 +1,5 @@
 # マイクロ SD カード上に環境構築をする
-###### TODO バージョン確認？Phenox2 には Linux (Ubuntu 13.04) が搭載されており、
+Phenox2 には Linux (Ubuntu 13.04) が搭載されており、
 この Linux 上で飛行制御システムが作動しています。
 この Linux はマイクロ SD カード上に構築されており、
 ユーザーの好みに応じてカスタマイズすることが可能です。
@@ -173,8 +173,8 @@ sudo mkfs.ext4 -L root /dev/sdX2
 必要なソフトウェアをダウンロードし、SD カード上に展開します。
 
 以下のコマンドを実行して、ソフトウェアをダウンロードしてください。```bash
-wget http://phenoxlab.com/static/phenox boot master.tar.gz
-wget http://phenoxlab.com/static/phenox ubuntu master.tar.gz
+wget http://phenoxlab.com/static/phenox_boot_master.tar.gz
+wget http://phenoxlab.com/static/phenox_ubuntu_master.tar.gz
 ```
 ![ダウンロード1] (/img/phenox_build_ja/6.1.download.png)
 
