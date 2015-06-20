@@ -297,11 +297,21 @@ SD カード内にデータがある場合は、環境構築を行うと全て�
 ターミナルで<code>dmesg</code>コマンドを実行してください。  <br />
 （<code>dmesg</code>と入力して<code>Enter</code>を押してください。） <br />
 <img alt="ターミナルの開き方3" src="../../img/phenox_build_ja/2.1.find_identifier.png" /></p>
-<p>画面出力の最後の方に SD カードについてのメッセージが現れます。
-<img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.find_identifier.png" /></p>
-<p>メッセージの中に、以下の写真で示すような <code>sdX</code> (<code>X</code>部分は環境によって変化します)
-の文字を探します。この例では識別子は <code>sdb</code> となっています。
-<img alt="SDカードの識別子を探す2" src="../../img/phenox_build_ja/2.3.find_identifier.png" /></p>
+<p>画面出力の最後の方に SD カードについてのメッセージが現れます。   <br />
+SD カードのメッセージは環境によって違う種類のものが確認されています。  <br />
+よく確認の上、以下のマニュアルの該当部分を適宜読み替えて作業を進めてください。</p>
+<ul>
+<li>識別子が <code>sdX</code> 系の場合</li>
+</ul>
+<p><img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.find_identifier.png" /></p>
+<p>識別子は <code>sdX</code> (<code>X</code>部分は環境によってへんかします。)となります。   <br />
+メッセージの中に、<code>sdX</code> の文字を探します。この例では識別子は <code>sdb</code> となっています。
+<img alt="SDカードの識別子を探す2" src="../../img/phenox_build_ja/2.3.find_identifier.png" />    </p>
+<ul>
+<li>識別子が <code>mmcblk0</code> の場合</li>
+</ul>
+<p><img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.2.find_identifier_mmcblk0.png" /></p>
+<p><img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.3.find_identifier_mmcblk0.png" />    </p>
 <p>5. SD カードのフォーマットを行います。
 次のコマンドの <code>sdX</code> 部分を先程確認した値に置き換え、実行してください。</p>
 <pre><code class="bash">sudo dd if=/dev/zero of=/dev/sdX bs=1024 count=1
