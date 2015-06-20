@@ -28,12 +28,24 @@ SD カード内にデータがある場合は、環境構築を行うと全て�
 （`dmesg`と入力して`Enter`を押してください。）   
 ![ターミナルの開き方3] (/img/phenox_build_ja/2.1.find_identifier.png)
 
-画面出力の最後の方に SD カードについてのメッセージが現れます。
+画面出力の最後の方に SD カードについてのメッセージが現れます。     
+SD カードのメッセージは環境によって違う種類のものが確認されています。    
+よく確認の上、以下のマニュアルの該当部分を適宜読み替えて作業を進めてください。
+
+- 識別子が `sdX` 系の場合
+
 ![SDカードの識別子を探す1] (/img/phenox_build_ja/2.2.find_identifier.png)
 
-メッセージの中に、以下の写真で示すような `sdX` (`X`部分は環境によって変化します)
-の文字を探します。この例では識別子は `sdb` となっています。
-![SDカードの識別子を探す2] (/img/phenox_build_ja/2.3.find_identifier.png)
+識別子は `sdX` (`X`部分は環境によってへんかします。)となります。     
+メッセージの中に、`sdX` の文字を探します。この例では識別子は `sdb` となっています。
+![SDカードの識別子を探す2] (/img/phenox_build_ja/2.3.find_identifier.png)    
+
+- 識別子が `mmcblk0` の場合
+
+![SDカードの識別子を探す1] (/img/phenox_build_ja/2.2.2.find_identifier_mmcblk0.png)
+
+
+![SDカードの識別子を探す1] (/img/phenox_build_ja/2.2.3.find_identifier_mmcblk0.png)    
 
 5\. SD カードのフォーマットを行います。
 次のコマンドの `sdX` 部分を先程確認した値に置き換え、実行してください。
