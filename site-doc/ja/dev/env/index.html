@@ -304,16 +304,18 @@ SD カードのメッセージは環境によって違う種類のものが確�
 <li>識別子が <code>sdX</code> 系の場合</li>
 </ul>
 <p><img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.find_identifier.png" /></p>
-<p>識別子は <code>sdX</code> (<code>X</code>部分は環境によってへんかします。)となります。   <br />
+<p>識別子は <code>sdX</code> (<code>X</code>部分は環境によって変化します。)となります。   <br />
 メッセージの中に、<code>sdX</code> の文字を探します。この例では識別子は <code>sdb</code> となっています。
 <img alt="SDカードの識別子を探す2" src="../../img/phenox_build_ja/2.3.find_identifier.png" />    </p>
 <ul>
-<li>識別子が <code>mmcblk0</code> の場合</li>
+<li>識別子が <code>mmcblkX</code> 系の場合</li>
 </ul>
 <p><img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.2.find_identifier_mmcblk0.png" /></p>
-<p><img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.3.find_identifier_mmcblk0.png" />    </p>
+<p>識別子は <code>mmcblkX</code> (<code>X</code>部分は環境によって変化します。)となります。   <br />
+メッセージの中に、<code>mmcblkX</code> の文字を探します。この例では識別子は <code>mmcblk0</code> となっています。
+<img alt="SDカードの識別子を探す1" src="../../img/phenox_build_ja/2.2.3.find_identifier_mmcblk0.png" /></p>
 <p>5. SD カードのフォーマットを行います。
-次のコマンドの <code>sdX</code> 部分を先程確認した値に置き換え、実行してください。</p>
+次のコマンドの <code>sdX</code> 部分を先程確認した値（<code>sd+数字</code>もしくは<code>mmcblk+数字</code>）に置き換え、実行してください。</p>
 <pre><code class="bash">sudo dd if=/dev/zero of=/dev/sdX bs=1024 count=1
 </code></pre>
 
@@ -421,7 +423,7 @@ SD カードのメッセージは環境によって違う種類のものが確�
 <img alt="SDカードのパーティション作成18" src="../../img/phenox_build_ja/4.20.partition.png" />
 fdisk の書き込みが完了したら、SD カードを一度抜き、再び差し直します。</p>
 <p>7. 作成した２つのパーティションにファイルシステムを構築します。  <br />
-次の２つのコマンドを、<code>sdX</code> を先程確認した値に置き換えた上で、順番に実行してください。    </p>
+次の２つのコマンドを、<code>sdX</code> を先程確認した値（<code>sd+数字</code>もしくは<code>mmcblk+数字</code>）に置き換えた上で、順番に実行してください。    </p>
 <pre><code class="bash">sudo mkfs.vfat -F 32 -n boot /dev/sdX1
 sudo mkfs.ext4 -L root /dev/sdX2
 </code></pre>
