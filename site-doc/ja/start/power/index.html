@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>電源について - Phenox Library Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "電源について";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../home/" class="icon icon-home"> Phenox Library Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../home/">ホーム</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>初めに</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../note/">初めにお読みください</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../package/">Phenox セット内容物</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../hardware/">機体構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../circuit/">回路構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../directions/">機体軸と回転方向</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">電源について</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">バッテリーの持続時間</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_2">バッテリーでの動作方法</a></li>
+                
+                    <li><a class="toctree-l4" href="#todo">TODO: 図を挿入</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_3">外部電源での動作方法</a></li>
+                
+                    <li><a class="toctree-l4" href="#todo_1">TODO: 図を挿入</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../com/">通信方法について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../others/">その他の取り扱い</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>アプリケーション開発</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/dev/">開発について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/env/">Linux 環境の構築</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/gui/">GUIによるパーティションの作成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/lib/">Phenox ライブラリについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/param/">パラメーター一覧</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/state/">状態量一覧</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/glossary/">用語集</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>チュートリアル</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tut/build/">プロジェクトのビルド</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tut/controll/">Phenox の飛行</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tut/server/">画像配信サーバープログラム</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../trouble_shooting/">トラブルシューティング</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../appendix/">付録</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../home/">Phenox Library Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../home/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>初めに &raquo;</li>
+        
+      
+    
+    <li>電源について</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/mthrok/phenox/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>Phenox には機体に搭載されたバッテリーと、外部電源の 2 種類の電源供給方法があります。</p>
+<h1 id="_1">バッテリーの持続時間</h1>
+<p>付属のバッテリー (３セル, 180mAh) を用いた際の Phenox の連続作動時間は、飛行状態で 5 分間、無飛行状態で 20 分間になります。新規ソフトウェアのインストール・ビルド作業には、場合によって数十分から数時間程度かかることがありますので、長時間の使用を想定される場合、外部電源を使用することをお勧めします。なお、Phenox を飛行させる場合はバッテリーを使用し、外部電源の使用はお控え下さい。</p>
+<h1 id="_2">バッテリーでの動作方法</h1>
+<ol>
+<li>バッテリーの電源電圧が 11.1V ∼ 12.5V の範囲であることを確認下さい。</li>
+<li>バッテリーを機体にセットし、図??のように、ゴムで固定してください。プロペラを手で回してみて、プロペラがケーブルと干渉していないことを確認下さい。</li>
+</ol>
+<h6 id="todo">TODO: 図を挿入</h6>
+<ol>
+<li>付属の MicroSD カードを挿入してください。</li>
+<li>2 枚のカメラ回路 (Bottom カメラ,Front カメラ) が正しく挿入されていることを確認ください。</li>
+<li>電源スイッチを OFF にした状態で、電池を電源コネクタに挿入してください。</li>
+<li>通信方法に応じて 3.3.1,3.3.2 を参照しながら Linux のブートを行って下さい。</li>
+</ol>
+<h1 id="_3">外部電源での動作方法</h1>
+<ol>
+<li>付属の MicroSD カードを挿入してください。</li>
+<li>2 枚のカメラ回路 (Bottom カメラ,Front カメラ) が正しく挿入されていることを確認ください。</li>
+<li>電源スイッチを OFF にした状態で、図??のように、外部電源ケーブルを電源コネクタに挿入し、DC12V 電源の DC ジャックと接続してください。</li>
+</ol>
+<h6 id="todo_1">TODO: 図を挿入</h6>
+<ol>
+<li>通信方法に応じて 3.3.1,3.3.2 を参照しながら Linux のブートを行って下さい。</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../com/" class="btn btn-neutral float-right" title="通信方法について"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../directions/" class="btn btn-neutral" title="機体軸と回転方向"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../directions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../com/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

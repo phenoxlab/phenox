@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>プロジェクトのビルド - Phenox Library Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "プロジェクトのビルド";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../home/" class="icon icon-home"> Phenox Library Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../home/">ホーム</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>初めに</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/note/">初めにお読みください</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/package/">Phenox セット内容物</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/hardware/">機体構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/circuit/">回路構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/directions/">機体軸と回転方向</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/power/">電源について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/com/">通信方法について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/others/">その他の取り扱い</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>アプリケーション開発</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/dev/">開発について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/env/">Linux 環境の構築</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/gui/">GUIによるパーティションの作成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/lib/">Phenox ライブラリについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/api/">API</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/param/">パラメーター一覧</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/state/">状態量一覧</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../dev/glossary/">用語集</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>チュートリアル</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">プロジェクトのビルド</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#1">1. 電源、シリアル通信の準備</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#2-ssh">2. ssh 接続</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#3">3. プロジェクトの作成</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#4">4. プロジェクトのビルド</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#5">5. プログラムの実行</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#6">6. ソースコードの変更と再ビルド</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../controll/">Phenox の飛行</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../server/">画像配信サーバープログラム</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../trouble_shooting/">トラブルシューティング</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../appendix/">付録</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../home/">Phenox Library Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../home/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>チュートリアル &raquo;</li>
+        
+      
+    
+    <li>プロジェクトのビルド</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/mthrok/phenox/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>このチュートリアルでは、以下の作業の習得を目的に、具体的な手順を示します。なお、ホスト PC として Ubuntu14.04 を使用します。</p>
+<ol>
+<li>Phenox2 を外部電源から起動し、シリアル通信, ssh 通信の機能を確認します。</li>
+<li>Phenox2 ライブラリの画像、音声処理関数の使われ方と、その効果を確認します。</li>
+<li>ユーザーのカスタムプロジェクトを作成し、ビルドを行います。</li>
+<li>パラメータを変更し、プロジェクトをビルドし、変更が反映されることを確認します。</li>
+</ol>
+<h1 id="1">1. 電源、シリアル通信の準備</h1>
+<p><a href="../../start/power">電源について</a> を参考に電源のセットアップを行い、<a href="../../start/com">通信方法について</a>を参考にシリアル通信のセットアップと電源の投入、root としてログインが完了したところまで進んでください。</p>
+<h1 id="2-ssh">2. ssh 接続</h1>
+<ol>
+<li>ホスト PC より WiFi ネットワークの検索を行い、SSID が「phenoxnet」であるアクセスポイントを選択し、パスワードに phenoxnet と入力してください。</li>
+<li>ホスト PC よりターミナルを立ち上げ、以下のコマンドで <code>ssh</code> 接続をオプション <code>-X</code> を付けて 行って下さい。初期パスワードは <code>root</code> になります。</li>
+</ol>
+<pre><code class="bash">ssh -X root@192.168.2.1
+</code></pre>
+
+<p>なお、以降の作業は、シリアル通信経由のターミナル、あるいは <code>ssh</code> からログインしたターミナルのどちらで作業を行っても構いません。</p>
+<h1 id="3">3. プロジェクトの作成</h1>
+<p>チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。</p>
+<pre><code class="bash">cd /root/phenox/work/
+cp -a tutorial1 myproject1
+</code></pre>
+
+<h1 id="4">4. プロジェクトのビルド</h1>
+<p>まずは、先ほどコピーした tutorial1 と同じ内容で myproject1 をビルドしてみます。</p>
+<pre><code class="bash">cd /root/phenox/work/myproject1
+make clean all
+</code></pre>
+
+<p>これで、実行ファイル <code>main</code> が作成されました。</p>
+<h1 id="5">5. プログラムの実行</h1>
+<p>このプログラムは以下の動作を行います。</p>
+<ol>
+<li>Phenox ライブラリの初期化</li>
+<li>正面カメラから得られた特徴点付きの QVGA 画像を 10 枚取得</li>
+<li>取得された画像を PNG形式で保存した後、5 秒間の音声を録音し、<code>sound.raw</code> として保存</li>
+</ol>
+<p>プログラム開始時には Phenox2 がジャイロセンサーなどの初期化を行うので、必ず Phenox2 を安定した場所で静止させて、手に持つことはしないで下さい。開始から３秒程で初期化は完了し、 <code>CPU0:Finished Initialization.</code> というメッセージが現れます。</p>
+<p>それではプログラムを実行してみましょう。</p>
+<pre><code class="bash">./main
+</code></pre>
+
+<p>プログラムは 15 秒ほどで終了します。</p>
+<p>ホスト PC 上で ssh の X フォワーディングが正常に作動している場合、<code>ssh</code> コンソールで以下のコマンドを実行すると、ファイルマネージャーが開き、画像、音声の保存されたディレクトリにアクセスできます。</p>
+<pre><code class="bash">nautilus
+</code></pre>
+
+<p>ssh の X フォワーディングが正常に作動していない場合でも、一度 Phenox2 をシャットダウンし、microSD カードをホスト PC に挿入し、<code>root</code> パーティションの中の<code>/root/phenox/work/myproject1</code> にアクセスすれば画像、音声を入手することが可能です。ホスト PC 上から <code>root</code> パーティション にアクセスできない場合 (Mac など) は、以下のようにして、画像、音声の保存先を<code>boot</code>パーティ ションに変更します。(microSD カード内には<code>boot</code>, <code>root</code> の 2 つのパーティションが存在して おり、Mac では <code>boot</code> パーティションのみアクセスできることが経験的に知られています。) まず、 Phenox2 にログイン後、<code>boot</code> パーティション (<code>/dev/mmcblkp1</code> と認識されています) を<code>/mnt</code> に マウントします。</p>
+<pre><code class="bash">mount /dev/mmcblkp1 /mnt
+</code></pre>
+
+<p>次に、<code>/root/phenox/work/myproject1/main.c</code> のソースコードを <code>vi</code> エディタなどで編集し、画像、 音声の保存先を <code>/mnt</code> に変更した後、8.2.3 に従ってプロジェクトのビルドを行ってから、main プロ グラムの実行を行って下さい。</p>
+<h1 id="6">6. ソースコードの変更と再ビルド</h1>
+<p>ソースコード内でいくつかのパラメータを変更してみます。ここでは、<code>myproject1/main.c</code> の <code>cameraid</code> 変数を <code>PX_FRONT_CAM</code> から <code>PX_BOTTOM_CAM</code> に, <code>record</code> 変数を 10.0 にしてみま す。変更を加えたら、先ほどと同様にビルドを行って下さい。</p>
+<pre><code class="bash">cd /root/phenox/work/myproject1
+make clean all
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../controll/" class="btn btn-neutral float-right" title="Phenox の飛行"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../../dev/glossary/" class="btn btn-neutral" title="用語集"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../../dev/glossary/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../controll/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

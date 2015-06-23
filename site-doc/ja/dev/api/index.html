@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>API - Phenox Library Documentation</title>
+  
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "API";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../../home/" class="icon icon-home"> Phenox Library Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../home/">ホーム</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>初めに</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/note/">初めにお読みください</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/package/">Phenox セット内容物</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/hardware/">機体構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/circuit/">回路構成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/directions/">機体軸と回転方向</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/power/">電源について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/com/">通信方法について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../start/others/">その他の取り扱い</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>アプリケーション開発</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../dev/">開発について</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../env/">Linux 環境の構築</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../gui/">GUIによるパーティションの作成</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../lib/">Phenox ライブラリについて</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">API</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#_1">基本関数、状態取得関数</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxinit_chain">void pxinit_chain()</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_cpu1ready">int pxget_cpu1ready()</a></li>
+                
+                    <li><a class="toctree-l4" href="#pxget_motorstatus">pxget_motorstatus()</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxget_pconfigpx_pconfig-param">void pxget_pconfig(px_pconfig *param)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_pconfigpx_pconfig-param">void pxset_pconfig(px_pconfig *param)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxget_selfstatepx_selfstate-state">void pxget_selfstate(px_selfstate *state)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_keepalive">void pxset_keepalive()</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_battery">int pxget_battery()</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_2">基本関数、状態取得関数</a></li>
+                
+                    <li><a class="toctree-l4" href="#px_flymode-pxget_operate_mode">px_flymode pxget_operate_mode()</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_operate_modepx_flymode-mode">void pxset_operate_mode(px_flymode mode)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_visioncontrol_xyfloat-tx-float-ty">void pxset_visioncontrol_xy(float tx, float ty)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_rangecontrol-zfloat-tz">void pxset_rangecontrol z(float tz)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_dst_degxfloat-val">void pxset_dst_degx(float val)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_dst_degyfloat-val">void pxset_dst_degy(float val)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_dst_degyfloat-val_1">void pxset_dst_degy(float val)</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxset_visualselfpositionfloat-txfloat-ty">int pxset_visualselfposition(float tx,float ty)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_3">画像、画像特徴点</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_imgfullwcheckpx_cameraid-cam-iplimage-img">int pxget_imgfullwcheck(px_cameraid cam, IplImage **img)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_img_seqpx_cameraid-cam">void pxset_img_seq(px_cameraid cam)</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxset_imgfeature_querypx_cameraid-cam">int pxset_imgfeature_query(px_cameraid cam)</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_imgfeaturepx_imgfeature-ftint-maxnum">int pxget_imgfeature(px_imgfeature *ft,int maxnum)</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxset_blobmark_querypx_cameraid-cam-float-min_y-float-max_y-float-min_ufloat-max_u-float-min_v-float-max_v">int pxset_blobmark_query(px_cameraid cam, float min_y, float max_y, float min_u,float max_u, float min_v, float max_v)</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_blobmarkfloat-xfloat-y-float-size">int pxget_blobmark(float x,float y, float *size)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_4">音声</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_whisle_detect">int pxget_whisle_detect()</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_whisle_detect_reset">void pxset_whisle_detect_reset()</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_sound_recordquery">void pxset_sound_recordquery()</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_sound_recordstate">int pxget_sound_recordstate()</a></li>
+                
+                    <li><a class="toctree-l4" href="#int-pxget_soundshort-buffer-float-recordtime">int pxget_sound(short *buffer, float recordtime)</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#_5">デバッグ</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_ledint-led-int-state">void pxset_led(int led, int state)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_buzzerint-state">void pxset_buzzer(int state)</a></li>
+                
+                    <li><a class="toctree-l4" href="#void-pxset_systemlog">void pxset_systemlog()</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../param/">パラメーター一覧</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../state/">状態量一覧</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../glossary/">用語集</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>チュートリアル</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tut/build/">プロジェクトのビルド</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tut/controll/">Phenox の飛行</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../tut/server/">画像配信サーバープログラム</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../faq/">FAQ</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../trouble_shooting/">トラブルシューティング</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../appendix/">付録</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../home/">Phenox Library Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../home/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>アプリケーション開発 &raquo;</li>
+        
+      
+    
+    <li>API</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/mthrok/phenox/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p>ここで紹介する関数の使用例は、チュートリアルを参照してください。</p>
+<h1 id="_1">基本関数、状態取得関数</h1>
+<h3 id="void-pxinit_chain">void pxinit_chain()</h3>
+<p>飛行制御システム (CPU1) を起動し、パラメータの初期化を行います。</p>
+<h3 id="int-pxget_cpu1ready">int pxget_cpu1ready()</h3>
+<p><code>pxinit chain()</code> 実行後、飛行制御システム (CPU1) の準備ができた場合は 1 を返し、それ以外では 0 を返します。飛行制御システムの準備が完了してから 3 秒後にジャイロセンサのキャリブレーションが実行されるため、キャリブレーションの終了までは機体を必ず静止させ、Phenox2 を手で掴まないで下さい。</p>
+<h3 id="pxget_motorstatus">pxget_motorstatus()</h3>
+<p>モーターが回転状態(上昇状態、ホバー状態、下降状態)のときは 1 を返し、それ以外では 0 を返し ます。</p>
+<h3 id="void-pxget_pconfigpx_pconfig-param">void pxget_pconfig(px_pconfig *param)</h3>
+<p>現在の機体のパラメータの一覧 (<code>px_pconfig</code>) をローカル変数 <code>param</code> に格納します。</p>
+<h3 id="void-pxset_pconfigpx_pconfig-param">void pxset_pconfig(px_pconfig *param)</h3>
+<p>ローカル変数 <code>param</code> に格納されたパラメータの一覧を、飛行制御システムに反映します。パラメーターの一部を書き換える場合は、一度 <code>pxget_pconfig()</code> 関数を実行することで変数 <code>param</code> の一覧を取 得してから、目的の変数を変更し、<code>pxset_pconfig()</code> 関数で設定を反映して下さい。</p>
+<h3 id="void-pxget_selfstatepx_selfstate-state">void pxget_selfstate(px_selfstate *state)</h3>
+<p>機体の状態の一覧 (<code>px_selfstate</code> 構造体を参照) を取得します。</p>
+<h3 id="void-pxset_keepalive">void pxset_keepalive()</h3>
+<p>機体制御システムに対して、Linux(CPU0) が phenox ライブラリを使用したアプリケーションを実行中であることを伝えます。この関数は、ユーザー自身がタイマー割り込み関数などを用いて定期的に呼び出すようにしてください。</p>
+<h3 id="int-pxget_battery">int pxget_battery()</h3>
+<p>バッテリの残量状態を取得します。バッテリの残量が残り少ない状態では 1 を返し、それ以外では 0 を返します。この値が 1 になった場合は、飛行制御システムによって自動的に、ホバー状態 (<code>PX_HOVER</code>) の Phenox は下降状態 (<code>PX_DOWN</code>) に遷移し、<code>px_pconfig</code> 構造体の <code>downtime_max</code> で指定した時間 (秒)が経過した後、停止状態 (<code>PX_HALT</code>) に遷移します。ユーザー側では、<code>shutdown</code> コマンドなどを用いて Linux システムをシャットダウンしてください。</p>
+<h1 id="_2">基本関数、状態取得関数</h1>
+<h3 id="px_flymode-pxget_operate_mode">px_flymode pxget_operate_mode()</h3>
+<p>飛行状態を取得します。<code>px_flymode</code> 型は 4 種類の状態 (<code>PX_HALT</code>, <code>PX_UP</code>, <code>PX_HOVER</code>, <code>PX_DOWN</code>) があり、それぞれ停止状態、上昇状態、ホバー状態、下降状態を表します。</p>
+<h3 id="void-pxset_operate_modepx_flymode-mode">void pxset_operate_mode(<code>px_flymode</code> mode)</h3>
+<p>飛行状態を設定します。<code>px_flymode</code> 型は 4 種類の状態 (<code>PX_HALT</code>, <code>PX_UP</code>, <code>PX_HOVER</code>, <code>PX_DOWN</code>) があり、それぞれ停止状態、上昇状態、ホバー状態、下降状態を表します。
+<code>PX_UP</code>, <code>PX_DOWN</code> に設定した場合は、<code>px_pconfig</code> 構造体の <code>uptime_max</code>, <code>downtime_max</code> で指定した時間 (秒)が経過すると、飛行制御システムによって自動的にそれぞれホバー状態、停止状 態に遷移します。また、<code>PX_HALT</code> 状態から他の状態へ遷移する場合には、3 秒間の始動状態(プロペラの弱い回転運動状態)が飛行制御システムによって挿入されます。</p>
+<h3 id="void-pxset_visioncontrol_xyfloat-tx-float-ty">void pxset_visioncontrol_xy(float tx, float ty)</h3>
+<p>水平方向 (機体軸 X,Y) の目標自己位置を設定し、飛行状態の場合 (<code>pxget_operate_mode() == PX_HOVER</code>) は Phenox2 を追従させます。引数 <code>tx</code>, <code>ty</code> には、現在の水平方向位置 (<code>px_selfstate</code> 構造体の <code>vision_tx</code>, <code>vision_ty</code>) に、移動したい方向の小ベクトル (大きさ −120 ∼ 120 程度) を足した量を指定することを強くお勧めします(チュートリアル参照)。  <br />
+飛行制御プ ログラム (CPU1) は、<code>px_pconfig</code> 構造体の <code>pgain_vision_tx</code>, <code>pgain_vision_ty</code>(比例ゲイン) と <code>dgain_vision_tx</code>, <code>dgain_vision_ty</code> (微分ゲイン) で指定した強度に応じて、目標位置に追従しようと試みます。なお、この制御に積分項は含まれておらず、多少のバイアスが残るため、必要に応じてユー ザー自身で積分項を入れるか、画像情報を元にバイアス (<code>px_pconfig</code> 構造体の <code>duty_bias*</code>変数) を補 正するなどの試みを行って下さい。また、座標系は画像座標系で表現されるため、移動量は地面からの距離に反比例します。そのため、必要に応じて高度情報 (<code>px_selfstate</code> 構造体の <code>height</code> 変数) を加味したゲイン設定を行って下さい。</p>
+<h6 id="doto-check-duty_bias-pointer">DOTO: Check duty_bias* &lt;- pointer?</h6>
+<h3 id="void-pxset_rangecontrol-zfloat-tz">void pxset_rangecontrol z(float tz)</h3>
+<p>高度方向 (機体軸 Z) の目標自己位置を設定し、飛行状態 (<code>pxget_operate_mode() == PX_HOVER</code>) の場合は Phenox2 を追従させます。水平方向の移動量は下向きカメラを用いることに対して、高度 方向の制御は超音波センサを用いているため、機体軸 XY と Z との間で異なる関数となっています。 <code>tz</code> の単位はセンチメートルで、指定する値は 100 ∼ 180 の範囲をお勧めします。飛行制御プログラム (CPU1) は、<code>px_pconfig</code> 構造体の <code>pgain_sonar_tz</code>,(比例ゲイン) と <code>dgain_sonar_tz</code>(微分ゲイン) で指定した強度に応じて、目標位置に追従しようと試みます。なお、この制御に積分項は含まれて おらず、積載重量とパラメータ (<code>px_pconfig</code> 構造体の <code>duty_hover</code> 変数) によっては大きなバイアス が残るため、必要に応じてユーザー自身で積分項を入れるか、高度情報を元にバイアス (<code>px_pconfig</code> 構造体の <code>duty_hover</code> 変数) を補正するなどの試みを行って下さい。</p>
+<h3 id="void-pxset_dst_degxfloat-val">void pxset_dst_degx(float val)</h3>
+<p>Phenox2 の <code>degx</code> (機体軸 X に対する右ネジ向きの回転角度) の目標値を 180 度数単位で設定し、飛行状態 (<code>pxget_operate_mode() == PX_HOVER</code>) の場合は Phenox2 を追従させます。この関数に は有効期間 (<code>px_pconfig</code> 構造体の <code>selxytime_max</code>) が秒単位で設定されており、本関数を最後に実行 してから設定時間以上が経過すると、飛行制御プログラムによって自動的に、下向きカメラの画像 特徴点を元に推定した自己制御制御 (<code>pxset_visioncontrol xy()</code>) が行われ、現在の位置に留まろうとする制御が行われます。従って、常に指定した角度に Phenox2 を制御させたい場合はタイマ割り込み関数などを用いて、周期的に本関数を呼び出す必要があります。大きな値を指定するほど急な移動につながりますので、指定する値としては 0 ∼ 10.0 を目安としてください。</p>
+<h3 id="void-pxset_dst_degyfloat-val">void pxset_dst_degy(float val)</h3>
+<p>Phenox2 の <code>degx</code>(機体軸 Y に対する右ネジ向きの回転角度) の目標値を 180 度数単位で設定し、飛行状態 (<code>pxget operate mode() == PX_HOVER</code>) の場合は Phenox2 を追従させます。この関数に は有効期間 (<code>px_pconfig</code> 構造体の <code>selxytime_max</code>) が秒単位で設定されており、本関数を最後に実行してから設定時間以上が経過すると、飛行制御プログラムによって自動的に、下向きカメラの画像特徴点を元に推定した自己制御制御 (<code>pxset_visioncontrol xy()</code>) が行われ、現在の位置に留まろうとする制御が行われます。従って、常に指定した角度に Phenox2 を制御させたい場合はタイマ割り込み関数などを用いて、周期的に本関数を呼び出す必要があります。大きな値を指定するほど急な移動につながりますので、指定する値としては 0 ∼ 10.0 を目安としてください。</p>
+<h3 id="void-pxset_dst_degyfloat-val_1">void pxset_dst_degy(float val)</h3>
+<p>Phenox2 の <code>degx</code>(機体軸 Z に対する右ネジ向きの回転角度) の目標値を 180 度数単位で設定し、飛 行状態 (<code>pxget_operate_mode() == PX_HOVER</code>) の場合は Phenox2 を追従させます。引数は現在 の Z 角度に対する相対角度として与えられるため、現在 Phenox2 が向いている角度から、回転させたい角度への変化量を指定してください (今の向きから半時計回りに 10.5 度回転させたい場合は, <code>val = 10.5</code>, 今の向きから時計回りに 10.5 度回転させたい場合は, <code>val = -10.5</code>)。本関数は、XY 軸の回転 角度制御関数 (<code>pxset_dst_degx</code>, <code>pxset_dst_degy</code>) とは異なり、時間の経過による影響を受けません。</p>
+<h3 id="int-pxset_visualselfpositionfloat-txfloat-ty">int pxset_visualselfposition(float tx,float ty)</h3>
+<p><code>px_selfstate</code> 構造体の <code>vision_tx</code>, <code>vision_ty</code> を引数に指定した <code>tx</code>, <code>ty</code> の値に修正します。従って、本関 数の実行によって <code>pxset_visioncontrol_xy</code> 関数が影響を受けます (そのため、<code>pxset_visioncontrol_xy</code> 関数の引数 <code>tx</code>, <code>ty</code> には、<code>px_selfstate</code> 構造体の <code>vision_tx</code>, <code>vision_ty</code> に、移動したい相対位置を足した量を指定することをお勧めします)。この関数が使用されるケースとして、画像特徴点ベースの自己位置推定値の積算誤差をリセットし、あるランドマークを原点とした画像座標系を再び定義したい場合を想定しています。</p>
+<h1 id="_3">画像、画像特徴点</h1>
+<h3 id="int-pxget_imgfullwcheckpx_cameraid-cam-iplimage-img">int pxget_imgfullwcheck(px_cameraid cam, IplImage **img)</h3>
+<p>引数 <code>cam</code> で指定したカメラから得られた画像を <code>img</code> に保存します。<code>cam</code> は <code>px_cameraid</code> 型の構造 体 (<code>px_FRONT_CAM</code>, <code>px_BOTTOM_CAM</code>) で、正面カメラ、あるいは下面カメラを指定します。 <code>img</code> は <code>OpenCV</code> で定義された構造体である <code>IplImage</code> 型で、あらかじめ <code>cvCreateImage</code> 関数などで 初期化しておきます。画像サイズは QVGA(320x240) で固定で、1 秒間に 30 フレームの取得が可能 です。なお、この関数を使用する際には、<code>pxset_img_seq()</code> 関数をタイマ割り込み関数などを用いて 周期的に呼び出すようにして下さい。</p>
+<h3 id="void-pxset_img_seqpx_cameraid-cam">void pxset_img_seq(px_cameraid cam)</h3>
+<p><code>pxget_imgfullwcheck()</code> 関数で画像を取得するための、前処理を行います。この前処理は、FPGA に よって書き込まれた画像情報を読み出し、別のメモリ領域にコピーする処理となっており、この処 理を定期的に行うことによって、画像を読み出したいタイミングで常に最新の画像を取得すること ができます。この関数はタイマ割り込み関数などを用いて周期的に呼び出すようにして下さい。</p>
+<h3 id="int-pxset_imgfeature_querypx_cameraid-cam">int pxset_imgfeature_query(px_cameraid cam)</h3>
+<p>引数 cam で指定したカメラから得られた画像特徴点を、Linux から取得するための要求を、飛行制 御システムに発行します。この関数が成功すると、1 を返します。一度要求を発行すると、飛行制御 システム内で処理が終了するまで-1 を返します。</p>
+<h3 id="int-pxget_imgfeaturepx_imgfeature-ftint-maxnum">int pxget_imgfeature(px_imgfeature *ft,int maxnum)</h3>
+<p>pxset_imgfeature query() 関数によって発行された画像特徴点取得要求が、飛行制御システムによっ て処理され、完了されたかどうかを調べます。正常に終了した場合は、引数 <code>ft</code> に特徴点の座標情報 が書き込まれ、発見された特徴点の個数を返し、処理中がまだ完了していない場合は-1 を返します。 引数 <code>maxnum</code> には <code>ft</code> のサイズを指定します。</p>
+<h3 id="int-pxset_blobmark_querypx_cameraid-cam-float-min_y-float-max_y-float-min_ufloat-max_u-float-min_v-float-max_v">int pxset_blobmark_query(px_cameraid cam, float min_y, float max_y, float min_u,float max_u, float min_v, float max_v)</h3>
+<p>引数 <code>cam</code> で指定したカメラから得られた画像に対して、YUV 色空間内で指定された範囲の色のピクセル総数と重心を求める処理の要求を飛行制御システムに発行します。Y の範囲は <code>min_y</code> から <code>max_y</code> の範囲、U の範囲は <code>min_u</code> から <code>max_u</code> の範囲、V の範囲は <code>min_v</code> から <code>max_v</code> の範囲で指定 します。この関数が成功すると、1 を返します。一度要求を発行すると、飛行制御システム内で処理 が終了するまで-1 を返します。</p>
+<h3 id="int-pxget_blobmarkfloat-xfloat-y-float-size">int pxget_blobmark(float <em>x,float </em>y, float *size)</h3>
+<p><code>pxset_blobmark_query()</code> 関数によって発行された、YUV 色空間内で指定された範囲の色のピクセ ル総数と重心を求める要求が、飛行制御システムによって処理され、完了されたかどうかを調べます。正常に終了した場合は、引数 <code>x</code>, <code>y</code> に重心位置、引数 <code>size</code> にピクセル総数が書き込まれ、1 を返し ます。処理中がまだ完了していない場合は-1 を返します。</p>
+<h1 id="_4">音声</h1>
+<h3 id="int-pxget_whisle_detect">int pxget_whisle_detect()</h3>
+<p>3kHz の音を検出します。3kHz の音が検出された場合は 1 を返し、それ以外では 0 を返しま す。<code>px_pconfig</code> 構造体の <code>whisleborder</code> 変数を書き換えることで、感度を調整することができま す。なお、この関数はブザーの音にも反応しますので、ブザーを使用後は、検出状態を解除する <code>pxset_whisle detect reset()</code> 関数を使用するようにしてください。</p>
+<h3 id="void-pxset_whisle_detect_reset">void pxset_whisle_detect_reset()</h3>
+<p>3kHz の音の検出する関数である <code>pxget_whisle detect()</code> には、過去に検出された状態が残り続ける ため、本関数を使用することで、一度検出状態を解除することができます。</p>
+<h3 id="void-pxset_sound_recordquery">void pxset_sound_recordquery()</h3>
+<p>マイクで録音された音声を取得するための要求を飛行制御システムに発行します。</p>
+<h3 id="int-pxget_sound_recordstate">int pxget_sound_recordstate()</h3>
+<p><code>pxset_sound_recordquery()</code> 関数によって発行された、音声を取得するための要求が飛行制御システムによって処理され、完了したかどうかを調べます。処理中の場合は -1 を返し、完了した場合は 1 を返します。</p>
+<h3 id="int-pxget_soundshort-buffer-float-recordtime">int pxget_sound(short *buffer, float recordtime)</h3>
+<p>引数 <code>buffer</code> に、引数 <code>recordtime</code> で指定した時間長さの音声信号を書き込みます。音声信号は 10kHz のサンプリングレート, 16bit の <code>short</code> 型, Raw データで表現されています。この関数は <code>pxget sound recordstate()</code> 関数を使って、飛行制御システムによる音声処理が完了したことを確認 の上、実行してください。</p>
+<h1 id="_5">デバッグ</h1>
+<h3 id="void-pxset_ledint-led-int-state">void pxset_led(int led, int state)</h3>
+<p>引数 led(0 あるいは 1) で指定した LED を点灯させます。引数 <code>state</code> に 1 を書き込むことで LED を 点灯させ、0 を書き込むことで LED を消灯させることができます。</p>
+<h3 id="void-pxset_buzzerint-state">void pxset_buzzer(int state)</h3>
+<p>引数 state に 1 を書き込むことで、ブザーを鳴らし、に 0 を書き込むことで、ブザーを止めることが できます。なお、ブザーの音は 3kHz に近いため、自身の音で <code>pxget_whisle detect()</code> 関数が反応し ます。ブザーを鳴らした後は、<code>pxset_whisle detect reset()</code> 関数を使うようにするなどの対策が必要 となります。</p>
+<h3 id="void-pxset_systemlog">void pxset_systemlog()</h3>
+<p>飛行制御システムによるログを <code>systemlog.txt</code> に書き出します。この関数はタイマ割り込み関数などを用いて周期的に呼び出すようにして下さい。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../param/" class="btn btn-neutral float-right" title="パラメーター一覧"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lib/" class="btn btn-neutral" title="Phenox ライブラリについて"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../lib/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../param/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
