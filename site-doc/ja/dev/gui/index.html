@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Phenox ライブラリについて - Phenox Library Documentation</title>
+  <title>GUIによるパーティションの作成 - Phenox Library Documentation</title>
   
 
   <link rel="shortcut icon" href="../../favicon.ico">
@@ -21,7 +21,7 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Phenox ライブラリについて";
+    var mkdocs_page_name = "GUIによるパーティションの作成";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -141,31 +141,22 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../gui/">GUIによるパーティションの作成</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">GUIによるパーティションの作成</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#gui">GUIアプリケーションを使ってパーティションを作成する方法</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Phenox ライブラリについて</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#phenox">Phenox ライブラリ</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#_1">カスタムプロジェクトの作成とビルド</a></li>
-                
-                    <li><a class="toctree-l4" href="#phenox_1">Phenox ライブラリの取得</a></li>
-                
-                    <li><a class="toctree-l4" href="#c">C 言語プロジェクト</a></li>
-                
-                    <li><a class="toctree-l4" href="#python">Python プロジェクト</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../lib/">Phenox ライブラリについて</a>
         
     </li>
 
@@ -277,7 +268,7 @@
         
       
     
-    <li>Phenox ライブラリについて</li>
+    <li>GUIによるパーティションの作成</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -291,23 +282,50 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="phenox">Phenox ライブラリ</h1>
-<p>Phenox ライブラリの中身は大きく分けて2つのディレクトリ (phenox/library, phenox/work) で構成されています。phenox/library にはライブラリ本体が入っており、phenox/work にはチュートリ アルやカスタムプロジェクトが入っています。phenox/work 下のプロジェクトは、phenox/library であらかじめビルドされたファイルである pxlib.a, pxlib.h, pxlib.so を取り込むことで、phenox ライブラリで提供される API を呼び出すことができます。</p>
-<h1 id="_1">カスタムプロジェクトの作成とビルド</h1>
-<h2 id="phenox_1">Phenox ライブラリの取得</h2>
-<p>市販の microSD カードを使用して Phnoex ライブラリを取得する場合は、??を参照に、環境構築を 行って下さい。</p>
-<h2 id="c">C 言語プロジェクト</h2>
-<p>ここでは、C 言語プロジェクトを作成する方法を説明します。最も簡単な方法は、以下のように チュートリアルプロジェクトをコピーすることです。</p>
-<pre><code class="bash">cd /root/phenox/work/
-cp -a tutorial autohover myproject
-# main.c, parameter.c を適宜書き換えた上で、ビルドを行ってください。
-cd /root/phenox/work/myproject
-make clean all
-# コンパイルされたプログラムは、その場で実行することができます。
-./main
+                <h2 id="gui">GUIアプリケーションを使ってパーティションを作成する方法</h2>
+<p>fdiskだとハードルが高いという人は<a href="http://gparted.org">GParted</a>を使うと
+比較的簡単にパーティションが作成できます。</p>
+<p><strong>(ddコマンドまで終わっていることを想定）</strong></p>
+<p>1. GPartedをインストールする</p>
+<p>GPartedはパーティションを作成・編集するためのGUIアプリケーションです。
+Ubuntuであれば以下のコマンドでインストールすることが出来ます。</p>
+<pre><code class="bash">sudo apt-get install gparted 
 </code></pre>
 
-<h2 id="python">Python プロジェクト</h2>
+<p>2. GPartedを起動する</p>
+<p>認証が必要となります。パスワードを入力してGPartedを起動します。
+<img alt="authentication" src="../../img/phenox_build_gui/authentication.png" /></p>
+<p>起動後の画面です。右上のプルダウンメニューが先ほど<code>dsmeg</code>で確認した
+識別子となっていることを確認してください。(例では<code>mmcblk0</code>となっています。)</p>
+<p><img alt="init" src="../../img/phenox_build_gui/init.png" /></p>
+<p>3. メニューの<code>Device</code>→<code>Create Partition Table</code>を選択します。
+<code>msdos</code>を選択し、パーティションテーブルを作成します。</p>
+<p><img alt="partition table" src="../../img/phenox_build_gui/partition_table.png" /></p>
+<p>4. bootパーティションを作成します。
+まず、新規作成のアイコンをクリックします。</p>
+<p><img alt="new" src="../../img/phenox_build_gui/new.png" /></p>
+<p><code>New_size</code>を256、<code>File system</code>をfat32、<code>Label</code>をbootとし、
+<code>Add</code>を押して作成します。</p>
+<p><img alt="boot" src="../../img/phenox_build_gui/boot.png" /></p>
+<p>5. rootパーティションを作成します。
+同様に、新規作成のアイコンをクリックします。
+<code>New_size</code>はデフォルトのまま、<code>File system</code>をext4、
+<code>Label</code>をrootとし、<code>Add</code>を押して作成します。
+<img alt="root" src="../../img/phenox_build_gui/root.png" /></p>
+<p>6. <code>Apply All Operations</code>のアイコンをクリックし、ディスクに書き込みます。</p>
+<p><img alt="apply" src="../../img/phenox_build_gui/apply.png" /></p>
+<p>以下の警告画面が出るので、<code>Apply</code>を選択します。</p>
+<p><img alt="warning" src="../../img/phenox_build_gui/warning.png" /></p>
+<p>書き込みが正常に完了すると以下の画面が出るので、<code>Close</code>を選択してください。
+<img alt="complete" src="../../img/phenox_build_gui/complete.png" /></p>
+<p>7. bootパーティションを右クリックし、<code>Manage Flags</code>を選択します。
+<code>boot</code>と<code>lba</code>にチェックをいれ、<code>Close</code>を押します。</p>
+<p><img alt="flag" src="../../img/phenox_build_gui/flags.png" /></p>
+<p>以上でパーティションの作成は終了です。</p>
+<p>パーティション構成が以下と同様になっていることを
+確認の上、メニューの<code>GParted</code>→<code>Quit</code>からGPartedを終了してください。
+<img alt="end" src="../../img/phenox_build_gui/end.png" /></p>
+<p><strong>(8番(wget以降)からは同様の作業)</strong></p>
               
             </div>
           </div>
@@ -315,10 +333,10 @@ make clean all
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../api/" class="btn btn-neutral float-right" title="API"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../lib/" class="btn btn-neutral float-right" title="Phenox ライブラリについて"/>Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../gui/" class="btn btn-neutral" title="GUIによるパーティションの作成"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../env/" class="btn btn-neutral" title="Linux 環境の構築"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -346,10 +364,10 @@ make clean all
           <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../gui/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../env/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../api/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../lib/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
