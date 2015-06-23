@@ -1,0 +1,14 @@
+site_name: Phenox Library Documentation
+theme: readthedocs
+#repo_url: https://github.com/phenoxlab/phenox/
+repo_url: https://github.com/mthrok/phenox/
+site_description: Phenox Library Documentation
+site_author: Ryo Konomura
+site_favicon: 'favicon.ico'
+site_dir: '../../site-doc/en'
+pages:
+- 'Home': 'home.md'
+- 'Index': 'index.md'
+- Before Starting:
+    - 'Phenox and Components': '01_before_you_start/package.md'
+    - 'Training': '01_before_you_start/training.md'
