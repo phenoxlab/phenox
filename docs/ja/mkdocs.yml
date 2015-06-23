@@ -20,6 +20,7 @@ pages:
 - アプリケーション開発:
     - '開発について': 'dev/dev.md'
     - 'Linux 環境の構築': 'dev/env.md'
+    - 'GUIによるパーティションの作成': 'dev/gui.md'
     - 'Phenox ライブラリについて': 'dev/lib.md'
     - 'API' : 'dev/api.md'
     - 'パラメーター一覧' : 'dev/param.md'
