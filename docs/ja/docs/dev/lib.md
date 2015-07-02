@@ -17,3 +17,7 @@ make clean all
 ```
 
 ## Python プロジェクト
+Python用のライブラリは[GitHubページ](https://github.com/atsushisugiyama/phenox_python/)にて開発中です。現在公開されている分は開発版なので不安定な要素もあります。
+
+(TODO: テストと詳細整備)
+
