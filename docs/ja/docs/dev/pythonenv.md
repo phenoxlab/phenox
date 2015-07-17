@@ -26,7 +26,7 @@ cd /media/<username>/root/root
 echo "export PYTHONPATH=\"/root/phenox/work/phenox_python\"" >> .bash_profile
 ```
 
-この編集によってPythonのimport文使用時に先ほど追加した`phenox_python`ディレクトリが検索対象となります。以上の操作が完了したらSDカードを抜いてください。
+この編集によって`phenox_python`ディレクトリがPythonのimport文の検索対象となります。以上の操作が完了したらSDカードを抜いてください。
 
 
 ## 3. 動作確認
@@ -44,7 +44,14 @@ python
 import phenox
 ```
 
-エラーが出ずにphenoxモジュールが追加されたら成功です。成功、失敗に関わらずPython対話型モードを終了します。
+エラーが出ずにphenoxモジュールが追加され、下記のメッセージが表示されたら成功です。
+
+```Python
+phenox module: CPU0 Start Initialization. Please do not move Phenox
+phenox module: CPU0 Finished Initialization
+```
+
+成功、失敗に関わらずPython対話型モードを終了します。
 ```Python
 exit()
 ```
