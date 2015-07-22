@@ -6,7 +6,7 @@ site_description: Phenox Library Documentation
 site_author: 此村 領
 site_favicon: 'favicon.ico'
 pages:
-- 'ホーム': 'home.md'
+- 'ホーム': 'index.md'
 - 初めに:
     - '初めにお読みください': 'start/note.md'
     - 'Phenox セット内容物': 'start/package.md'
