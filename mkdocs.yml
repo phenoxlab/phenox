@@ -5,9 +5,8 @@ repo_url: https://github.com/mthrok/phenox/
 site_description: Phenox Library Documentation
 site_author: 此村 領
 site_favicon: 'favicon.ico'
-site_dir: '../../site-doc/ja'
 pages:
-- 'ホーム': 'home.md'
+- 'ホーム': 'index.md'
 - 初めに:
     - '初めにお読みください': 'start/note.md'
     - 'Phenox セット内容物': 'start/package.md'
