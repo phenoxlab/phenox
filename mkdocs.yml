@@ -7,8 +7,8 @@ site_author: Ryo Konomura
 site_favicon: 'favicon.ico'
 site_dir: '../../site-doc/en'
 pages:
-- 'Home': 'home.md'
-- 'Index': 'index.md'
+- 'Home': 'index.md'
+- 'Index': 'old-index.md'
 - Before Starting:
     - 'Phenox and Components': '01_before_you_start/package.md'
     - 'Training': '01_before_you_start/training.md'
