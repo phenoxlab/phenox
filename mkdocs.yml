@@ -30,5 +30,4 @@ pages:
     - 'Phenox の飛行' : 'tut/controll.md'
     - '画像配信サーバープログラム': 'tut/server.md'
 - 'FAQ': 'faq.md'
-- 'トラブルシューティング': 'trouble_shooting.md'
 - '付録': 'appendix.md'

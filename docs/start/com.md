@@ -33,7 +33,7 @@ hostpc$ ssh root@192.168.2.1
 ```bash
 mv /etc/rc2.d/S20hostapd /etc/rc2.d/refuge
 ```
-2. 次に、Phenox2 をユーザーの用意した WiFi ルーターへ接続し、`wpa supplicant` コマンドで DHCP サーバから IP アドレスを取得します。設定ファイルの一例が `/root/setting/wlan-set-wli-uc.sh` に記載されています。このスクリプトをユーザーに合わせて書き換え、以下のコマンドを実 行してください。
+2. 次に、Phenox2 をユーザーの用意した WiFi ルーターへ接続し、`wpa supplicant` コマンドで DHCP サーバから IP アドレスを取得します。設定ファイルの一例が `/root/setting/wlan-set-wli-uc.sh` に記載されています。このスクリプトをユーザーの環境に合わせて書き換え、以下のコマンドを実 行してください。
 ```bash
 source /root/setting/wlan-set-wli-uc.sh
 ```
