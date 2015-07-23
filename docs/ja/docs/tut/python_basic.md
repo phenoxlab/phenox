@@ -5,46 +5,26 @@
 
 本チュートリアルの前に[Python環境の構築](../dev/pythonenv)を完了していることが前提となります。
 
-# 1. サンプルコードの入手と配置
- [GitHub](https://github.com/atsushisugiyama/phenox_python/)のファイルを取得します。[Python環境の構築](../dev/pythonenv)で取得したディレクトリがある場合`git clone`までの操作は不要です。
+# 1. 電源、シリアル通信の準備
+[電源について](../start/power) を参考に電源のセットアップを行い、[通信方法について](../start/com)を参考にシリアル通信あるいはSSH接続によるログインまで進んでください。本チュートリアルはシリアル通信、SSH接続のいずれでも実行可能です。
 
+# 2. サンプルコードの実行
+サンプルプログラムが配置されたディレクトリに移動します。
 ```bash
-cd ~
-mkdir pxpy_temp
-cd pxpy_temp
-git clone https://github.com/atsushisugiyama/phenox_python.git
-```
-
-Phenox2用のSDカードをホストPCに挿入し、スクリプトを配置します。
-
-```bash
-cd /media/<username>/root/root/phenox/work
-mkdir tutorial_python
-cp -r ~/pxpy_temp/phenox_python/sample/ phenox_python/
-```
-
-ただし`<username>`はPCユーザの名前です。以上が終了したらホストPCからSDカードをアンマウントしてください。
-
-# 2. 電源、シリアル通信の準備
-[電源について](../start/power) を参考に電源のセットアップを行い、[通信方法について](../start/com)を参考にシリアル通信によるログインまで進んでください。本チュートリアルでは終了時までシリアル通信を用いてPhenoxを通信を行います。
-
-# 3. サンプルコードの実行
-先ほど SD カード内に移動したファイルがあることを確認します。
-```bash
-cd /root/phenox/work/python_led
+cd /root/phenox/work/python_tutorial
 ls
 ```
 
-以下の3ファイルが表示されていれば問題ありません。
+ここにはサンプルとして4つのPythonスクリプトが配置されています。
 ```bash
 autohover.py
+get_image.py
 led_blink.py
 phenox_params.py
 ```
 
-Phenox2を平らな所に置き、サンプルコードを実行してください。
+ここでは上記のうち`led_blink.py`および`get_image.py`を実行してみましょう。Phenox2を平らな所に置き、サンプルコードを実行します。
 ```bash
-cd /root/phenox/work/python_led
 python led_blink.py
 ```
 
@@ -56,11 +36,10 @@ python led_blink.py
 このプログラムは中断されない限り継続します。動作を確認したら、`Ctrl+c`コマンドによってプログラムを終了してください。
 
 
-# 4. 対話型モードによる再現
+# 3. 対話型モードによる再現
 サンプルコードの処理内容をより明確に理解するため、Pythonの対話型モード環境で同様の処理を実践してみます。
 
 ```bash
-cd /root/phenox/work/tutorial_python
 python
 ```
 
@@ -79,12 +58,36 @@ px.set_led(0, True)
 px.set_led(0, False)
 ```
 
-今度はLEDが消灯します。以上を繰り返すことでLEDを点滅させることが出来ます。また`set_led`関数の第一引数に`1`を指定して同様にすることで、緑色LEDを点滅させることも可能です。
-
-動作が確認できたら対話型モードを終了してください。
+今度はLEDが消灯します。以上を繰り返すことでLEDを点滅させることが出来ます。また`set_led`関数の第一引数に`1`を指定して同様にすることで、緑色LEDを点滅させることも可能です。動作が確認できたら対話型モードを終了してください。
 ```Python
 exit()
 ```
 
-なおC言語プログラムの場合プログラム終了前に`pxclose_chain`関数を呼び出す必要がありますが、Pythonの場合は不要です(逆に実行するとプログラム終了時にメモリエラーが起きてしまいます)。
+なおC言語プログラムの場合プログラム終了前に`pxclose_chain`関数を呼び出す必要がありますが、Pythonの場合は不要です(逆に、実行するとプログラム終了時にメモリエラーが起きてしまいます)。
+
+
+# 4. カメラによる撮影画像の取得
+LEDより実用性の高い例としてカメラによる画像取得を行います。
+```bash
+cd /root/phenox/work/tutorial_python
+python get_image.py
+```
+
+このスクリプトでは以下の処理を行います。
+
+1. Phenoxライブラリの初期化
+2. 前方カメラで撮影した画像を取得
+3. 取得した画像を`test.jpg`という名前で保存
+
+なお撮像が安定するまでの時間を確保するため、このプログラムは初期化後に約2秒待機するようになっています。
+
+画像が取得出来たらPhenoxをシャットダウンし、SDカードを取り出してホストPCに挿入し、画像を確認します。ファイルの権限書き換えが必要なことに注意してください。
+```bash
+cd /media/<username>/root/root/phenox/work/tutorial_python
+sudo chmod 777 test.jpg
+xdg-open test.jpg
+```
+
+なお、ホストPCがUbuntuではない場合はSDカードの`root`パーティションが認識されない場合があります。その場合は[プロジェクトのビルド](./build)で"5.プログラムの実行"に記載された方法を参考に`get_image.py`の保存ファイル名を書き換えて下さい。
+
 
