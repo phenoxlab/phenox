@@ -12,3 +12,5 @@ pages:
 - Before Starting:
     - 'Phenox and Components': '01_before_you_start/package.md'
     - 'Training': '01_before_you_start/training.md'
+- Tutorials:
+    - 'Streaming with mjpg-streamer': 'tut/mjpgstreamer.md'
