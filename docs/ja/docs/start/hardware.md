@@ -12,10 +12,10 @@ Phenox には前後左右上下があります。まず、機体フレームに�
 
 以下の写真は Phenox を上から見たところ（機体上面）、下から見たところ（機体下面）です。下面にはカメラ、SD カードリーダー、CPU、超音波センサーなどが見えます。電子部品の詳細については次章で説明します。
 
-![写真 2 Phenox 上面] (/img/phenox/phenox_top_small.jpg)
+![写真 2 Phenox 上面] (/img/phenox/phenox_top.jpg)
 <div align="center">写真 2 Phenox 上面</div>
 
-![写真 3 Phenox 下面] (/img/phenox/phenox_bottom_small.jpg)
+![写真 3 Phenox 下面] (/img/phenox/phenox_bottom.jpg)
 <div align="center">写真 3 Phenox 下面</div>
 
 次に、Phenox の前後左右について説明します。Phenox には２つのカメラが搭載されており、一つは電子回路下面の下面カメラ、もう一つは電子回路に対して垂直に取り付けられている正面カメラです。その名が示す通り、正面カメラの向いている方向が Phenox の正面、前方になります。以下に正面カメラの位置を示します。
