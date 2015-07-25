@@ -4,13 +4,8 @@ Phenox を開発する際には、機体の軸を把握する必要がありま�
 ![写真 2 Phenox の機体軸と方向](/img/phenox/phenox_principle_axis.jpg)
 <div align="center">写真 2 Phenox の機体軸と方向</div>
 
-###### TODO: ↓わかりにくい
-回転方向は 右ネジの向きとなります。
-
-###### TODO: ↓ degx, degy, degz どれ？
 以上の定義は、Phenox ライブラリに登場する、front, back, left, right といったワード、degx, degy, degz といったワードに対応します。
 
 # プロペラの回転方向
 Phenox には４つのプロペラがついており、機体の前後左右についているものをそれぞれ Front Rotor, Back Rotor, Left Rotor, Right Rotor と呼びます。このうち、Front Rotor と Back Rotor は機体を上から見たときに時計回り、Left Rotor と Right Rotor は反時計周りに回転します。プロペラの交換は回転方向を確認の上で行って下さい。
 
-###### TODO: 写真を入れる。
