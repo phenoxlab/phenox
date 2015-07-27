@@ -25,9 +25,12 @@ pages:
     - 'パラメーター一覧' : 'dev/param.md'
     - '状態量一覧' : 'dev/state.md'
     - '用語集' : 'dev/glossary.md'
+    - 'Python API' : 'dev/pythonapi.md'
 - チュートリアル:
     - 'プロジェクトのビルド' : 'tut/build.md'
     - 'Phenox の飛行' : 'tut/controll.md'
     - '画像配信サーバープログラム': 'tut/server.md'
+    - 'Pythonでのプログラム実行' : 'tut/python_basic.md'
+    - 'Pythonコードによる飛行' : 'tut/python_hover.md'
 - 'FAQ': 'faq.md'
 - '付録': 'appendix.md'

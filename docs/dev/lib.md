@@ -17,3 +17,4 @@ make clean all
 ```
 
 ## Python プロジェクト
+Pythonでプログラムを実行する方法については[Pythonでのプログラム実行](../tut/python_basic)および[Pythonコードによる飛行](../tut/python_hover)を参照下さい。また詳細なAPIについては[Python API](pythonapi)を参照下さい。
