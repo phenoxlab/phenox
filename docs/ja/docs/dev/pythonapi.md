@@ -1,7 +1,14 @@
-ここで紹介する関数の使用例は、チュートリアルを参照してください。
+ここで紹介する関数の使用例はチュートリアルである[Pythonでのプログラム実行](../tut/python_basic)および[Pythonコードによる飛行](../tut/python_hover)を参照下さい。
 
 # はじめに
-Python APIはC言語用APIのラッパーとして実装されており、Pythonスクリプト中で`phenox`モジュールをimportすることで利用できます。具体的な利用方法については[Pythonでのプログラム実行](../tut/python_basic)を参考にしてください。
+PhenoxのAPIはC言語をメインターゲットとして`pxlib.h`, `pxlib.c`により実装されていますが、C言語用APIは共有オブジェクトファイル`pxlib.so`としても公開されているため、言語間連携コードを構成することでC言語以外の言語からでもAPIにアクセスすることが可能です。特にPhenoxの出荷時構成ではPythonによるラッパーが用意されているため、Pythonを用いてPhenoxの各機能を用いることが可能です。
+
+
+Python APIは共有オブジェクトファイル`pxlib.so`をラップして実装されており、Pythonスクリプト中で`phenox`モジュールをimportすることで利用できます。具体的な利用方法については[Pythonでのプログラム実行](../tut/python_basic)を参考にしてください。
+
+なお`phenox`モジュールの実装はPhenox上のファイルシステムにおいて`/root/phenox/work/phenox_python/phenox.py`に配置されています。
+
+# C言語用APIとの違い
 
 Python APIはC言語用APIと細かい点が異なります。特に重要な差異を次に示しますが、これ以外にも細かな変更が行われている事に注意してください。
 
@@ -49,11 +56,11 @@ C言語APIで用いられる`px_imgfeature`構造体のラッパークラスで�
 
 # 基本関数、状態取得関数
 ### phenox.init_chain()
-**!ユーザコードで使わないでください!**  
+**<font color="red">!ユーザコードで使わないでください!</font>**  
 `pxinit_chain`のラッパー関数です。飛行制御システム (CPU1) を起動し、パラメータの初期化を行います。戻り値はありません。
 
 ### phenox.get_cpu1ready()
-**!ユーザコードで使わないでください!**  
+**<font color="red">!ユーザコードで使わないでください!</font>**  
 `pxget_cpu1ready()`のラッパー関数です。飛行制御システム(CPU1)の準備ができた場合はTrueを返し、それ以外ではFalseを返します。
 
 ### phenox.get_motorstatus()
