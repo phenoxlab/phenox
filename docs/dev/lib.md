@@ -17,3 +17,5 @@ make clean all
 ```
 
 ## Python プロジェクト
+Pythonプログラムを実行する方法については[Pythonによるプログラム実行](../tut/python_basic)を参照ください。
+

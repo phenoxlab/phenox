@@ -21,11 +21,11 @@ pages:
     - 'Linux 環境の構築': 'dev/env.md'
     - 'GUIによるパーティションの作成': 'dev/gui.md'
     - 'Phenox ライブラリについて': 'dev/lib.md'
-    - 'API' : 'dev/api.md'
+    - 'C言語 API' : 'dev/api.md'
+    - 'Python API' : 'dev/pythonapi.md'
     - 'パラメーター一覧' : 'dev/param.md'
     - '状態量一覧' : 'dev/state.md'
     - '用語集' : 'dev/glossary.md'
-    - 'Python API' : 'dev/pythonapi.md'
 - チュートリアル:
     - 'プロジェクトのビルド' : 'tut/build.md'
     - 'Phenox の飛行' : 'tut/controll.md'
