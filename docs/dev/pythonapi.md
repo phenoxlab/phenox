@@ -6,7 +6,7 @@ PhenoxのAPIはC言語をメインターゲットとして`pxlib.h`, `pxlib.c`�
 
 Python APIは共有オブジェクトファイル`pxlib.so`をラップして実装されており、Pythonスクリプト中で`phenox`モジュールをimportすることで利用できます。具体的な利用方法については[Pythonでのプログラム実行](../tut/python_basic)を参考にしてください。
 
-なお`phenox`モジュールの実装はPhenox上のファイルシステムにおいて`/root/phenox/work/phenox_python/phenox.py`に配置されています。
+なお`phenox`モジュールの実装はPhenox上で`/root/phenox/work/phenox_python`ディレクトリに配置されています。
 
 # C言語用APIとの違い
 
