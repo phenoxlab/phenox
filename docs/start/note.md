@@ -1,0 +1,1 @@
+You can program how Phenox flies. Depending on the surrounding environment, however, Phenox can act in the way you do not expect it to. This chapter explains the basics of Phenox and how to use Phenox safely. Please read through this chapter while having your Phenox by your side.
