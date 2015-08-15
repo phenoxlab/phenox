@@ -16,9 +16,9 @@ Phenox の電子回路は、1 枚のメイン回路、2 枚のカメラ回路、
 ![図 3 電子部品の構成3] (/img/phenox/ic3.png)
 <div align="center">図 3 メイン回路下面（カメラ回路あり）</div>
 
-![図 4 電子部品の構成3] (/img/phenox/ic4.png)
+![図 4 電子部品の構成4] (/img/phenox/ic4.png)
 <div align="center">図 4 シリアル通信回路</div>
 
-![図 4 電子部品の構成3] (/img/phenox/supply_cable.JPG)
+![図 5 電源供給ケーブル] (/img/phenox/supply_cable.JPG)
 <div align="center">図 5 電源供給ケーブル</div>
 

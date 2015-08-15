@@ -24,7 +24,9 @@ make clean all
 ```
 
 以下の写真のように、USBケーブルを介してホストPCにPSコントローラを接続すると、「/dev/input/js0」などとしてデバイスが認識されることを確認してください。
-(/img/phenox_tut/joystick.JPG)
+![図 1 PS3コントローラとホストPC] (/img/phenox_tut/joystick.JPG)
+<div align="center">図 1 PS3コントローラとホストPC</div>
+
 
 jstest-gtkを実行し、PS3コントローラの入力が効いている状態になっていることを確認してください。(ボタンが効かない場合、中央にあるロゴのボタンを押してみて下さい。)
 ```bash
