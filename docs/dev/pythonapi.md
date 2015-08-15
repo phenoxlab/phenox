@@ -119,7 +119,7 @@ state = phenox.get_selfstate()
 `pxset_keepalive()`のラッパー関数です。機体制御システムに対して、Linux(CPU0)がphenoxモジュールを使用したアプリケーションを実行中であることを伝えます。戻り値はありません。この関数はユーザー自身がタイマー割り込み関数などを用いて定期的に呼び出すようにしてください。
 
 ### phenox.get_battery_is_low()
-`pxget_battery()`のラッパー関数です。バッテリの残量が残り少ない状態では`True`を返し、それ以外では`False`を返します。この値が`True`になった場合は、飛行制御システムによって自動的に、ホバー状態 (`phenox.PX_HOVER`)のPhenoxは下降状態 (`phenox.PX_DOWN`) に遷移し、`PhenoxConfig`の`downtime_max`で指定した時間(秒)が経過した後、停止状態(`phenox.PX_HALT`)に遷移します。この関数の戻り値が`True`であった場合、速やかにユーザプログラムを終了し手動で`shutdown`コマンドなどを用いてLinuxシステムをシャットダウンするか、プログラム中で自動的にシャットダウン処理を実行できるようにしてください。
+`pxget_battery()`のラッパー関数です。バッテリの残量が残り少ない状態では`True`を返し、それ以外では`False`を返します。この値が`True`になった場合は、飛行制御システムによって自動的に、ホバー状態 (`phenox.PX_HOVER`)のPhenoxは下降状態 (`phenox.PX_DOWN`) に遷移し、`PhenoxConfig`の`downtime_max`で指定した時間(秒)が経過した後、停止状態(`phenox.PX_HALT`)に遷移します。この関数の戻り値が`True`であった場合、速やかにユーザプログラムを終了し手動で`halt`コマンドなどを用いてLinuxシステムをシャットダウンするか、プログラム中で自動的にシャットダウン処理を実行できるようにしてください。
 
 # 制御関数
 ### phenox.get_operate_mode()
@@ -131,7 +131,10 @@ state = phenox.get_selfstate()
 `phenox.HALT`を指定するとプロペラを即時停止させます。`phenox.PX_UP`を指定すると`PhenoxConfig`上で設定した`uptime_max`の時間(秒)だけ上昇を行いホバー状態へ移行します。`phenox.PX_DOWN`を指定すると`PhenoxConfig`上で設定した`downtime_max`の時間(秒)だけ下降し停止状態へ移行します。また`PX_HALT`状態から他の状態へ遷移する場合には、3秒間の始動状態(プロペラの弱い回転運動状態)が飛行制御システムによって挿入されます。
 
 ### phenox.set_visioncontrol_xy(tx, ty)
-`pxset_visioncontrol_xy(float tx, float ty)`のラッパー関数です。水平方向 (機体軸 X,Y) の目標自己位置を設定し、飛行状態の場合(`phenox.get_operate_mode()`の戻り値が`phenox.HOVER`である場合)はPhenox2を追従させます。引数 `tx`, `ty` には、現在の水平方向位置 (`SelfState` 構造体の `vision_tx`, `vision_ty`) に、移動したい方向の小ベクトル (大きさ −120 ∼ 120 程度) を足した量を指定することを強くお勧めします(チュートリアル参照)。    
+`pxset_visioncontrol_xy(float tx, float ty)`のラッパー関数です。水平方向 (機体軸 X,Y) の目標自己位置を設定し、飛行状態の場合(`phenox.get_operate_mode()`の戻り値が`phenox.HOVER`である場合)はPhenox2を追従させます。
+
+飛行制御プ ログラム (CPU1) は、`px_pconfig` 構造体の `pgain_vision_tx`, `pgain_vision_ty`(Pゲイン) と `dgain_vision_tx`, `dgain_vision_ty` (Dゲイン) で指定した強度に応じて、目標位置(tx,ty)に追従しようと試みます。この制御に積分項は含まれておらず、多少のバイアスが残るため、必要に応じてユー ザー自身で積分項を入れるか、一度目標位置からバイアス相当だけずれた状態でのホバー状態を実行し、静止した位置を基準とした相対位置を目標に設定する必要があります。
+
 飛行制御プログラム(CPU1)は、`PhenoxConfig`の`pgain_vision_tx`, `pgain_vision_ty`(比例ゲイン) と `dgain_vision_tx`, `dgain_vision_ty` (微分ゲイン) で指定した強度に応じて目標位置に追従しようと試みます。なお本制御に積分項は含まれておらず多少のバイアスが残るため、必要に応じてユー ザー自身で積分項を入れるか、画像情報を元にバイアス (`PhenoxConfig`の`duty_bias_`から始まる諸パラメータ)を補正するなどの試みを行って下さい。また座標系は画像座標系で表現されるため、移動量は地面からの距離に反比例します。そのため、必要に応じて高度情報(`SelfState`の`height`変数)を加味したゲイン設定を行って下さい。
 ###### DOTO: Check duty_bias* <- pointer?
 
@@ -141,11 +144,10 @@ state = phenox.get_selfstate()
 
 ### phenox.set_dst_degx(val)
 `pxset_dst_degx(float val)`のラッパー関数です。
-Phenox2の`degx`(機体軸 X に対する右ネジ向きの回転角度)の目標値を度数法で設定し、飛行状態の場合(`phenox.get_operate_mode()`の戻り値が`phenox.HOVER`の場合)はPhenox2 を追従させます。この関数には有効期間(`PhenoxConfig`構造体の`selxytime_max`)が秒単位で設定されており、本関数を最後に実行してから設定時間以上が経過すると、飛行制御プログラムによって自動的に、下向きカメラの画像特徴点を元に推定した自己制御(`pxset_visioncontrol_xy()`)が行われ、現在の位置に留まろうとする制御が行われます。従って、常に指定した角度にPhenox2を制御させたい場合はタイマ割り込み関数などを用いて、周期的に本関数を呼び出す必要があります。大きな値を指定するほど急な移動につながりますので、指定する値としては 0 ∼ 10.0 を目安としてください。
+
 
 ### phenox.set_dst_degy(val)
 `pxset_dst_degy(float val)`のラッパー関数です。
-Phenox2の`degy`(機体軸Yに対する右ネジ向きの回転角度)の目標値を度数法で設定し、飛行状態の場合(`phenox.get_operate_mode()`の戻り値が`phenox.HOVER`の場合)はPhenox2 を追従させます。この関数には有効期間(`PhenoxConfig`構造体の`selxytime_max`)が秒単位で設定されており、本関数を最後に実行してから設定時間以上が経過すると、飛行制御プログラムによって自動的に、下向きカメラの画像特徴点を元に推定した自己制御(`pxset_visioncontrol_xy()`)が行われ、現在の位置に留まろうとする制御が行われます。従って、常に指定した角度にPhenox2を制御させたい場合はタイマ割り込み関数などを用いて、周期的に本関数を呼び出す必要があります。大きな値を指定するほど急な移動につながりますので、指定する値としては 0 ∼ 10.0 を目安としてください。
 
 
 ### phenox.set_dst_degz(val)
@@ -238,8 +240,6 @@ features = px.get_imgfeature(100)
 
 ### phenox.set_sound_recordquery(recordtime)
 `pxset_sound_recordquery(float recordtime)`のラッパー関数です。マイクで録音された音声を取得するための要求を飛行制御システムに発行します。
-
-######TODO: C言語APIのドキュメンテーションでは引数の表記がありませんが実際の`pxlib.h`を見る限りではこちらのシグネチャが正しいものと思われます。
 
 ### phenox.get_sound_record_completed()
 `pxget_sound_recordstate()`のラッパー関数です。`pxset_sound_recordquery()`関数によって発行された音声取得の要求の処理状況を確認し、完了済みの場合は`True`、処理中の場合は`False`を返します。

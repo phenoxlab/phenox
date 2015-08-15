@@ -3,7 +3,7 @@ theme: readthedocs
 #repo_url: https://github.com/phenoxlab/phenox/
 repo_url: https://github.com/mthrok/phenox/
 site_description: Phenox Library Documentation
-site_author: 此村 領
+site_author: Ryo Konomura
 site_favicon: 'favicon.ico'
 pages:
 - 'ホーム': 'index.md'
@@ -27,9 +27,14 @@ pages:
     - '状態量一覧' : 'dev/state.md'
     - '用語集' : 'dev/glossary.md'
 - チュートリアル:
-    - 'プロジェクトのビルド' : 'tut/build.md'
-    - 'Phenox の飛行' : 'tut/controll.md'
-    - '画像配信サーバープログラム': 'tut/server.md'
+    - '画像、音声を取得する' : 'tut/build.md'
+    - 'Node-jsを使った画像配信サーバー構築': 'tut/server.md'
+    - 'MJPG-streamerを使った画像配信': 'tut/mjpgstreamer.md'
+    - 'Phenox を飛行させる(自動)' : 'tut/controll.md'
+    - 'Phenox を飛行中に移動させる(自動)' : 'tut/controll_move.md'
+    - 'Phenox を飛行中に色マーカーに追従させる(自動)' : 'tut/controll_color.md'
+    - 'Phenox を天井に向けて飛行させる(自動)' : 'tut/controll_inverse.md'
+    - 'Phenox をコントローラで操縦する' : 'tut/controll_manual.md'
     - 'Pythonによるプログラム実行' : 'tut/python_basic.md'
     - 'Pythonコードによる飛行' : 'tut/python_hover.md'
 - 'FAQ': 'faq.md'

@@ -5,18 +5,20 @@ Phenox の電子回路は、1 枚のメイン回路、2 枚のカメラ回路、
 3. 超音波送信機、受信機4. Zynq (XC7Z010CLG400)5. DDR3 メモリ (256MB)6. 姿勢センサ7. マイク8. ブザー9. 汎用 LED010. 汎用 LED111. 電源確認用 LED 
 12. 下面カメラ13. 正面カメラ14. Micro SD カードスロット
 15. USB2.0 ポート16. WiFi モジュール17. シリアル通信回路挿入ポート
-18. シリアル通信回路19. USB ケーブル (A-B)
+18. シリアル通信回路19. USB ケーブル (A-B) 20.電源供給ケーブル
 
-![図 1 電子部品の構成1] (/img/ic1.png)
+![図 1 電子部品の構成1] (/img/phenox/ic1.png)
 <div align="center">図 1 メイン回路下面（カメラ回路なし）</div>
 
-![図 2 電子部品の構成2] (/img/ic2.png)
+![図 2 電子部品の構成2] (/img/phenox/ic2.png)
 <div align="center">図 2 メイン回路上面</div>
 
-![図 3 電子部品の構成3] (/img/ic3.png)
+![図 3 電子部品の構成3] (/img/phenox/ic3.png)
 <div align="center">図 3 メイン回路下面（カメラ回路あり）</div>
 
-![図 4 電子部品の構成3] (/img/ic4.png)
+![図 4 電子部品の構成3] (/img/phenox/ic4.png)
 <div align="center">図 4 シリアル通信回路</div>
 
+![図 4 電子部品の構成3] (/img/phenox/supply_cable.JPG)
+<div align="center">図 5 電源供給ケーブル</div>
 

@@ -1,7 +1,5 @@
 まず、Phenox2 セットに以下のものが含まれていることを確認してください。
 
-##### TODO: 梱包物一覧の写真をここに入れる。
-
 - Phenox2 本体
     1. フレーム
     2. プロペラ
@@ -11,24 +9,28 @@
     6. 正面カメラ回路
     7. シリアル通信回路
     8. プロテクター
-
-- USB ケーブル(A-B)
 - バッテリ(11.1V, 180mAh) x 1
 - 4GB micro SD カード(環境構築済み)
 - USB-WiFi ドングル (型番: WLI-UC-GNM)
 - 外部電源供給ケーブル (Phenox電源プラグからDCプラグへの変換)
-
+- 笛(3kHzの音を出す)
 
 また、以下のものは Phenox2 セットには含まれておりません。別途ご用意ください。
 
-- ３セルバッテリ充電器 (JST-XH4 コネクタ対応)
+- バッテリ充電器 (3セルLiPoの充電が可能でかつJST-XH4コネクタ対応のもの)
+例)
+``http://www.hobbyking.com/hobbyking/store/__7637__Turnigy_12v_2_3S_Basic_Balance_Charger.html``
+``http://www.hobbyking.com/hobbyking/store/__6443__G_T_Power_A8_8Cell_balancer_Charger.html``
+
 - 予備のバッテリ (型番: Turnigy nano-tech 180mah 3S 25~40C Lipo Pack)
 - DC12V 電源 (1A 以上)
+- USB ケーブル(A-B)
 - テスター (電池残量の計測)
 - 保護メガネ
 - ホストコンピューター (ssh クライアント機能、シリアル通信機能のあるもの）
+- PS3コントローラ
 
-Phenox をインターネットへ接続する場合はこれに加えて以下のもが必要になります。
+Phenox をインターネットへ接続する場合はこれに加えて以下のものが必要になります。
 
 - WiFi ルーター
 - インターネット接続環境
