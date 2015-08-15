@@ -7,8 +7,7 @@ site_author: Ryo Konomura
 site_favicon: 'favicon.ico'
 pages:
 - 'ホーム': 'index.md'
-- 初めに:
-    - '初めにお読みください': 'start/note.md'
+- Phenoxの扱い方:    
     - 'Phenox セット内容物': 'start/package.md'
     - '機体構成': 'start/hardware.md'
     - '回路構成': 'start/circuit.md'
