@@ -6,7 +6,7 @@
   
 3. When the host-PC is connected to the serial communication board with USB A-B cable, please check that device(FT232RL) is recognized by OS (There is no need to supply power to the main board in this stage.).
   
-4.When the host-PC is running Linux OS, establish software of serial communication (minicom) as described in [Appendix](../appendix.md). If the host-PC is not running Linux OS, the configuration of the serial communication software is as follows.  
+4. When the host-PC is running Linux OS, establish software of serial communication (minicom) as described in [Appendix](../appendix.md). If the host-PC is not running Linux OS, the configuration of the serial communication software is as follows.  
  - baudrate = 230400 bps  
  - 1 stop bit  
  - no parity  
