@@ -10,16 +10,17 @@ Firstly, please check the followings are contained in your Phenox2 set.
     7. Serial communication circuit
     8. Protector
 
-- USB Cable (A-B)
 - Battery (Turnigy nano-tech 180mAh 3S 25~40C LiPo Pack)
 - 4GB Micro SD Card (with preinstalled development environment)
 - USB-WiFi Dongle (WLI-UC-GNM)
 - External Power Source Connecter (JST-XH4 plug to DC Plug)
+- Whisle (to detect 3kHz sound)
 
-Following items are not contained in Phenox2 set. Please prepare them by yourself.
+Following items are not contained in Phenox2 set. Please prepare them by users.
 
 - Battery charger (3-Cell LiPo battery balance charger)
 - Spare battery
+- USB Cable (A-B)
 - DC 12V Power Source (more than 1A)
 - Electrical Tester
 - Safety Glasses

@@ -8,7 +8,7 @@ Phenox has its own coordinate and directions (front, back, left, right, top and 
 ![Fig.1 Upside and downside of Phenox] (/img/phenox/phenox_top_and_bottom.jpg)
 <div align="center">Fig.1 Upside and downside of Phenox</div>
 
-The following pictures show the phenox from the top and from the bottom. We can see, on bottom side, devices such as cameras, SC card reader, CPU, abd ultrasonic sensors. The detail of onboard devices are explained in the next chapter.
+The following pictures show the phenox from the top and from the bottom. We can see, on bottom side, devices such as cameras, SC card reader, CPU, and ultrasonic sensors. The detail of onboard devices are explained in the next chapter.
 
 ![Fig.2 Phenox Top] (/img/phenox/phenox_top.jpg)
 <div align="center">Fig.2 Phenox Top</div>
@@ -16,7 +16,7 @@ The following pictures show the phenox from the top and from the bottom. We can 
 ![Fig.3 Phenox Bottom] (/img/phenox/phenox_bottom.jpg)
 <div align="center">Fig.3 Phenox Bottom</div>
 
-Phenox has two on-board cameras. The bottom camera is attached on the cirface of the electric circuit. The front camera, is attached perpendicular to the circuit. As its name says, the direction the front camera faces is the front direction of Phenox. The front camera is illustrated in the following figure.
+Phenox has two on-board cameras. The bottom camera is attached on the surface of the electric circuit. The front camera, is attached perpendicular to the circuit. As its name says, the direction the front camera faces is the front direction of Phenox. The front camera is illustrated in the following figure.
 
 ![Fig.4 Phenox Front Camera and Front Direction] (/img/phenox/phenox_front.jpg)
 <div align="centering">Phenox Front Camera and Front Direction</div>
@@ -25,3 +25,15 @@ From the center of the body, the opposite side of the front is back, and right a
 
 ![Fig.5 Phenox Directions] (/img/phenox/phenox_all_directions.jpg)
 <div align="center">Fig.5 Phenox Directions</div>
+
+##Glossary 
+
+### Zynq
+Programmable Soc released from Xilinx.Inc.
+Two CPUs (CPU0,CPU1) and FPGA are used by Phenox2
+### CPU0
+Linux operateing system is running in CPU0. 
+### CPU1
+Flight control system is running in CPU1.
+###FPGA 
+FPGA processes image and sound signal, controls actuators and communicates with sensors.
