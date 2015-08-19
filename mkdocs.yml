@@ -25,7 +25,7 @@ pages:
     - 'Get image and sound' : 'tut/build.md'
     #- 'Streaming with node.js web server': 'tut/server.md'
     - 'Streaming with mjpg-streamer': 'tut/mjpgstreamer.md'
-    #- 'Fly Phenox2(autonomous)' : 'tut/controll.md'
+    - 'Fly Phenox2(autonomous)' : 'tut/controll.md'
     #- 'Move Phenox2 horizontally during flight(autonomous)' : 'tut/controll_move.md'
     #- 'Controll Phenox2 with joystick (manual)' : 'tut/controll_manual.md'
     #- 'Fly Phenox2 with colored landmark(autonomous)' : 'tut/controll_color.md'
