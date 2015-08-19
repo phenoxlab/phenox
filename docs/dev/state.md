@@ -32,7 +32,7 @@ Self velocity of Z axis estimated by visual feature points using bottom camera, 
 
 ### float height
 Height from ground measured from ultrasonic sensor, which is represented in cm.
-This value is always 0 when Phenox2 is not hovering state (`PX_HOVER`) and measureble range is (60cm to 200cm).
+This value is always 0 when Phenox2 is not hovering state (`PX_HOVER`) and measureble range is 60cm to 200cm.
 
 ### int battery
 Indicate battery state, return 1 when battery is nealy out.

@@ -5,7 +5,7 @@ Linux system is built on microSD, so users can customize their own system by rew
 
 In this section, we explain how to build Phenox2 software on custom microSD card.
 
-We tried it on the host-PC which installs Ubuntu 14.04.
+Here we report the method using Ubuntu 14.04 as host-PC.
 
 1\. Prepare microSD (4.0Gbyte or upper)  
 2\. Open terminal.  
@@ -49,11 +49,10 @@ In fdisk, press key as follows
  - press "t" and Enter  
  - press "2" and Enter  
  - press "83" and Enter  
- - press "p" and Enter. Check that two partitions(FAT32 and Linux) are created. 
+ - press "p" and Enter. Check that two partitions(FAT32 and Linux) are created.  
 |/dev/sdX1 |   *   | XXXXXXX | YYYYYYY | BBBBBBB |  c | W95 FAT32 (LBA)|  
 |/dev/sdX2 |   | XXXXXXX | YYYYYYY | BBBBBBB | 83 | Linux|  
  - press "w" and Enter  
-
 After finishing, eject microSD and inject it again.  
 7\. Create filesystems on two patitions with following command.  
 ```bash
@@ -61,7 +60,7 @@ hostpc$ sudo mkfs.vfat -F 32 -n boot /dev/sdX1
 hostpc$ sudo mkfs.ext4 -L root /dev/sdX2
 ``` 
 After finishing, eject microSD and inject it again.  
-8\. Download softwares from Phenox Lab, extract them and copy to microSD.  
+8\. Download softwares from Phenox Lab, extract and copy them to microSD.  
 ```bash
 hostpc$ wget http://phenoxlab.com/static/phenox_boot_master.tar.gz
 hostpc$ wget http://phenoxlab.com/static/phenox_ubuntu_master.tar.gz

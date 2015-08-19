@@ -7,16 +7,16 @@ Phenox2 operates 5 minutes on the fly, and 20 minutes on the ground with attache
 
 Also, please don't use supply cable when users want to fly Phenox2.
 
-# バッテリーの装着と取り外し方法
+# Changing battery
 Before inserting the battery plug to the main board, fix the battery to the protector with rubber band as shown in Fig.1. 
 ![Fig.1 Fix battery to the protector] (/img/phenox/phenox_battery_1.jpg)
 <div align="center">Fig.1 Fix battery to the protector</div>
 
-Plese insert the supply plug to the battery connector of the mainboard as shown in Fig.2. Please be careful not to bend main board.
+Then, insert the supply plug to the battery connector of the mainboard as shown in Fig.2. Please be careful not to bend main board.
 ![Fig.2 Attach battery to the mainboard] (/img/phenox/phenox_battery_2.jpg)
 <div align="center">Fig.2 Attach battery to the mainboard </div>
 
-When removing battery, put your hand as shown in Fig.3. The way shown Fig.4 is not good because bending power to the main board is too strong, which may cause serious breakdown of the mainboad.
+When removing battery, remove rubber band and protector first, and  put your hand as shown in Fig.3. The way shown Fig.4 is not good because bending power to the main board is too strong, which may cause serious breakdown of the mainboad.
 ![Fig.3 Remove battery(good way)] (/img/phenox/phenox_battery_3.jpg)
 <div align="center">Fig.3 Remove battery(good way) </div>
 

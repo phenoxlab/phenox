@@ -1,4 +1,4 @@
-# Phenox ライブラリ
+# Build Phenox library
 Phenox library consists of two directories ("phenox/library", "phenox/work"). APIs and their definition are in "phenox/library", and user projects and tutorials are in "phenox/work".  Projects in "phenox/work" can call APIs of Phenox library by including "pxlib.a", "pxlib.h" and "pxlib.so".
 
 In each projects, users need to set physical parameters to operate Phenox2 in "parameter.c" in C language project. 

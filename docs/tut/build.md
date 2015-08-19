@@ -10,13 +10,13 @@ This tutorial explains following works using Ubuntu14.04 as host-PC.
 # 1. Setup supply power and communication
 Please setup supply power using external supply plug as described in [Power supply](../start/power.md), and setup communication using serial communication board as described in [Communication](../start/com.md).
 
-Then, turn power switch on and finish to login to Phenox2 via serial communication board. 
+Then, turn power switch on and finish to login to Phenox2 with serial communication board. 
  
 # 2. ssh connection 
-Please setup communication via ssh as described in [Communication](../start/com.md).
+Please setup communication using ssh as described in [Communication](../start/com.md).
 
 Now, user communicates with Phenox2 with two method (wired and wireless method).
-Please choose prefered communication method. 
+From now on, please choose prefered communication method. 
 
 # 3. Create project
 Copy tutorial to make custom projects as follows..
@@ -55,14 +55,14 @@ After that, message "CPU0: waiting for whisle" appears, so please blow 3kHz whis
 If user login to Phenox2 using ssh with X11 forwarding option, users can directly access to the directory with file manager as following command.
 
 ```bash
-phenox# nautilus
+phenox# nautilus .
 ```
 
-Directory is also accessible from host-PC by reading contents of Phenox2. Insert microSD card of Phenox2, and check folder of `/root/phenox/work/myproject1`.
+Directory is also accessible from host-PC by reading contents of microSD. Insert microSD card of host-PC, and check folder of `/root/phenox/work/myproject1`.
 
 # 6. Changing source code and rebuild
 
-Please read source code of main.c, and edit something. 
+Please read source code of main.c and parameter.c, edit something, and try rebuild. 
 ```bash
 cd /root/phenox/work/myproject1
 make clean all

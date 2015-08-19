@@ -2,7 +2,7 @@
 
 Circuit boards of Phenox2 consists of a main-board, two camera boards and a serial communication board.
   
-The name and location of each parts is listed as following picture(Fig.1~4).
+The name and location of each parts is listed as following picture(Fig.1~5).
   
 1. Power switch  
 2. Supply connector  

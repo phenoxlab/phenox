@@ -1,10 +1,10 @@
 # Principal Axes
 
 # Axes and rotations
-The direction of 3 axes are defined as shown in Fig.1.
- - X axis is rightwards.
- - Y axis is forwards.
- - Z axis is upwards.
+The direction of 3 axes are defined as shown in Fig.1.  
+ - X axis is rightwards.  
+ - Y axis is forwards.  
+ - Z axis is upwards.  
 
 Also, Rotation around x axis is "degx", rotation around y axis is "degy" and rotation around z axis is "degz" as shown in Fig.1. Please remember the definition because those names are used in Phenox Library.
 

@@ -1,0 +1,34 @@
+site_name: Phenox Library Documentation
+theme: readthedocs
+repo_url: https://github.com/phenoxlab/phenox/
+site_description: Phenox Library Documentation
+site_author: Ryo Konomura
+site_favicon: 'favicon.ico'
+pages:
+- 'Home': 'index.md'
+- Hardware:
+    - 'Phenox Package Contents': 'start/package.md'
+    - 'Hardware Overview': 'start/hardware.md'
+    - 'Circuit Overview': 'start/circuit.md'
+    - 'Principal Axes': 'start/directions.md'
+    - 'Power supply': 'start/power.md'
+    - 'Communication': 'start/com.md'
+    - 'Others': 'start/others.md' 
+- Application Development:
+    - 'Introduction': 'dev/dev.md'
+    - 'Install Software On Custom microSD': 'dev/env.md'
+    - 'Build Phenox library': 'dev/lib.md'
+    - 'C Language API' : 'dev/api.md'
+    - 'Parameters (px_pconfig)' : 'dev/param.md'
+    - 'Selfstate (px_selfstate)' : 'dev/state.md'
+- Tutorials:
+    - 'Get image and sound' : 'tut/build.md'
+    #- 'Streaming with node.js web server': 'tut/server.md'
+    - 'Streaming with mjpg-streamer': 'tut/mjpgstreamer.md'
+    - 'Fly Phenox2(autonomous)' : 'tut/controll.md'
+    #- 'Move Phenox2 horizontally during flight(autonomous)' : 'tut/controll_move.md'
+    #- 'Controll Phenox2 with joystick (manual)' : 'tut/controll_manual.md'
+    #- 'Fly Phenox2 with colored landmark(autonomous)' : 'tut/controll_color.md'
+    #- 'FAQ': 'faq.md'
+    #- 'appendix': 'appendix.md'
+
