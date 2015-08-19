@@ -19,10 +19,10 @@ Save struct of physical parameters (`px_pconfig`) to local variable "param".
 ### void pxset_pconfig(px_pconfig *param)
 Reflect physical parameters which is set in local variable "param" to CPU1(flight control system). If users want to change parameters partially, copy current physical parameters using `pxget_pconfig()`, change parameters, and call this function as follows.  
 ```bash
-  px_selfstate st;
-  pxget_selfstate(&st);
-  st.duty_hover = 1800;
-  pxset_pconfig(&st);
+  px_pconfig pc;
+  pxget_pconfig(&pc);
+  pc.duty_hover = 1800;
+  pxset_pconfig(&pc);
 ```
 
 ### void pxget_selfstate(px_selfstate *state)

@@ -1,68 +1,67 @@
-このチュートリアルでは、以下の作業の習得を目的に、具体的な手順を示します。なお、ホスト PC として Ubuntu14.04 を使用します。
+# Fly and move Phenox2(autonomous)
 
-1. Phenox2 を電池から起動し、ssh 通信により接続します。
-2. Phenox2 ライブラリの `px_selfstate` 構造体より入手できる状態量を表示します。
-3. 下向きカメラで取得する画像特徴点の個数を確認し、飛行に適した環境を用意します。
-4. 地面に Phenox2 本体を置き, 笛によって離陸させ、飛行させます。
-5. Phenox2が機体前方へ移動することを確認します。
+This tutorial explains following works using Ubuntu14.04 as host-PC.
 
-飛行に際しては以下のことに注意してください。
+1. Startup Phenox2 from battery, connect to host-PC using ssh.  
+2. Check self state (px_selfstate).
+3. Prepare flight space checking number of visual feature points from bottom camera.
+4. Put Phenox2 on the ground, and blow whisle to start hovering autonomously.
+5. Move Phenox2 to forward keeping same height.
 
- - 屋内環境下で 3m x 3m 以上の、障害物の無い、平坦な地面をしたスペースを用意してください。
- - 空調などの風が起こる装置はあらかじめ切っておきます。
- - 本チュートリアルでは、Phenox2が機体前方に移動します。機体前方に十分なスペースを用意してください。
+Also, please take care of following points.
 
-# 1. ssh接続によるPhenox2 へのログイン
-[電源について](../start/power) を参考に、電池を使用した電源のセットアップを実行し、[通信方法について](../start/com)を参考に、ssh通信のセットアップと電源の投入を行い、ホストPCがssh通信を経由してPhenox2へのログインを完了したところまで進んでください。
+ - Prepare wide and planer space(3m x 3m at least) without any object on the ground.  
+ - Try experiment in indoor environment, and turn off air conditioner.  
+ - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.  
+ - In this tutorial, Phenox2 move forward about 1.5m, so prepare enough space in front side of Phenox2.
 
-# 2. プロジェクトの作成
-チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
-```bash
-cd /root/phenox/work/
-cp -a tutorial_move myproject_move
-```
-
-# 3. プロジェクトのビルド
-まずは、先ほどコピーした tutorial_move と同じ内容で myproject_move をビルドしてみます。
-```bash
-cd /root/phenox/work/myproject_move
-make clean all
-```
-これで、実行ファイル `main` が作成されました。
-
-# 4. プログラムの実行: 状態量の確認
-このプログラムは以下の動作を行います。
-
-1. Phenox ライブラリの初期化
-2. ユーザーによって笛が鳴らされるまで待機
-3. 笛の音に反応して離陸
-4. ホバー状態に入り、約8秒間経過、正面方向へ約1.5m進みます。
-5. ユーザーがPhenox2を捕え、大きく傾けることで停止します。
-
-それでは、まず、待機状態の Phenox の各種状態量を確認してみましょう。
-
-以下のコマンドでプログラムを実行します。
+# 1. Setup supply power and communication
+Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
+ 
+# 2. Create project
+Copy tutorial to make custom projects as follows..
 
 ```bash
-./main
+phenox# cd /root/phenox/work/
+phenox# cp -a tutorial_move myproject_move
 ```
-
-プログラム開始時には Phenox2 がジャイロセンサーなどの初期化を行うので、必ず Phenox2 を安定した場所で静止させて、手に持つことはしないで下さい。開始から３秒程で初期化は完了し、 `CPU0:Finished Initialization.` というメッセージが現れます。万が一、この間に手で持つなどした場合は、初期化が完了しません。その場合はCtrl-cでプログラムを停止し、"reboot"コマンドで再起動します。
-
-初期化が完了すると、状態量が表示されます。状態量の数字は、それぞれ `px_selfstate` 構造体のメンバー変数 (`degx`, `degy`, `degz`, `vision_tx`, `vision_ty`, `vision_tz`, `height`) と、下向きカメラから得られた特徴点の個数を表しています。状態量の表示が開始されたら、Phenox2 を持ち上げて、動かしながら各状態量が変化することを確認してみてください。`height`はホバー状態になるまで、0を示します。
-
-# 5. プログラムの実行: 特徴点の検出状況の確認と地面の環境整備
-状態量の表示の右端の数字が、下向きカメラから得られた特徴点の個数を示しています。Phenox2 を持ち下向きカメラを地面に向けながら、特徴点の個数がある程度の値 (最低 15 個程度)になるまで、床に特徴点となる模様を張り付けてください。なお、画像特徴点となりやすいものは、明暗がはっきりし、角の多い模様になります。
-
-# 6. プログラムの実行: 飛行
-地面の環境整備が完了したら、Phenox2 を地面の上に置き、Phenox2 の近くで笛を大きく吹いてください。離陸が始まります。笛の音を検出すると 3 秒間のスタートアップ状態の後、上昇 (`PX_UP`) し、ホバー状態 (`PX_HOVER`) となり, 高度方向、水平方向に状態を保つように飛行制御が行われます。約8秒が経過すると。Phenox2がゆっくりと機体前方方向に進みます。約1.5~2m程度進むと、その場でのホバー状態に戻ります。
-
-
-# 7. プログラムの実行: 飛行状態の停止
-Phenox2 の 飛行を止める場合は、Phenox2 の足の1つを手で掴み、大きく傾けて下さい。不安な方は手袋を着用することをお勧めします。この機能は、全てのユーザープログラムに明示されてはいないものの、飛行制御用CPUの機能として備わっています。
-
-# 8. シャットダウン
-シャットダウンさせる際は、"halt"コマンドを実行した後、電源スイッチをOFFにしてください。
+# 3. Build project
+Build  myproject_move as default setting.
 ```bash
-halt
+phenox# cd /root/phenox/work/myproject_move
+phenox# make clean all
 ```
+Now, executable file "main" is created.
+
+# 4. Execute program
+The sequence of this tutorial program are as follows.
+
+1. Initialize CPU1(flight control system) for 3 seconds.
+2. Wait for whisle sound printing selfstate. 
+3. Start hovering when whisle sound is detected.
+4. Hovers to keep same position for about 8 seconds, then go forward about 1.5m.
+5. Users grub one of legs of Phenox2 and tilt it largely to stop Phenox2.
+
+Before running program, please put Phenox2 on the ground and do not move it until message "CPU0:Finished Initialization" appears. If users move Phenox2 during initialization, CPU1 detects movement and stops initialization. When this happens, please reboot Phenox2 by "reboot" command.
+
+Now, let's start "main".
+```bash
+phenox# ./main
+```
+
+After initialization, members of selfstate (`degx`, `degy`, `degz`, `vision_tx`, `vision_ty`, `vision_tz`, `height`) and number of feature points are printed in terminal.
+
+# 5. Prepare flight environment (needed only first time of flight)
+Please hold Phenox2 and move above flight space to check number of feature points, and put markers on the ground if needed. 15 feature points are enough to estimate self position stably.
+
+# 6. Fly Phenox2
+After flight space is prepared, put Phenox2 on the ground, and blow whisle near Phenox2 strongly. Phenox2 operates 3 seconds of start up of motors, and takes off (`PX_UP`). Then, Phenox2 enters hover state (`PX_HOVER`) and try to fly at same position for about 8 seconds. Then, Phenox2 moves forward about 1.5m, and try to keep the same position. 
+
+# 7. Stop Phenox2
+Flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
+
+To shutdown Phenox2, type following command.
+```bash
+phenox# halt
+```
+

@@ -1,89 +1,91 @@
-このチュートリアルでは、以下の作業の習得を目的に、具体的な手順を示します。なお、ホスト PC として Ubuntu14.04 を使用します。
+# Control Phenox2 with joystick (manual)
 
-1. Phenox2 を電池から起動し、ssh 通信により接続します。
-2. ホストPCにPS3コントローラを接続し、ホストPCからPhenox2を操縦します。
+This tutorial explains following works using Ubuntu14.04 as host-PC.
 
-飛行に際しては以下のことに注意してください。
+1. Startup Phenox2 from battery, connect to host-PC using ssh.  
+2. Connect PS3 controller to host-PC and control Phenox2 manually from host-PC.
 
- - 屋内環境下で 3m x 3m 以上の、障害物の無い、平坦な地面をしたスペースを用意してください。
- - 空調などの風が起こる装置はあらかじめ切っておきます。
+Also, please take care of following points.
 
-# 0. ホストPC上での準備
-初めて本チュートリアルを実行する場合、ホストPC上で「joystick」パッケージ,「jstest-gtk」パッケージをインストールします。
+ - Prepare wide and planer space(3m x 3m at least) without any object on the ground.  
+ - Try experiment in indoor environment, and turn off air conditioner.  
+ - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
+
+# 0. Preparation on host-PC
+If users try this tutorial for the first time, install "joystick" and "jstest-gtk".
 ```bash
-sudo apt-get install joystick jstest-gtk
+hostpc@ sudo apt-get install joystick jstest-gtk
 ```
 
-ホストPC上で、以下のリンクから手動操縦プログラム(phenox_manual)をダウンロードし、展開とビルドを実行してください。
-
+Download manual control software from Phenox Lab, then extract and build it.
 ```bash
-wget http://phenoxlab.com/static/phenox_manual.tar.gz
-tar zxvf phenox_manual.tar.gz
-cd phenox_manual
-make clean all
+hostpc@ wget http://phenoxlab.com/static/phenox_manual.tar.gz
+hostpc@ tar zxvf phenox_manual.tar.gz
+hostpc@ cd phenox_manual
+hostpc@ make clean all
 ```
 
-以下の写真のように、USBケーブルを介してホストPCにPSコントローラを接続すると、「/dev/input/js0」などとしてデバイスが認識されることを確認してください。
-![図 1 PS3コントローラとホストPC] (/img/phenox_tut/joystick.JPG)
-<div align="center">図 1 PS3コントローラとホストPC</div>
+Connect PS3 controller (shown in Fig.1) to the host-PC with USB A-B cable, then check that it is recognized by device named such as "/dev/input/js0".
+ 
+![Fig.1 PS3 controller and host-PC] (/img/phenox_tut/joystick.JPG)
+<div align="center">Fig.1 PS3 controller and host-PC</div>
 
-
-jstest-gtkを実行し、PS3コントローラの入力が効いている状態になっていることを確認してください。(ボタンが効かない場合、中央にあるロゴのボタンを押してみて下さい。)
-```bash
-jstest-gtk
+Launch "jstest-gtk", and check that values are chenged when users press button or move joystick. ```bash
+hostpc@ jstest-gtk
 ```
 
-# 1. ssh接続によるPhenox2 へのログイン
-[電源について](../start/power) を参考に、電池を使用した電源のセットアップを実行し、[通信方法について](../start/com)を参考に、ssh通信のセットアップと電源の投入を行い、ホストPCがssh通信を経由してPhenox2へのログインを完了したところまで進んでください。
+# 1. Setup supply power and communication
+Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
+ 
+# 2. Create project
+Copy tutorial to make custom projects as follows..
 
-# 2. プロジェクトの作成
-チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
 ```bash
-cd /root/phenox/work/
-cp -a tutorial_manualnet myproject_manualnet
+phenox# cd /root/phenox/work/
+phenox# cp -a tutorial_manualnet myproject_manualnet
+```
+# 3. Build project
+Build  myproject_manualnet as default setting.
+```bash
+phenox# cd /root/phenox/work/myproject_manualnet
+phenox# make clean all
+```
+Now, executable file "main" is created.
+
+# 4. Execute program
+The sequence of this tutorial program are as follows.
+
+1. Initialize CPU1(flight control system) for 3 seconds.
+2. Launch simple TCP server and wait for coneection from host-PC.
+3. After coneection, it is controlled manually according to the input of joystick of host-PC.
+
+Before running program, please put Phenox2 on the ground and do not move it until message "CPU0:Finished Initialization" appears. If users move Phenox2 during initialization, CPU1 detects movement and stops initialization. When this happens, please reboot Phenox2 by "reboot" command.
+
+Now, let's start "main".
+```bash
+phenox# ./main
 ```
 
-# 3. プロジェクトのビルド
-まずは、先ほどコピーした tutorial_manualnet と同じ内容で myproject_manualnet をビルドしてみます。
-```bash
-cd /root/phenox/work/myproject_manualnet
-make clean all
-```
-これで、実行ファイル `main` が作成されました。
+# 5. Execute manual control program fron host-PC and fly Phenox2.
+Put Phenox2 on the planer ground so that front camera is heading forward. 
 
-# 4. プログラムの実行: 状態量の確認
-このプログラムは以下の動作を行います。
-
-1. Phenox ライブラリの初期化
-2. TCPサーバを立ち上げ、ホストPCからのTCPクライアントの接続を待つ
-3. クライアントの接続が完了すると、ボタンの入力に応じて飛行制御を行う
-
-以下のコマンドでプログラムを実行します。
+From host-PC, run manual control program (phenox_manual). Change device name according to user's environment.
 
 ```bash
-./main
+hostpc@  cd phenox_manual
+hostpc@ ./phenox_manual /dev/input/js0 192.168.2.1
 ```
 
-プログラム開始時には Phenox2 がジャイロセンサーなどの初期化を行うので、必ず Phenox2 を安定した場所で静止させて、手に持つことはしないで下さい。開始から３秒程で初期化は完了し、 `CPU0:Finished Initialization.` というメッセージが現れます。万が一、この間に手で持つなどした場合は、初期化が完了しません。その場合はCtrl-cでプログラムを停止し、"reboot"コマンドで再起動します。
+When coneection is established correctly, message saying "connected to client" appears on terminal. In this tutorial, simple 2 button and 1 joystick controller is prepared as follows.  
+ - cross === Phenox2 enters down state ('PX_DOWN') if it is in hovering state ('PX_HOVER').  
+ - triangle === Phenox2 enters up state ('PX_UP') if it is in halt state('PX_HALT').  
+ - left joystick === control degx and degy.  
+  
+To take off Phenox2, press triangle. Then, Phenox2 operates 3 seconds of start up of motors, and takes off (`PX_UP`), and enters hover state (`PX_HOVER`). 
+Please move left joystick slowly to control Phenox2 horizontally when Phenox2 is in hovering state.  
+Press cross button to let Phenox2 landing. If users want to stop flying Phenox2 immediately, please hold one of legs and tilt it largely.  
 
-
-# 5.ホストPCでの手動操縦プログラムの実行
-初期化の完了したPhenox2を、フロントカメラが前方を向くように、広く平坦な地面の上に置いてください。
-
-ホストPCから、手動操縦プログラム(phenox_manual)を実行します。（「/dev/input/js0」の部分はユーザーの環境に応じて変更してください。）
+To shutdown Phenox2, type following command.
 ```bash
-cd phenox_manual
-./phenox_manual /dev/input/js0 192.168.2.1
-```
-正しく接続された場合は「connected to client.」というメッセージが表示されます。本チュートリアルでは、単純化のために3種類の入力(離陸、着陸、前後左右の移動)を用意しました。  
- - X・・・下降  
- - △・・・上昇  
- - 左スティック・・・degx,degyの制御  
-離陸させるには、△ボタンを押してください。3秒間のスタートアップの後、上昇を開始します。上昇から2秒程度経過後、水平方向の操縦が可能になるので、左スティックをゆっくりと動かしてみてください。。左右の動きで機体が左右に動き、上下の動きで機体が前後に動きます。  
-着陸させるには、Xボタンを押してください。即座に停止したい場合は、Phenox2 の足の1つを手で掴み、大きく傾けて下さい。
-
-# 8. シャットダウン
-シャットダウンさせる際は、"halt"コマンドを実行した後、電源スイッチをOFFにしてください。
-```bash
-halt
+phenox# halt
 ```

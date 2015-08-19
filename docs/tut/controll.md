@@ -2,15 +2,15 @@
 
 This tutorial explains following works using Ubuntu14.04 as host-PC.
 
-1. Start up Phenox2 from battery, connect to host-PC using ssh.  
+1. Startup Phenox2 from battery, connect to host-PC using ssh.  
 2. Check self state (px_selfstate).
 3. Prepare flight space checking number of visual feature points from bottom camera.
 4. Put Phenox2 on the ground, and blow whisle to start hovering autonomously.
 
-Also, please take care of following 2 points.
+Also, please take care of following points.
 
  - Prepare wide and planer space(3m x 3m at least) without any object on the ground.  
- - Try experiment in indoor environment, and turn off the air conditioner.  
+ - Try experiment in indoor environment, and turn off air conditioner.  
  - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
 
 # 1. Setup supply power and communication
@@ -23,7 +23,7 @@ Copy tutorial to make custom projects as follows..
 phenox# cd /root/phenox/work/
 phenox# cp -a tutorial_autohover myproject_autohover
 ```
-# 4. Build project
+# 3. Build project
 Build  myproject_autohover as default setting.
 ```bash
 phenox# cd /root/phenox/work/myproject_autohover
@@ -31,7 +31,7 @@ phenox# make clean all
 ```
 Now, executable file "main" is created.
 
-# 5. Execute program
+# 4. Execute program
 The sequence of this tutorial program are as follows.
 
 1. Initialize CPU1(flight control system) for 3 seconds.
@@ -48,13 +48,13 @@ phenox# ./main
 
 After initialization, members of selfstate (`degx`, `degy`, `degz`, `vision_tx`, `vision_ty`, `vision_tz`, `height`) and number of feature points are printed in terminal.
 
-# 6. Prepare flight environment
+# 5. Prepare flight environment (needed only first time of flight)
 Please hold Phenox2 and move above flight space to check number of feature points, and put markers on the ground if needed. 15 feature points are enough to estimate self position stably.
 
-# 7. Fly Phenox2
+# 6. Fly Phenox2
 After flight space is prepared, put Phenox2 on the ground, and blow whisle near Phenox2 strongly. Phenox2 operates 3 seconds of start up of motors, and takes off (`PX_UP`). Then, Phenox2 enters hover state (`PX_HOVER`) and try to fly at same position.
 
-# 8. Stop Phenox2
+# 7. Stop Phenox2
 Flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
 
 To shutdown Phenox2, type following command.

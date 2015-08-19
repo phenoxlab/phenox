@@ -6,10 +6,7 @@
   
 3. When the host-PC is connected to the serial communication board with USB A-B cable, please check that device(FT232RL) is recognized by OS (There is no need to supply power to the main board in this stage.).
   
-4. When the host-PC is running Linux OS, establish software of serial communication (minicom) as described in [Appendix](../appendix.md). If the host-PC is not running Linux OS, the configuration of the serial communication software is as follows.  
- - baudrate = 230400 bps  
- - 1 stop bit  
- - no parity  
+4. When the host-PC is running Linux OS, establish software of serial communication (minicom) as described in [Appendix](../appendix.md). If the host-PC is not running Linux OS, the configuration of the serial communication software is as follows (baudrate = 230400 bps, 1 stop bit  no parity).
 
 5. Set the power switch to on state checking LED0 and LED1. LED0 and LED1 will turn on for about 2 seconds, and then turn off when the main board finished loading boot loader (u-boot) successfully. If no messages are sent from Phenox2 in this stage, please check the setup of serial communication software.  
 Also if LED0 and LED1 continues on state, there may be problem of micro-SD card, and please refer to [FAQ](../faq.md).  

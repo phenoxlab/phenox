@@ -1,74 +1,70 @@
-このチュートリアルでは、以下の作業の習得を目的に、具体的な手順を示します。なお、ホスト PC として Ubuntu14.04 を使用します。
+# Fly Phenox2 tracking colored landmark(autonomous)
 
-1. 色マーカーを用意し、Phenox2を色マーカーに追従するように制御を行います。
+This tutorial explains following works using Ubuntu14.04 as host-PC.
 
-飛行に際しては以下のことに注意してください。
+1. Fly Phenox2 and let it track colored landmark.
 
- - 屋内環境下で 3m x 3m 以上の、障害物の無い、平坦な地面をしたスペースを用意してください。
- - 空調などの風が起こる装置はあらかじめ切っておきます。
- - 本チュートリアルでは、緑色の紙をマーカーとして地面に張り付けます。そのため、緑色でない床面を用意してください。
+Also, please take care of following points.
 
+ - Prepare wide and planer space(3m x 3m at least) without any object on the ground.  
+ - Try experiment in indoor environment, and turn off air conditioner.  
+ - This tutorial needs colored landmark and expects no similar color in flight space. So please remove similar colored from flight space.
+ - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
 
-# 0. 色マーカーの準備
-ホストPC上で以下URLから色マーカーのPDFファイルをA4サイズでダウンロード・印刷し、飛行スペースの中央の地面に貼り付けてください。
-```http://phenoxlab.com/static/colored_mark.pdf```
-また、色マーカーと似たような色は、飛行スペースに映らないようにします。
+# 0. Prepare colored landmark
+Please download and print following green mark with A4 size, and put on the center of flight space.  
+```http://phenoxlab.com/static/colored_mark.pdf```  
+Also, please remove similar color from the flight space.
 
-
-# 1. ssh接続によるPhenox2 へのログイン
-[電源について](../start/power) を参考に、電池を使用した電源のセットアップを実行し、[通信方法について](../start/com)を参考に、ssh通信のセットアップと電源の投入を行い、ホストPCがssh通信を経由してPhenox2へのログインを完了したところまで進んでください。
-
-# 2. プロジェクトの作成
-チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
-```bash
-cd /root/phenox/work/
-cp -a tutorial_colormark myproject_colormark
-```
-
-# 3. プロジェクトのビルド
-まずは、先ほどコピーした tutorial_colormark と同じ内容でmyproject_colormark をビルドしてみます。
-```bash
-cd /root/phenox/work/myproject_colormark
-make clean all
-```
-これで、実行ファイル `main` が作成されました。
-
-# 4. プログラムの実行: 状態量の確認
-このプログラムは以下の動作を行います。
-
-1. Phenox ライブラリの初期化
-2. ユーザーによって笛が鳴らされるまで待機
-3. 笛の音に反応して離陸
-4. ホバー状態に入り、色マーカーに追従するように飛行します。
-
-
-それでは、まず、待機状態の Phenox の各種状態量を確認してみましょう。
-
-以下のコマンドでプログラムを実行します。
+# 1. Setup supply power and communication
+Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
+ 
+# 2. Create project
+Copy tutorial to make custom projects as follows..
 
 ```bash
-./main
+phenox# cd /root/phenox/work/
+phenox# cp -a tutorial_colormark myproject_colormark
 ```
-
-プログラム開始時には Phenox2 がジャイロセンサーなどの初期化を行うので、必ず Phenox2 を安定した場所で静止させて、手に持つことはしないで下さい。開始から３秒程で初期化は完了し、 `CPU0:Finished Initialization.` というメッセージが現れます。万が一、この間に手で持つなどした場合は、初期化が完了しません。その場合はCtrl-cでプログラムを停止し、"reboot"コマンドで再起動します。
-
-
-# 5. プログラムの実行: Phenox2のメッセージ確認
-
-色マーカーの真上にPhenox2をかざしたときに、色マーカーが出てきた旨のメッセージが出現することを確認ください。
-逆に、色マーカーの無い飛行スペース上では、メッセージが出現しないことを確認ください。
-
-# 6. プログラムの実行: 飛行
-地面の環境整備が完了したら、Phenox2 を地面に貼り付けた色マーカーの真上に置き、Phenox2 の近くで笛を大きく吹いてください。離陸が始まります。笛の音を検出すると 3 秒間のスタートアップ状態の後、上昇 (`PX_UP`) し、ホバー状態 (`PX_HOVER`) となり, 高度方向、水平方向に状態を保つように飛行制御が行われます。
-
-ホバー状態になったら、超音波センサの邪魔にならないよう配慮しながら、緑色のマーカーを下向きカメラの視野に収まる範囲で動かしてみてください。Phenox2が追従することを確認できます。
-
-
-# 7. プログラムの実行: 飛行状態の停止
-Phenox2 の 飛行を止める場合は、Phenox2 の足の1つを手で掴み、大きく傾けて下さい。不安な方は手袋を着用することをお勧めします。この機能は、全てのユーザープログラムに明示されてはいないものの、飛行制御用CPUの機能として備わっています。
-
-# 8. シャットダウン
-シャットダウンさせる際は、"halt"コマンドを実行した後、電源スイッチをOFFにしてください。
+# 3. Build project
+Build  myproject_colormark as default setting.
 ```bash
-halt
+phenox# cd /root/phenox/work/myproject_colormark
+phenox# make clean all
 ```
+Now, executable file "main" is created.
+
+# 4. Execute program
+The sequence of this tutorial program are as follows.
+
+1. Initialize CPU1(flight control system) for 3 seconds.
+2. Wait for whisle sound printing selfstate. 
+3. Start hovering when whisle sound is detected.
+4. Hovers to track colored landmark keeping same height.
+
+Before running program, please put Phenox2 on the ground and do not move it until message "CPU0:Finished Initialization" appears. If users move Phenox2 during initialization, CPU1 detects movement and stops initialization. When this happens, please reboot Phenox2 by "reboot" command.
+
+Now, let's start "main".
+```bash
+phenox# ./main
+```
+
+After initialization, members of selfstate (`degx`, `degy`, `degz`, `vision_tx`, `vision_ty`, `vision_tz`, `height`) and number of feature points are printed in terminal.
+
+# 5. Prepare flight environment (needed only first time of flight)
+Please hold Phenox2 and check whether message saying that "it detects colormark" is printed on terminal when the bottom camera sees colored landmark. Also move Phenox2 around other flight area and check that no message appears.
+
+# 6. Fly Phenox2
+After flight space is prepared, put Phenox2 on the ground closed to colored landmark, and blow whisle near Phenox2 strongly. Phenox2 operates 3 seconds of start up of motors, and takes off (`PX_UP`). Then, Phenox2 enters hover state (`PX_HOVER`) and fly to track colored landmark.
+
+Then, move colored landmark slowly without disturbing height control of Phenox2. Users can see Phenox2 tracks the colored landmark.
+
+# 7. Stop Phenox2
+Flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
+
+To shutdown Phenox2, type following command.
+```bash
+phenox# halt
+```
+
+

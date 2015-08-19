@@ -2,7 +2,7 @@
 
 This tutorial explains following works using Ubuntu14.04 as host-PC.
 
-1. Start up Phenox2 from external supply plug, and try two communication method (using serial communication board and ssh connection).  
+1. Startup Phenox2 from external supply plug, and try two communication method (using serial communication board and ssh connection).  
 2. Check how to use APIs of image processing sound processing.
 3. Create and build user's custom project.
 4. Changing source code and rebuild project. 
