@@ -13,16 +13,16 @@
 # 0. ホストPC上での準備
 初めて本チュートリアルを実行する場合、ホストPC上で「joystick」パッケージ,「jstest-gtk」パッケージをインストールします。
 ```bash
-sudo apt-get install joystick jstest-gtk
+hostpc@ sudo apt-get install joystick jstest-gtk
 ```
 
 ホストPC上で、以下のリンクから手動操縦プログラム(phenox_manual)をダウンロードし、展開とビルドを実行してください。
 
 ```bash
-wget http://phenoxlab.com/static/phenox_manual.tar.gz
-tar zxvf phenox_manual.tar.gz
-cd phenox_manual
-make clean all
+hostpc@ wget http://phenoxlab.com/static/phenox_manual.tar.gz
+hostpc@ tar zxvf phenox_manual.tar.gz
+hostpc@ cd phenox_manual
+hostpc@ make clean all
 ```
 
 以下の写真のように、USBケーブルを介してホストPCにPSコントローラを接続すると、「/dev/input/js0」などとしてデバイスが認識されることを確認してください。
@@ -32,7 +32,7 @@ make clean all
 
 jstest-gtkを実行し、PS3コントローラの入力が効いている状態になっていることを確認してください。(ボタンが効かない場合、中央にあるロゴのボタンを押してみて下さい。)
 ```bash
-jstest-gtk
+hostpc@ jstest-gtk
 ```
 
 # 1. ssh接続によるPhenox2 へのログイン
@@ -48,8 +48,8 @@ cp -a tutorial_manualnet myproject_manualnet
 # 3. プロジェクトのビルド
 まずは、先ほどコピーした tutorial_manualnet と同じ内容で myproject_manualnet をビルドしてみます。
 ```bash
-cd /root/phenox/work/myproject_manualnet
-make clean all
+phenox# cd /root/phenox/work/myproject_manualnet
+phenox# make clean all
 ```
 これで、実行ファイル `main` が作成されました。
 
@@ -63,7 +63,7 @@ make clean all
 以下のコマンドでプログラムを実行します。
 
 ```bash
-./main
+phenox# ./main
 ```
 
 プログラム開始時には Phenox2 がジャイロセンサーなどの初期化を行うので、必ず Phenox2 を安定した場所で静止させて、手に持つことはしないで下さい。開始から３秒程で初期化は完了し、 `CPU0:Finished Initialization.` というメッセージが現れます。万が一、この間に手で持つなどした場合は、初期化が完了しません。その場合はCtrl-cでプログラムを停止し、"reboot"コマンドで再起動します。
@@ -74,10 +74,10 @@ make clean all
 
 ホストPCから、手動操縦プログラム(phenox_manual)を実行します。（「/dev/input/js0」の部分はユーザーの環境に応じて変更してください。）
 ```bash
-cd phenox_manual
-./phenox_manual /dev/input/js0 192.168.2.1
+hostpc@  cd phenox_manual
+hostpc@ ./phenox_manual /dev/input/js0 192.168.2.1
 ```
-正しく接続された場合は「connected to client.」というメッセージが表示されます。本チュートリアルでは、単純化のために3種類の入力(離陸、着陸、前後左右の移動)を用意しました。  
+	正しく接続された場合は「connected to client.」というメッセージが表示されます。本チュートリアルでは、単純化のために3種類の入力(離陸、着陸、前後左右の移動)を用意しました。  
  - X・・・下降  
  - △・・・上昇  
  - 左スティック・・・degx,degyの制御  
@@ -87,5 +87,5 @@ cd phenox_manual
 # 8. シャットダウン
 シャットダウンさせる際は、"halt"コマンドを実行した後、電源スイッチをOFFにしてください。
 ```bash
-halt
+phenox# halt
 ```

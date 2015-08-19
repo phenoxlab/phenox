@@ -19,15 +19,15 @@
 # 2. プロジェクトの作成
 チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
 ```bash
-cd /root/phenox/work/
-cp -a tutorial_move myproject_move
+phenox# cd /root/phenox/work/
+phenox# cp -a tutorial_move myproject_move
 ```
 
 # 3. プロジェクトのビルド
 まずは、先ほどコピーした tutorial_move と同じ内容で myproject_move をビルドしてみます。
 ```bash
-cd /root/phenox/work/myproject_move
-make clean all
+phenox# cd /root/phenox/work/myproject_move
+phenox# make clean all
 ```
 これで、実行ファイル `main` が作成されました。
 
@@ -45,7 +45,7 @@ make clean all
 以下のコマンドでプログラムを実行します。
 
 ```bash
-./main
+phenox# ./main
 ```
 
 プログラム開始時には Phenox2 がジャイロセンサーなどの初期化を行うので、必ず Phenox2 を安定した場所で静止させて、手に持つことはしないで下さい。開始から３秒程で初期化は完了し、 `CPU0:Finished Initialization.` というメッセージが現れます。万が一、この間に手で持つなどした場合は、初期化が完了しません。その場合はCtrl-cでプログラムを停止し、"reboot"コマンドで再起動します。
@@ -65,5 +65,5 @@ Phenox2 の 飛行を止める場合は、Phenox2 の足の1つを手で掴み�
 # 8. シャットダウン
 シャットダウンさせる際は、"halt"コマンドを実行した後、電源スイッチをOFFにしてください。
 ```bash
-halt
+phenox# halt
 ```
