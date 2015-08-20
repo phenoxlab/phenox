@@ -29,6 +29,6 @@ pages:
     - 'Fly and move Phenox2(autonomous)' : 'tut/controll_move.md'    
     - 'Fly Phenox2 tracking colored landmark(autonomous)' : 'tut/controll_color.md'
     - 'Control Phenox2 with joystick (manual)' : 'tut/controll_manual.md'
-    #- 'FAQ': 'faq.md'
+    - 'FAQ': 'faq.md'
     #- 'appendix': 'appendix.md'
 

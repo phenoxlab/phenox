@@ -4,20 +4,35 @@
   
 2. Attach the serial communication board to the main board  as shown in Fig.1. It is strongly recommended to protect the serial communication board with tape to prevent accidential short circuit between those two boards as shown in Fig.2.
   
-3. When the host-PC is connected to the serial communication board with USB A-B cable, please check that device(FT232RL) is recognized by OS (There is no need to supply power to the main board in this stage.).
-  
-4. When the host-PC is running Linux OS, establish software of serial communication (minicom) as described in [Appendix](../appendix.md). If the host-PC is not running Linux OS, the configuration of the serial communication software is as follows (baudrate = 230400 bps, 1 stop bit  no parity).
-
-5. Set the power switch to on state checking LED0 and LED1. LED0 and LED1 will turn on for about 2 seconds, and then turn off when the main board finished loading boot loader (u-boot) successfully. If no messages are sent from Phenox2 in this stage, please check the setup of serial communication software.  
-Also if LED0 and LED1 continues on state, there may be problem of micro-SD card, and please refer to [FAQ](../faq.md).  
-If host-PC gets messages from ``u-boot`` of Phenox2 (this situation happens when the main board receive input from host-PC before booting Linux.), please type ``run sdboot``, and Phenox2 starts booting Linux.
-  
 ![Fig.1 Setup serial communication board] (/img/phenox/serial_comm.png)
 <div align="center">Setup serial communication board </div>
 
 ![Fig.2 protect serial communication board] (/img/phenox/taped_serial.JPG)
 <div align="center">Fig.2 protect serial communication board</div>
 
+
+3. If users use serial communicatino for the first time, install `minicom` as following command.
+```bash
+hostpc@ sudo apt-get install minicom
+```
+
+And doenload configuration file of minicom from Phenox Lab, and move to proper directory.
+```bash
+hostpc@ wget http://phenoxlab.com/static/minirc.dfl
+hostpc@ sudo mv minirc.dfl /etc/minicom/
+```
+
+Please check that device name like `/dev/ttyUSB{+number}` and `/dev/ttyACM{+number}` appears when serial communicatino board(FT232RL) is connected to the main board. (There is no need to supply power to the main board in this stage.)   And rewrite "minirc.dfl" according to the device name on user's environment.
+
+```bash
+hostpc@ sudo minicom 
+```
+ If the host-PC is not running Linux OS, the configuration of the serial communication software is as follows (baudrate = 230400 bps, 1 stop bit  no parity).
+
+4. Set the power switch to on state checking LED0 and LED1. LED0 and LED1 will turn on for about 2 seconds, and then turn off when the main board finished loading boot loader (u-boot) successfully. If no messages are sent from Phenox2 in this stage, please check the setup of serial communication software.  
+Also if LED0 and LED1 continues on state, there may be problem of micro-SD card, and please refer to [FAQ](../faq.md).  
+If host-PC gets messages from ``u-boot`` of Phenox2 (this situation happens when the main board receive input from host-PC before booting Linux.), please type ``run sdboot``, and Phenox2 starts booting Linux.
+  
 # Communication using WiFi module
 Phenox2 becomes access point ("phenoxnet") after booting Linux automatically, and waits for ssh connection from host-PC. 
   

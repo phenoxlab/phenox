@@ -30,7 +30,8 @@ Connect PS3 controller (shown in Fig.1) to the host-PC with USB A-B cable, then 
 ![Fig.1 PS3 controller and host-PC] (/img/phenox_tut/joystick.JPG)
 <div align="center">Fig.1 PS3 controller and host-PC</div>
 
-Launch "jstest-gtk", and check that values are chenged when users press button or move joystick. ```bash
+Launch "jstest-gtk", and check that values are chenged when users press button or move joystick. 
+```bash
 hostpc@ jstest-gtk
 ```
 
@@ -66,7 +67,7 @@ Now, let's start "main".
 phenox# ./main
 ```
 
-# 5. Execute manual control program fron host-PC and fly Phenox2.
+# 5. Execute manual control program from host-PC and fly Phenox2.
 Put Phenox2 on the planer ground so that front camera is heading forward. 
 
 From host-PC, run manual control program (phenox_manual). Change device name according to user's environment.
