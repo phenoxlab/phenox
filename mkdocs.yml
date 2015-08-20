@@ -37,4 +37,3 @@ pages:
     - 'Pythonによるプログラム実行' : 'tut/python_basic.md'
     - 'Pythonコードによる飛行' : 'tut/python_hover.md'
 - 'FAQ': 'faq.md'
-- '付録': 'appendix.md'
