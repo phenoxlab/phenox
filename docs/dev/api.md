@@ -29,7 +29,7 @@ Reflect physical parameters which is set in local variable "param" to CPU1(fligh
 Copy struct of selfstate (`px_selfstate`) to local variable "state". Please see [Selfstate](../dev/state.md) for each members.
 
 ### void pxset_keepalive()
-Send keep alive message from CPU0(Linux) to CPU1(flight control system). This function must be called periodically to CPU1 by users.
+Send keep alive message from CPU0(Linux) to CPU1(flight control system). This function must be called periodically by users.
 
 ### int pxget_battery()
  - Return 1 when battery is nearly out.
@@ -151,7 +151,7 @@ For actual usage, please refer to [Fly Phenox2 with colored landmark(autonomous)
 ### int pxget_blobmark(float *x,float *y, float *size)
 This function returns the mass and center of color blob after `pxset_blobmark_query()` is called.
 
- - Return 1, location of center of color blob is copied to "x" and "y", and total mass of color blob is copied to "size"
+ - Return 1, location of a center of color blob is copied to "x" and "y", and total mass of color blob is copied to "size"
  - Return -1 when CPU1 is in processing, or no query of `pxset_blobmark_query()` is received by CPU1.
 
 For actual usage, please refer to [Fly Phenox2 with colored landmark(autonomous)](../tut/controll_color.md)
@@ -163,7 +163,7 @@ This function detects 3kHz of whisle sound.
  - Return 1 when Phenox2 detects 3kHz sound after `pxset_whisle_detect_reset()` is called.
  - Return 0 when Phenox2 doesn't detect 3kHz sound after `pxset_whisle_detect_reset()` is called.
 
-The sensitivity to detect whisle can be changed by modifying `whisleborder` a member of `px_pconfig`.
+The sensitivity to detect whisle can be changed by modifying `whisleborder`, a member of `px_pconfig`.
 
 ### void pxset_whisle_detect_reset()
 This function resets current state of whisle detection and be used before starting 3kHz sound detection. 

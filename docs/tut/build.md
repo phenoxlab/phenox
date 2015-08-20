@@ -3,7 +3,7 @@
 This tutorial explains following works using Ubuntu14.04 as host-PC.
 
 1. Startup Phenox2 from external supply plug, and try two communication method (using serial communication board and ssh connection).  
-2. Check how to use APIs of image processing sound processing.
+2. Check how to use APIs of image processing and sound processing.
 3. Create and build user's custom project.
 4. Changing source code and rebuild project. 
 
@@ -23,12 +23,12 @@ Copy tutorial to make custom projects as follows..
 
 ```bash
 phenox# cd /root/phenox/work/
-phenox# cp -a tutorial1 myproject1
+phenox# cp -a tutorial_basic myproject_basic
 ```
 # 4. Build project
-Build  myproject1 as default setting.
+Build  myproject_basic as default setting.
 ```bash
-phenox# cd /root/phenox/work/myproject1
+phenox# cd /root/phenox/work/myproject_basic
 phenox# make clean all
 ```
 Now, executable file "main" is created.
@@ -38,7 +38,7 @@ The sequence of this tutorial program are as follows.
 
 1. Initialize CPU1(flight control system) for 3 seconds.
 2. Get 10 pcs of images with visual feature points taken from front camera.
-3. 5 seconds of recording of sound, and save it as `sound.raw`.
+3. 5 seconds of recording of sound, and save it as "sound.raw".
 4. Waiting for whisle sound made by users.
 
 Before running program, please put Phenox2 on the ground and do not move it until message "CPU0:Finished Initialization" appears. If users move Phenox2 during initialization, CPU1 detects movement and stops initialization. When this happens, please reboot Phenox2 by "reboot" command.
@@ -58,14 +58,14 @@ If user login to Phenox2 using ssh with X11 forwarding option, users can directl
 phenox# nautilus .
 ```
 
-Directory is also accessible from host-PC by reading contents of microSD. Insert microSD card of host-PC, and check folder of `/root/phenox/work/myproject1`.
+Directory is also accessible from host-PC by reading contents of microSD. Insert microSD card of host-PC, and check folder of `/root/phenox/work/myproject_basic`.
 
 # 6. Changing source code and rebuild
 
 Please read source code of main.c and parameter.c, edit something, and try rebuild. 
 ```bash
-cd /root/phenox/work/myproject1
-make clean all
+phenox# cd /root/phenox/work/myproject_basic
+phenox# make clean all
 ```
 Then, modified "main" program is created.
 

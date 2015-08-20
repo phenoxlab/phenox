@@ -52,7 +52,7 @@ phenox# ./main
 After initialization, members of selfstate (`degx`, `degy`, `degz`, `vision_tx`, `vision_ty`, `vision_tz`, `height`) and number of feature points are printed in terminal.
 
 # 5. Prepare flight environment (needed only first time of flight)
-Please hold Phenox2 and check whether message saying that "it detects colormark" is printed on terminal when the bottom camera sees colored landmark. Also move Phenox2 around other flight area and check that no message appears.
+Please hold Phenox2 and check whether message ""CPU0: green mark is found at (x x)" is printed on terminal when the bottom camera sees colored landmark. Also move Phenox2 around other flight area and check that no message appears.
 
 # 6. Fly Phenox2
 After flight space is prepared, put Phenox2 on the ground closed to colored landmark, and blow whisle near Phenox2 strongly. Phenox2 operates 3 seconds of start up of motors, and takes off (`PX_UP`). Then, Phenox2 enters hover state (`PX_HOVER`) and fly to track colored landmark.

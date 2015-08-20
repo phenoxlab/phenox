@@ -1,16 +1,16 @@
 # Install  software on custom microSD
 
 Phenox2 has two CPUs(CPU0 and CPU1). CPU0 installs Linux(Ubuntu 13.04) and CPU1 operates flight controll system.  
-Linux system is built on microSD, so users can customize their own system by rewriting contents of microSD. Also, binary of CPU1 and FPGA is also available. So users can download required software to operate Phenox2, and prepare microSD card by yourself.  
+Linux system is built on a microSD, so users can customize their own system by rewriting contents of a microSD. Also, binary of CPU1 and FPGA is also available. So users can download required software to operate Phenox2, and prepare a microSD card by yourself.  
 
 In this section, we explain how to build Phenox2 software on custom microSD card.
 
 Here we report the method using Ubuntu 14.04 as host-PC.
 
-1\. Prepare microSD (4.0Gbyte or upper)  
+1\. Prepare a microSD (4.0Gbyte or upper)  
 2\. Open terminal.  
-3\. Connect microSD to host-PC.  
-4\. Execute "dmesg" command. And you can check device name of micro SD as shown in Fig.1 or Fig.2.  
+3\. Inject a microSD to host-PC.  
+4\. Execute "dmesg" command. And you can check device name of a micro SD as shown in Fig.1 or Fig.2.  
 ```bash
 hostpc$ dmesg
 ```
@@ -22,11 +22,12 @@ Fig.1 shows the device name is "sdb", and Fig.2 shows the device name is "mmcblk
 ![Fig.2 dmesg result (mmcblkX)] (/img/phenox_build_ja/2.2.3.find_identifier_mmcblk0.png)
 <div align="center">Fig.1 dmesg result (mmcblkX)</div>
 
-5\. Before formatting microSD, execute following command.  
+5\. Before formatting a microSD, execute following command.  
 ```bash
 hostpc$ sudo dd if=/dev/zero of=/dev/sdX bs=1024 count=1
 ```
-6\. Create two partition to microSD.  
+Then, eject and inject a microSD again.
+6\. Create two partition to a microSD.  
 ```bash
 hostpc$ sudo fdisk /dev/sdX
 ```
@@ -53,14 +54,14 @@ In fdisk, press key as follows
 |/dev/sdX1 |   *   | XXXXXXX | YYYYYYY | BBBBBBB |  c | W95 FAT32 (LBA)|  
 |/dev/sdX2 |   | XXXXXXX | YYYYYYY | BBBBBBB | 83 | Linux|  
  - press "w" and Enter  
-After finishing, eject microSD and inject it again.  
-7\. Create filesystems on two patitions with following command.  
+After finishing, eject a microSD and inject it again.  
+7\. Create file systems on two patitions with following command.  
 ```bash
 hostpc$ sudo mkfs.vfat -F 32 -n boot /dev/sdX1
 hostpc$ sudo mkfs.ext4 -L root /dev/sdX2
 ``` 
-After finishing, eject microSD and inject it again.  
-8\. Download softwares from Phenox Lab, extract and copy them to microSD.  
+After finishing, eject a microSD and inject it again.  
+8\. Download softwares from Phenox Lab, extract and copy them to a microSD.  
 ```bash
 hostpc$ wget http://phenoxlab.com/static/phenox_boot_master.tar.gz
 hostpc$ wget http://phenoxlab.com/static/phenox_ubuntu_master.tar.gz

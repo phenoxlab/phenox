@@ -19,7 +19,7 @@ The following pictures show the phenox from the top and from the bottom. We can 
 Phenox has two on-board cameras. The bottom camera is attached on the surface of the electric circuit. The front camera, is attached perpendicular to the circuit. As its name says, the direction the front camera faces is the front direction of Phenox. The front camera is illustrated in the following figure.
 
 ![Fig.4 Phenox Front Camera and Front Direction] (/img/phenox/phenox_front.jpg)
-<div align="centering">Phenox Front Camera and Front Direction</div>
+<div align="centering">Fig.4 Phenox Front Camera and Front Direction</div>
 
 From the center of the body, the opposite side of the front is back, and right and left are defined in the natural manner. 
 
@@ -30,7 +30,7 @@ From the center of the body, the opposite side of the front is back, and right a
 
 ### Zynq
 Programmable Soc released from Xilinx.Inc.
-Two CPUs (CPU0,CPU1) and FPGA are used by Phenox2
+Two CPUs (CPU0,CPU1) and FPGA are used by Phenox2.
 ### CPU0
 Linux operateing system is running in CPU0. 
 ### CPU1
