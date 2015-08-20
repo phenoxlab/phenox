@@ -2,12 +2,6 @@
 1. 電源に応じて、[電源について](power.md) を参照しながら電源の準備を行って下さい。
 2. 図 1 の通りにシリアル通信回路をセットし、ホスト PC とシリアル通信回路の間を USB ケーブルで接続します。（シリアル通信回路の金属部分が不用意にメイン回路と接触することを防ぐため、シリアル通信回路は図2のように、ビニールテープなどでぐるぐる巻きにしておくことを強くお勧めします。）
 
-![図 1 シリアル通信回路の接続] (/img/phenox/serial_comm.png)
-<div align="center">図 1 シリアル通信回路の接続 </div>
-
-![図 2 シリアル通信回路をテープで保護する] (/img/phenox/taped_serial.JPG)
-<div align="center">図 2 シリアル通信回路をテープで保護する </div>
-
 3. ホスト PC がLinuxの場合は, minicom を使って、シリアル通信を行います。必要に応じて、ホスト PC に minicom をインストー ルしてください。
 ```bash
 hostpc@ sudo apt-get install minicom
@@ -30,6 +24,13 @@ hostpc@ sudo minicom
 ``u-boot >``というメッセージが出現し、先に進まない場合は、``run sdboot``と入力してください。
 
 なお、シリアル通信回路を使用する場合は、Phenox を飛行させることはお控え下さい。
+
+![図 1 シリアル通信回路の接続] (/img/phenox/serial_comm.png)
+<div align="center">図 1 シリアル通信回路の接続 </div>
+
+![図 2 シリアル通信回路をテープで保護する] (/img/phenox/taped_serial.JPG)
+<div align="center">図 2 シリアル通信回路をテープで保護する </div>
+
 
 # WiFi モジュールでの通信 (phenoxnet)
 製品出荷時では、Phenox が自動的にアクセスポイント (phenoxnet) となり、ネットワーク内のホスト PC から、ssh によるログインを受け付けます。この設定は、ユーザーによって Linux の内部を書き 換えることで、変更可能です。
