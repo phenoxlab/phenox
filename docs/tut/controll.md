@@ -18,13 +18,13 @@
 チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
 ```bash
 phenox# cd /root/phenox/work/
-phenox# cp -a tutorial2 myproject2
+phenox# cp -a tutorial_autohover myproject_autohover
 ```
 
 # 3. プロジェクトのビルド
-まずは、先ほどコピーした tutorial2 と同じ内容で myproject2 をビルドしてみます。
+まずは、先ほどコピーした tutorial_autohover と同じ内容で myproject_autohover をビルドしてみます。
 ```bash
-phenox# cd /root/phenox/work/myproject2
+phenox# cd /root/phenox/work/myproject_autohover
 phenox# make clean all
 ```
 これで、実行ファイル `main` が作成されました。

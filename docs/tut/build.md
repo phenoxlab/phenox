@@ -22,13 +22,13 @@ ssh -X root@192.168.2.1
 チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
 ```bash
 cd /root/phenox/work/
-cp -a tutorial1 myproject1
+cp -a tutorial_basic myproject_basic
 ```
 
 # 4. プロジェクトのビルド
-まずは、先ほどコピーした tutorial1 と同じ内容で myproject1 をビルドしてみます。
+まずは、先ほどコピーした tutorial_basic と同じ内容で myproject_basic をビルドしてみます。
 ```bash
-cd /root/phenox/work/myproject1
+cd /root/phenox/work/myproject_basic
 make clean all
 ```
 これで、実行ファイル `main` が作成されました。
@@ -55,18 +55,18 @@ make clean all
 nautilus
 ```
 
-ssh の X フォワーディングが正常に作動していない場合でも、一度 Phenox2 をシャットダウンし、microSD カードをホスト PC に挿入し、`root` パーティションの中の`/root/phenox/work/myproject1` にアクセスすれば画像、音声を入手することが可能です。ホスト PC 上から `root` パーティション にアクセスできない場合 (Mac など) は、以下のようにして、画像、音声の保存先を`boot`パーティ ションに変更します。(microSD カード内には`boot`, `root` の 2 つのパーティションが存在して おり、Mac では `boot` パーティションのみアクセスできることが経験的に知られています。) まず、 Phenox2 にログイン後、`boot` パーティション (`/dev/mmcblkp1` と認識されています) を`/mnt` に マウントします。
+ssh の X フォワーディングが正常に作動していない場合でも、一度 Phenox2 をシャットダウンし、microSD カードをホスト PC に挿入し、`root` パーティションの中の`/root/phenox/work/myproject_basic` にアクセスすれば画像、音声を入手することが可能です。ホスト PC 上から `root` パーティション にアクセスできない場合 (Mac など) は、以下のようにして、画像、音声の保存先を`boot`パーティ ションに変更します。(microSD カード内には`boot`, `root` の 2 つのパーティションが存在して おり、Mac では `boot` パーティションのみアクセスできることが経験的に知られています。) まず、 Phenox2 にログイン後、`boot` パーティション (`/dev/mmcblkp1` と認識されています) を`/mnt` に マウントします。
 
 ```bash
 mount /dev/mmcblkp1 /mnt
 ```
 
-次に、`/root/phenox/work/myproject1/main.c` のソースコードを `vi` エディタなどで編集し、画像、 音声の保存先を `/mnt` に変更した後、ソースコードの再ビルドを行ってから、main プロ グラムの実行を行って下さい。
+次に、`/root/phenox/work/myproject_basic/main.c` のソースコードを `vi` エディタなどで編集し、画像、 音声の保存先を `/mnt` に変更した後、ソースコードの再ビルドを行ってから、main プロ グラムの実行を行って下さい。
 
 # 6. ソースコードの変更と再ビルド
-ソースコード内でいくつかのパラメータを変更してみます。ここでは、`myproject1/main.c` の `cameraid` 変数を `PX_FRONT_CAM` から `PX_BOTTOM_CAM` に, `record` 変数を 10.0 にしてみま す。変更を加えたら、先ほどと同様にビルドを行って下さい。
+ソースコード内でいくつかのパラメータを変更してみます。ここでは、`myproject_basic/main.c` の `cameraid` 変数を `PX_FRONT_CAM` から `PX_BOTTOM_CAM` に, `record` 変数を 10.0 にしてみま す。変更を加えたら、先ほどと同様にビルドを行って下さい。
 ```bash
-cd /root/phenox/work/myproject1
+cd /root/phenox/work/myproject_basic
 make clean all
 ```
 再びmainプログラム実行してみて、変化が起こることを確かめます。
