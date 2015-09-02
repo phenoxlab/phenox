@@ -13,7 +13,7 @@ GPartedはパーティションを作成・編集するためのGUIアプリケ�
 Ubuntuであれば以下のコマンドでインストールすることが出来ます。
 
 ```bash
-sudo apt-get install gparted 
+hostpc$ sudo apt-get install gparted 
 ```
 
 2\. GPartedを起動する

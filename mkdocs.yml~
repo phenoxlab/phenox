@@ -25,7 +25,6 @@ pages:
     - 'パラメーター一覧' : 'dev/param.md'
     - '状態量一覧' : 'dev/state.md'
     - '用語集' : 'dev/glossary.md'
-    - 'ハードウェアを拡張する' : 'customize.md'
 - チュートリアル:
     - '画像、音声を取得する' : 'tut/build.md'
     - 'Node-jsを使った画像配信サーバー構築': 'tut/server.md'

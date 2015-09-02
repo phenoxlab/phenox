@@ -14,22 +14,22 @@
 1. ホスト PC より WiFi ネットワークの検索を行い、SSID が「phenoxnet」であるアクセスポイントを選択し、パスワードに phenoxnet と入力してください。
 2. ホスト PC よりターミナルを立ち上げ、以下のコマンドで `ssh` 接続をオプション `-X` を付けて 行って下さい。初期パスワードは `root` になります。
 ```bash
-ssh -X root@192.168.2.1
+hostpc$ ssh -X root@192.168.2.1
 ```
 なお、以降の作業は、シリアル通信経由のターミナル、あるいは `ssh` からログインしたターミナルのどちらで作業を行っても構いません。
 
 # 3. プロジェクトの作成 
 チュートリアルプロジェクトをコピーし、カスタムプロジェクトを作成します。
 ```bash
-cd /root/phenox/work/
-cp -a tutorial_basic myproject_basic
+phenox# cd /root/phenox/work/
+phenox# cp -a tutorial_basic myproject_basic
 ```
 
 # 4. プロジェクトのビルド
 まずは、先ほどコピーした tutorial_basic と同じ内容で myproject_basic をビルドしてみます。
 ```bash
-cd /root/phenox/work/myproject_basic
-make clean all
+phenox# cd /root/phenox/work/myproject_basic
+phenox# make clean all
 ```
 これで、実行ファイル `main` が作成されました。
 
@@ -45,20 +45,24 @@ make clean all
 
 それではプログラムを実行してみましょう。
 ```bash
-./main
+phenox# ./main
 ```
 
 "sound record for 5.0 seconds"とメッセージが表示されたら、何か話してみて下さい。5秒間が経過すると、"waiting for whisle"とメッセージが表示されるので、Phenoxの前で大きく笛を吹いてください。プログラムが終了します。
 
 ホスト PC 上で ssh の X フォワーディングが正常に作動している場合、`ssh` コンソールで以下のコマンドを実行すると、ファイルマネージャーが開き、画像、音声の保存されたディレクトリにアクセスできます。
 ```bash
-nautilus
+phenox# nautilus .
 ```
 
-ssh の X フォワーディングが正常に作動していない場合でも、一度 Phenox2 をシャットダウンし、microSD カードをホスト PC に挿入し、`root` パーティションの中の`/root/phenox/work/myproject_basic` にアクセスすれば画像、音声を入手することが可能です。ホスト PC 上から `root` パーティション にアクセスできない場合 (Mac など) は、以下のようにして、画像、音声の保存先を`boot`パーティ ションに変更します。(microSD カード内には`boot`, `root` の 2 つのパーティションが存在して おり、Mac では `boot` パーティションのみアクセスできることが経験的に知られています。) まず、 Phenox2 にログイン後、`boot` パーティション (`/dev/mmcblkp1` と認識されています) を`/mnt` に マウントします。
+ssh の X フォワーディングが正常に作動していない場合でも、一度 Phenox2 をシャットダウンし、microSD カードをホスト PC に挿入し、`root` パーティションの中の`/root/phenox/work/myproject_basic` にアクセスすれば画像、音声を入手することが可能です。
+  
+ホスト PC 上から `root` パーティション にアクセスできない場合 (Mac など) は、以下のようにして、画像、音声の保存先を`boot`パーティ ションに変更します。(microSD カード内には`boot`, `root` の 2 つのパーティションが存在して おり、Mac では `boot` パーティションのみアクセスできることが経験的に知られています。)
+  
+まず、 Phenox2 にログイン後、`boot` パーティション (`/dev/mmcblkp1` と認識されています) を`/mnt` に マウントします。
 
 ```bash
-mount /dev/mmcblkp1 /mnt
+phenox# mount /dev/mmcblkp1 /mnt
 ```
 
 次に、`/root/phenox/work/myproject_basic/main.c` のソースコードを `vi` エディタなどで編集し、画像、 音声の保存先を `/mnt` に変更した後、ソースコードの再ビルドを行ってから、main プロ グラムの実行を行って下さい。
@@ -66,13 +70,13 @@ mount /dev/mmcblkp1 /mnt
 # 6. ソースコードの変更と再ビルド
 ソースコード内でいくつかのパラメータを変更してみます。ここでは、`myproject_basic/main.c` の `cameraid` 変数を `PX_FRONT_CAM` から `PX_BOTTOM_CAM` に, `record` 変数を 10.0 にしてみま す。変更を加えたら、先ほどと同様にビルドを行って下さい。
 ```bash
-cd /root/phenox/work/myproject_basic
-make clean all
+phenox# cd /root/phenox/work/myproject_basic
+phenox# make clean all
 ```
 再びmainプログラム実行してみて、変化が起こることを確かめます。
 
 # 7. シャットダウン
 シャットダウンさせる際は、"halt"コマンドを実行した後、電源スイッチをOFFにしてください。
 ```bash
-halt
+phenox# halt
 ```
