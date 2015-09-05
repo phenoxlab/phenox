@@ -21,6 +21,7 @@ pages:
     - 'C Language API' : 'dev/api.md'
     - 'Parameters (px_pconfig)' : 'dev/param.md'
     - 'Selfstate (px_selfstate)' : 'dev/state.md'
+    - 'Extend Hardware' : 'dev/customize.md'
 - Tutorials:
     - 'Get image and sound' : 'tut/build.md'
     - 'Streaming with node.js web server': 'tut/server.md'
