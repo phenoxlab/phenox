@@ -41,11 +41,11 @@ Phenox をインターネットへ接続する場合はこれに加えて以下�
 
 #交換部品について
 交換部品についての価格表は、以下のURLより入手可能です。
-``http://http://phenoxlab.com/static/parts_cost_official_ja.pdf``
+``http://phenoxlab.com/static/parts_cost_official_ja.pdf``
   
 注文は``order@phenoxlab.com``より受付けます。納期は発注から1ヶ月程度を見込んでください。  
 プロテクタに関しては以下のURLでCADデータを公開しており、ユーザーで製作・手配することも可能です。
-``http://http://phenoxlab.com/static/protector.pdf``  
-``http://http://phenoxlab.com/static/protector.dxf``  
+``http://phenoxlab.com/static/protector.pdf``  
+``http://phenoxlab.com/static/protector.dxf``  
 また、micro SD カードに関しても、[Linux環境の構築](../dev/env)の手順に従うことで、ユーザー側で環境構築が可能です。
 
