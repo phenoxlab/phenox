@@ -38,13 +38,13 @@ To connect Phenox to the Internet, the following items are also needed.
 #Replacement part
 
 The price list is avialable from following URL.  
-``http://http://phenoxlab.com/static/parts_cost_official_en.pdf``
+``http://phenoxlab.com/static/parts_cost_official_en.pdf``
   
 The order is received from following mail address.
 ``order@phenoxlab.com``
 The estimate delivery will be a month later after the order is received.
 
 The CAD data of the protector is available from following URL, and users can make it by their own. 
-``http://http://phenoxlab.com/static/protector.pdf``  
-``http://http://phenoxlab.com/static/protector.dxf``  
+``http://phenoxlab.com/static/protector.pdf``  
+``http://phenoxlab.com/static/protector.dxf``  
 Also, software of Phenox2 can be installed to the custom micro SD. Please refer to [Install software on custom microSD](../dev/env).
