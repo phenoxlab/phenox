@@ -66,6 +66,9 @@ Phenox2 enters `PX_HOVER` state automatically by CPU1 after this time.
 Time (second) of down state (PX_DOWN) when `pxset_operate_mode(PX_DOWN)` is called.
 Phenox2 enters `PX_HALT` state automatically by CPU1 after this time.
 
+### float dangz_rotspeed
+Rotation speed when Phenox2 rotates around degZ by calling `pxset_dst_degz()`.
+
 ### int featurecontrast_front
 Contrast of visual feature points detection of front camera  used by `pxset_imgfeature_query()` and `pxget_imgfeature()` functions.
 If this value is larger, less visual feature points are found, but become more robust to noise.
