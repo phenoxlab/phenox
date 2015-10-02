@@ -27,7 +27,7 @@ Following items are not contained in Phenox2 set. Please prepare them by users.
 ``http://www.hobbyking.com/hobbyking/store/__6443__G_T_Power_A8_8Cell_balancer_Charger.html``
 - Spare battery (Turnigy nano-tech 180mah 3S 25~40C Lipo Pack)
 - USB Cable (A-B)
-- DC 12V Power Source (more than 1A)
+- DC 12V Power Source (1A or upper, 5.5mm/2.1mm)
 - Electrical Tester
 - Safety Glasses
 - Host computer (with SSH client and serial communication)
