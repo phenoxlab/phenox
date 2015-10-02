@@ -27,7 +27,7 @@
 ``http://www.hobbyking.com/hobbyking/store/__6443__G_T_Power_A8_8Cell_balancer_Charger.html``
 
 - 予備のバッテリ (型番: Turnigy nano-tech 180mah 3S 25~40C Lipo Pack)
-- DC12V 電源 (1A 以上)
+- DC12V 電源 (1A 以上, 外径5.5mm/内径2.1mm)
 - USB ケーブル(A-B)
 - テスター (電池残量の計測)
 - 保護メガネ
