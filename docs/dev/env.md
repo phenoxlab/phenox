@@ -224,3 +224,10 @@ sudo cp -a phenox_ubuntu_master/* /media/<username>/root/
 umount /media/<username>/root /media/<username>/boot
 ```
 ![アンマウント] (/img/phenox_build_ja/8.unmount.png)
+
+## ソフトウェアの更新
+現在のリビジョン番号は、microSDカードの各パーティション(boot/, root/)内のrevision.logに記載されています。
+##phenox_boot_master ("boot"フォルダにコピーするファイル)
+最新版は20150930です。
+##phenox_ubuntu_master ("root"フォルダにコピーするファイル)
+最新版は20150917です。
