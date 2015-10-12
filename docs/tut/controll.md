@@ -10,7 +10,8 @@
  - 屋内環境下で 3m x 3m 以上の、障害物の無い、平坦な地面をしたスペースを用意してください。
  - 空調などの風が起こる装置はあらかじめ切っておきます。  
  - 飛行中のPhenox2は足を捕まえて大きく傾けることで停止できることを常に頭に入れて下さい。
-
+  
+飛行の様子
 [![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
 
 # 1. ssh接続によるPhenox2 へのログイン

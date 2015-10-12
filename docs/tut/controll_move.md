@@ -12,7 +12,8 @@
  - 空調などの風が起こる装置はあらかじめ切っておきます。
  - 本チュートリアルでは、Phenox2が機体前方に移動します。機体前方に十分なスペースを用意してください。  
  - 飛行中のPhenox2は足を捕まえて大きく傾けることで停止できることを常に頭に入れて下さい。
-
+  
+飛行の様子
 [![Alt text for your video](http://img.youtube.com/vi/fEEkiQL5E1I/0.jpg)](http://www.youtube.com/watch?v=fEEkiQL5E1I)
 
 # 1. ssh接続によるPhenox2 へのログイン

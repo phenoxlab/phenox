@@ -8,7 +8,8 @@
  - 空調などの風が起こる装置はあらかじめ切っておきます。
  - 本チュートリアルでは、緑色の紙をマーカーとして地面に張り付けます。そのため、緑色でない床面を用意してください。  
  - 飛行中のPhenox2は足を捕まえて大きく傾けることで停止できることを常に頭に入れて下さい。
-
+  
+飛行の様子
 [![Alt text for your video](http://img.youtube.com/vi/CYNWzuIqtWc/0.jpg)](http://www.youtube.com/watch?v=CYNWzuIqtWc)
 
 # 0. 色マーカーの準備
