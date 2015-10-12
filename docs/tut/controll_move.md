@@ -1,5 +1,9 @@
 # Fly and move Phenox2(autonomous)
 
+##Movie of flight
+[![Alt text for your video](http://img.youtube.com/vi/fEEkiQL5E1I/0.jpg)](http://www.youtube.com/watch?v=fEEkiQL5E1I)
+
+
 This tutorial explains following works using Ubuntu14.04 as host-PC.
 
 1. Startup Phenox2 from battery, connect to host-PC using ssh.  
@@ -64,6 +68,3 @@ To shutdown Phenox2, type following command.
 ```bash
 phenox# halt
 ```
-
-##Movie of flight
-[![Alt text for your video](http://img.youtube.com/vi/fEEkiQL5E1I/0.jpg)](http://www.youtube.com/watch?v=fEEkiQL5E1I)
