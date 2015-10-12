@@ -11,9 +11,6 @@
  - 空調などの風が起こる装置はあらかじめ切っておきます。  
  - 飛行中のPhenox2は足を捕まえて大きく傾けることで停止できることを常に頭に入れて下さい。
   
-飛行の様子
-[![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
-
 # 1. ssh接続によるPhenox2 へのログイン
 [電源について](../start/power) を参考に、電池を使用した電源のセットアップを実行し、[通信方法について](../start/com)を参考に、ssh通信のセットアップと電源の投入を行い、ホストPCがssh通信を経由してPhenox2へのログインを完了したところまで進んでください。
 
@@ -67,3 +64,5 @@ Phenox2 の 飛行を止める場合は、Phenox2 の足の1つを手で掴み�
 phenox# halt
 ```
 
+##飛行の様子
+[![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
