@@ -64,5 +64,5 @@ Phenox2 の 飛行を止める場合は、Phenox2 の足の1つを手で掴み�
 phenox# halt
 ```
 
-##飛行の様子
+##飛行の様子(動画）
 [![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
