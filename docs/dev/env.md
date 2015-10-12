@@ -227,7 +227,7 @@ umount /media/<username>/root /media/<username>/boot
 
 ## ソフトウェアの更新
 現在のリビジョン番号は、microSDカードの各パーティション(boot/, root/)内のrevision.logに記載されています。
-##phenox_boot_master ("boot"フォルダにコピーするファイル)
+###phenox_boot_master ("boot"フォルダにコピーするファイル)
 最新版は20150930です。
-##phenox_ubuntu_master ("root"フォルダにコピーするファイル)
+###phenox_ubuntu_master ("root"フォルダにコピーするファイル)
 最新版は20150917です。

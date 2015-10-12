@@ -9,6 +9,7 @@
  - 本チュートリアルでは、緑色の紙をマーカーとして地面に張り付けます。そのため、緑色でない床面を用意してください。  
  - 飛行中のPhenox2は足を捕まえて大きく傾けることで停止できることを常に頭に入れて下さい。
 
+[![Alt text for your video](http://img.youtube.com/vi/CYNWzuIqtWc/0.jpg)](http://www.youtube.com/watch?v=CYNWzuIqtWc)
 
 # 0. 色マーカーの準備
 ホストPC上で以下URLから色マーカーのPDFファイルをA4サイズでダウンロード・印刷し、飛行スペースの中央の地面に貼り付けてください。
