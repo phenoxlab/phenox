@@ -14,6 +14,9 @@ Also, please take care of following points.
  - Try experiment in indoor environment, and turn off air conditioner.  
  - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.  
  - In this tutorial, Phenox2 move forward about 1.5m, so prepare enough space in front side of Phenox2.
+  
+Movie of flight
+[![Alt text for your video](http://img.youtube.com/vi/fEEkiQL5E1I/0.jpg)](http://www.youtube.com/watch?v=fEEkiQL5E1I)
 
 # 1. Setup supply power and communication
 Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).

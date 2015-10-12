@@ -75,3 +75,12 @@ hostpc$ sudo cp -a phenox_ubuntu_master/* /media/<username>/root/
 ```bash
 hostpc$ umount /media/<username>/root /media/<username>/boot
 ```
+
+## Firmware Update
+Firmware (contents of micro SD card) will be somtimes updated. Information of latest revision number is announced in this page. 
+
+To check current revision number in micro SD card, please see "revision.log", which exists in "boot" and "root" folder.
+###phenox_boot_master
+The latest revision number is 20150930
+###phenox_ubuntu_master
+The latest revision number is 20150917

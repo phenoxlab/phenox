@@ -10,6 +10,9 @@ Also, please take care of following points.
  - Try experiment in indoor environment, and turn off air conditioner.  
  - This tutorial needs colored landmark and expects no similar color in flight space. So please remove similar colored from flight space.
  - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
+  
+Movie of flight
+[![Alt text for your video](http://img.youtube.com/vi/CYNWzuIqtWc/0.jpg)](http://www.youtube.com/watch?v=CYNWzuIqtWc)
 
 # 0. Prepare colored landmark
 Please download and print following green mark with A4 size, and put on the center of flight space.  

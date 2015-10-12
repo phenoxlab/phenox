@@ -9,14 +9,4 @@ You can program how Phenox flies. Depending on the surrounding environment, howe
 
 To go through the documentation click the 'Next' button on bottom right.
 
-# Firmware Update
-Firmware (contents of micro SD card) will be somtimes updated. Information of latest revision number is announced in this page. To update firmware, please download software from following web-site, extract and copy them to user's micro SD card. 
-```bash
-http://phenoxlab.com/static/phenox_boot_master.tar.gz
-http://phenoxlab.com/static/phenox_ubuntu_master.tar.gz
-```
-To check current revision number in micro SD card, please see "revision.log", which exists in "boot" and "root" folder.
-##phenox_boot_master
-The latest revision number is 20150930
-##phenox_ubuntu_master
-The latest revision number is 20150917
+The software update is announced in the bottom of[this page](dev/env.md)

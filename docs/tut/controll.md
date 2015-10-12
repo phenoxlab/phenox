@@ -12,6 +12,9 @@ Also, please take care of following points.
  - Prepare wide and planer space(3m x 3m at least) without any object on the ground.  
  - Try experiment in indoor environment, and turn off air conditioner.  
  - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
+  
+Movie of flight
+[![Alt text for your video](http://img.youtube.com/vi/CYNWzuIqtWc/0.jpg)](http://www.youtube.com/watch?v=CYNWzuIqtWc)
 
 # 1. Setup supply power and communication
 Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
