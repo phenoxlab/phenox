@@ -1,3 +1,6 @@
+##飛行の様子(動画）
+[![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
+
 このチュートリアルでは、以下の作業の習得を目的に、具体的な手順を示します。なお、ホスト PC として Ubuntu14.04 を使用します。
 
 1. Phenox2 を電池から起動し、ssh 通信により接続します。
@@ -63,6 +66,3 @@ Phenox2 の 飛行を止める場合は、Phenox2 の足の1つを手で掴み�
 ```bash
 phenox# halt
 ```
-
-##飛行の様子(動画）
-[![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
