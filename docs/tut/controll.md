@@ -1,7 +1,7 @@
 # Fly Phenox2(autonomous)
 
 ##Movie of flight
-[![Alt text for your video](http://img.youtube.com/vi/CYNWzuIqtWc/0.jpg)](http://www.youtube.com/watch?v=CYNWzuIqtWc)
+[![Alt text for your video](http://img.youtube.com/vi/ZQ_5pt0mRdc/0.jpg)](http://www.youtube.com/watch?v=ZQ_5pt0mRdc)
 
 This tutorial explains following works using Ubuntu14.04 as host-PC.
 
