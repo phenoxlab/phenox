@@ -94,11 +94,12 @@ For actual usage, please refer to [Controll Phenox2 with joystick (manual)](../t
 ### void pxset_dst_degz(float val)
 Control angle of `degZ`, which is defined in [Principal Axes](../start/directions.md) when Phenox2 is in hovering state(`pxget_operate_mode()` == `PX_HOVER`).
 
-Argument `val` 
+Argument `val` is defined as follows.
+  
  - if val is positive, Phenox2 rotates counterclockwise around degz. 
  - if val is negative, Phenox2 rotates clockwise around degz. 
  - if val is 0, Phenox2 stops roation around degz.
-
+  
 Rotation speed is set in `dangz_rotspeed`(member of `px_pconfig`) , so absolute value of `val` is not used for rotation speed.
 
 ### int pxset_visualselfposition(float tx,float ty)
