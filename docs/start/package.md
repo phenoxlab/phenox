@@ -46,6 +46,6 @@ Phenox をインターネットへ接続する場合はこれに加えて以下�
 注文は``order@phenoxlab.com``より受付けます。納期は発注から1ヶ月程度を見込んでください。  
 プロテクタに関しては以下のURLでCADデータを公開しており、ユーザーで製作・手配することも可能です。
 ``http://phenoxlab.com/static/protector.pdf``  
-``http://phenoxlab.com/static/protector.dxf``  
+``http://phenoxlab.com/static/protector.dxf.zip``  
 また、micro SD カードに関しても、[Linux環境の構築](../dev/env)の手順に従うことで、ユーザー側で環境構築が可能です。
 
