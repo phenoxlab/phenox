@@ -81,6 +81,6 @@ Firmware (contents of micro SD card) will be somtimes updated. Information of la
 
 To check current revision number in micro SD card, please see "revision.log", which exists in "boot" and "root" folder.
 ###phenox_boot_master
-The latest revision number is 20150930
+The latest revision number is 20151101
 ###phenox_ubuntu_master
 The latest revision number is 20150917

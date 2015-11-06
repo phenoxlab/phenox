@@ -29,7 +29,8 @@ When removing battery, remove rubber band and protector first, and  put your han
 2. Attach battery to the main board as described above. Also, check that propellers can rotate smoothly without interfering other objects.  
 3. Insert the microSD card.  
 4. Check that two camera boards are attached to the main board.  
-5. Plese boot Linux as described in [Communication](com.md).  
+5. Check that 4 corners of main board are fixed to silicon ring correctly. 
+6. Plese boot Linux as described in [Communication](com.md).  
 
 
 # Start operating Phenox2 with external supply cable

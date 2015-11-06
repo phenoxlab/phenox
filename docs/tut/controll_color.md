@@ -20,7 +20,7 @@ Please download and print following green mark with A4 size, and put on the cent
 Also, please remove similar color from the flight space.
 
 # 1. Setup supply power and communication
-Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
+First, please check that 4 corners of main board are fixed to silicon ring correctly. Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
  
 # 2. Create project
 Copy tutorial to make custom projects as follows..

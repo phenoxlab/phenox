@@ -17,7 +17,7 @@ Also, please take care of following points.
  - Remember that flying Phenox2 can be stopped immediately by holding one of legs and tilt it largely.
   
 # 1. Setup supply power and communication
-Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
+First, please check that 4 corners of main board are fixed to silicon ring correctly. Please setup supply power using battery as described in [Power supply](../start/power.md), and setup communication using ssh as described in [Communication](../start/com.md).
  
 # 2. Create project
 Copy tutorial to make custom projects as follows..
