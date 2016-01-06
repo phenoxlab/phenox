@@ -22,10 +22,12 @@
 また、以下のものは Phenox2 機体セットには含まれておりません。別途ご用意ください。
 
 - バッテリ充電器 (3セルLiPoの充電が可能でかつJST-XH4コネクタ対応のもの)
-
+例) http://www.gforce-hobby.jp/products/G0018.html
 
 - 予備のバッテリ (型番: Turnigy nano-tech 180mah 3S 25~40C Lipo Pack)
 - DC12V 電源 (1A 以上, 外径5.5mm/内径2.1mm)
+例) http://akizukidenshi.com/catalog/g/gM-01804/
+
 - USB ケーブル(A-B)
 - テスター (電池残量の計測)
 - 保護メガネ
