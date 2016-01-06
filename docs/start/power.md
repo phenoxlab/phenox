@@ -2,6 +2,9 @@
 
 Users have two options to supply power to Phenox2, using battery or external supply cable.
 
+# Basic
+The circuit board of Phenox2 is not protected. So it can be easily broken when it touches to other metal stuff. (A user may break Phenox2 by putting it on the serial communication board.) When the main board breaks, no LEDs are lit even if  users turn power switch on. So please take care not to touch the circuit board to other material and make the room always clean.
+
 # About battery
 Phenox2 operates 5 minutes on the fly, and 20 minutes on the ground with attached battery (3S, 180mAh). External supply cable should be used instead of battery when users want to use Linux system of Phenox2 for a long time (e.g. installing package from the Internet, or building new software). Also, discarge cables(red and black cable) of the attached battery are removed by us. So when users get a spare battery and want to remove discharge cable. please be careful for not causing short circuit.  
 
