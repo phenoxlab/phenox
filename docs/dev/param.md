@@ -1,18 +1,18 @@
 # パラメーター一覧
 ### float duty_hover
-ホバー状態 (`PX_HOVER`) での、基本推力を表します。この基本推力に対して、`pgain_sonar_tz`, `dgain_sonar_tz` で指定したゲインに応じて高度制御が行われます。積載重量に応じて、1800 から 2200 程度の値が 目安です。
+ホバー状態 (`PX_HOVER`) での、基本推力を表します。この基本推力に対して、`pgain_sonar_tz`, `dgain_sonar_tz` で指定したゲインに応じて高度制御が行われます。積載重量に応じて、1800 から 2900 程度の値が 目安です。
 
 ### float duty_hover_max
-ホバー状態 (`PX_HOVER`) での、最大推力を表します。`duty_hover+150` から `duty_hover+250`	 程度の値が目安です。
+ホバー状態 (`PX_HOVER`) での、最大推力を表します。`duty_hover`よりも大きな値を設定してください。
 
 ### float duty_hover_min
-ホバー状態 (`PX_HOVER`) での、最小推力を表します。`duty_hover-150` から `duty_hover-250` 程度の値が目安です。
+ホバー状態 (`PX_HOVER`) での、最小推力を表します。`duty_hover` よりも小さな値を設定してください。
 
 ### float duty_up
-上昇状態 (`PX_UP`) での、推力を表します。`duty_hover-150` から `duty_hover-250` 程度の値が目安です。
+上昇状態 (`PX_UP`) での、推力を表します。`duty_hover`よりも大きな値を設定してください。
 
 ### float duty_down
-下降状態 (`PX_DOWN`) での、推力を表します。`duty_hover-150` から `duty_hover-250` 程度の値が目安です。
+下降状態 (`PX_DOWN`) での、推力を表します。`duty_hover` よりも小さな値を設定してください。
 
 ### float duty_bias_front
 front モーターの推力のバイアスパラメータです。この値が大きいほど、該当モーターの推力が増加 します。重心のバランスに応じて −300 ∼ 300 程度の値が目安です。
