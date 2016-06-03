@@ -66,7 +66,7 @@ hostpc$ ssh root@192.168.2.1
 
 1. まず、起動時に hostapd を使用する機能を無効化します。hostapd 起動スクリプトを Linux 起動時実行対象から外します。    
 ```bash
-phenox# mv /etc/rc2.d/S20hostapd /etc/rc2.d/refuge
+phenox# mv /etc/rc2.d/S20accesspoint /etc/rc2.d/refuge
 ```
 2. 次に、Phenox2 をユーザーの用意した WiFi ルーターへ接続し、`wpa supplicant` コマンドで DHCP サーバから IP アドレスを取得します。設定ファイルの一例が `/root/setting/wlan-set-wli-uc.sh` に記載されています。このスクリプトをユーザーの環境に合わせて書き換え、以下のコマンドを実 行してください。
 ```bash
@@ -74,3 +74,60 @@ phenox# source /root/setting/wlan-set-wli-uc.sh
 ```
 
 各パラメータの意味と設定方法については、インターネット上で `wpa supplicant` コマンドの使用例を参照してください。
+
+## アクセスポイントへ起動時に自動的に接続する。
+上の方法では起動時に毎回スクリプトを実行しなければなりません。
+起動時に毎回同じアクセスポイントに接続する際にはスクリプトを自動起動させることで、自動的にインターネットに接続させることができます。
+
+1. まず、`/root/setting/wlan-set-wli-uc.sh`のうちいくつかをコメントアウト  
+(SSIDとPASSはつなげる先に合わせて変更）
+
+```bash
+#!/bin/sh
+
+ifconfig wlan1 up
+sleep 1
+wpa_supplicant -Dwext -iwlan1 -c /etc/wpa_supplicant/wpa_supplicant.conf -B
+ 
+wpa_cli -iwlan1 remove_network 0 
+wpa_cli -iwlan1 add_network 0 
+#wpad5e44faaf93adb217defc0afb07de32_cli -iwlan1 set_network 0 proto RSN 
+#wpa_cli -iwlan1 set_network 0 key_mgmt WPA-PSK 
+wpa_cli -iwlan1 set_network 0 ssid '"SSID"' 
+wpa_cli -iwlan1 set_network 0 psk '"PASS"' 
+#wpa_cli -iwlan1 set_network 0 pairwise CCMP 
+#wpa_cli -iwlan1 set_network 0 group CCMP 
+wpa_cli -iwlan1 enable_network 0
+sleep 3
+dhclient -v wlan1
+```
+
+
+2.実行権限を与える
+```shell-session
+# chmod +x /root/setting/wlan-set-wli-uc.sh
+```
+
+3.自動起動に追加  
+`/etc/rc.local`にさっきのスクリプトのある場所を追加(`exit 0`の上)
+```bash
+#!/bin/sh -e
+
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+/root/setting/wlan-set-wli-uc.sh
+exit 0
+```
+
+
+
+
