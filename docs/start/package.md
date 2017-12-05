@@ -49,3 +49,5 @@ Phenox をインターネットへ接続する場合はこれに加えて以下�
 ``http://phenoxlab.com/static/protector.dxf.zip``  
 また、micro SD カードに関しても、[Linux環境の構築](../dev/env)の手順に従うことで、ユーザー側で環境構築が可能です。
 
+
+この商品は開発版のため初期不良以外の保証は行なっておりません。
